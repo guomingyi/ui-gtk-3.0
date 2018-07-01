@@ -1,0 +1,46 @@
+./builds/unix/mkinstalldirs /srv/win32builder/fixed_3104/build/win64/lib                      \
+                         /srv/win32builder/fixed_3104/build/win64/lib/pkgconfig            \
+                         /srv/win32builder/fixed_3104/build/win64/include/freetype2/config \
+                         /srv/win32builder/fixed_3104/build/win64/bin                      \
+                         /srv/win32builder/fixed_3104/build/win64/share/aclocal
+mkdir -p -- /srv/win32builder/fixed_3104/build/win64/include/freetype2/config /srv/win32builder/fixed_3104/build/win64/bin /srv/win32builder/fixed_3104/build/win64/share/aclocal
+./builds/unix/libtool --mode=install /usr/bin/install -c                             \
+                                  /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/objs/libfreetype.la /srv/win32builder/fixed_3104/build/win64/lib
+libtool: install: /usr/bin/install -c /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/objs/.libs/libfreetype.dll.a /srv/win32builder/fixed_3104/build/win64/lib/libfreetype.dll.a
+libtool: install: base_file=`basename /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/objs/libfreetype.la`
+libtool: install:  dlpath=`/bin/sh 2>&1 -c '. /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/objs/.libs/'libfreetype.la'i; echo libfreetype-6.dll'`
+libtool: install:  dldir=/srv/win32builder/fixed_3104/build/win64/lib/`dirname ../bin/libfreetype-6.dll`
+libtool: install:  test -d /srv/win32builder/fixed_3104/build/win64/lib/../bin || mkdir -p /srv/win32builder/fixed_3104/build/win64/lib/../bin
+libtool: install:  /usr/bin/install -c /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/objs/.libs/libfreetype-6.dll /srv/win32builder/fixed_3104/build/win64/lib/../bin/libfreetype-6.dll
+libtool: install:  chmod a+x /srv/win32builder/fixed_3104/build/win64/lib/../bin/libfreetype-6.dll
+libtool: install:  if test -n '' && test -n 'x86_64-w64-mingw32-strip --strip-unneeded'; then eval 'x86_64-w64-mingw32-strip --strip-unneeded /srv/win32builder/fixed_3104/build/win64/lib/../bin/libfreetype-6.dll' || exit 0; fi
+libtool: install: /usr/bin/install -c /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/objs/.libs/libfreetype.lai /srv/win32builder/fixed_3104/build/win64/lib/libfreetype.la
+libtool: install: /usr/bin/install -c /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/objs/.libs/libfreetype.a /srv/win32builder/fixed_3104/build/win64/lib/libfreetype.a
+libtool: install: chmod 644 /srv/win32builder/fixed_3104/build/win64/lib/libfreetype.a
+libtool: install: x86_64-w64-mingw32-ranlib /srv/win32builder/fixed_3104/build/win64/lib/libfreetype.a
+for P in /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/freetype.h /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/ft2build.h /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/ftadvanc.h /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/ftautoh.h /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/ftbbox.h /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/ftbdf.h /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/ftbitmap.h /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/ftbzip2.h /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/ftcache.h /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/ftcffdrv.h /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/ftchapters.h /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/ftcid.h /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/fterrdef.h /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/fterrors.h /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/ftgasp.h /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/ftglyph.h /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/ftgxval.h /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/ftgzip.h /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/ftimage.h /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/ftincrem.h /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/ftlcdfil.h /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/ftlist.h /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/ftlzw.h /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/ftmac.h /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/ftmm.h /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/ftmodapi.h /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/ftmoderr.h /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/ftotval.h /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/ftoutln.h /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/ftpfr.h /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/ftrender.h /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/ftsizes.h /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/ftsnames.h /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/ftstroke.h /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/ftsynth.h /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/ftsystem.h /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/fttrigon.h /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/ftttdrv.h /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/fttypes.h /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/ftwinfnt.h /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/ftxf86.h /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/t1tables.h /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/ttnameid.h /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/tttables.h /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/tttags.h /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/ttunpat.h ; do                  \
+          /usr/bin/install -c -m 644                           \
+            $P /srv/win32builder/fixed_3104/build/win64/include/freetype2 ; \
+        done
+for P in /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/config/ftconfig.h /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/config/ftheader.h /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/config/ftmodule.h /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/config/ftoption.h /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/include/config/ftstdlib.h  /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/objs/ftmodule.h  ; do                         \
+          /usr/bin/install -c -m 644                                  \
+            $P /srv/win32builder/fixed_3104/build/win64/include/freetype2/config ; \
+        done
+rm -f /srv/win32builder/fixed_3104/build/win64/include/freetype2/freetype/config/*
+rmdir /srv/win32builder/fixed_3104/build/win64/include/freetype2/freetype/config
+rmdir: failed to remove `/srv/win32builder/fixed_3104/build/win64/include/freetype2/freetype/config': No such file or directory
+make: [install] Error 1 (ignored)
+rm -f /srv/win32builder/fixed_3104/build/win64/include/freetype2/freetype/*
+rmdir /srv/win32builder/fixed_3104/build/win64/include/freetype2/freetype
+rmdir: failed to remove `/srv/win32builder/fixed_3104/build/win64/include/freetype2/freetype': No such file or directory
+make: [install] Error 1 (ignored)
+/usr/bin/install -c -m 644 ./builds/unix/ftconfig.h               \
+          /srv/win32builder/fixed_3104/build/win64/include/freetype2/config/ftconfig.h
+/usr/bin/install -c -m 644 /srv/win32builder/fixed_3104/libs/32_libfreetype/freetype-2.5.1/objs/ftmodule.h                 \
+          /srv/win32builder/fixed_3104/build/win64/include/freetype2/config/ftmodule.h
+/usr/bin/install -c -m 755 ./builds/unix/freetype-config \
+          /srv/win32builder/fixed_3104/build/win64/bin/freetype-config
+/usr/bin/install -c -m 644 ./builds/unix/freetype2.m4 \
+          /srv/win32builder/fixed_3104/build/win64/share/aclocal/freetype2.m4
+/usr/bin/install -c -m 644 ./builds/unix/freetype2.pc \
+          /srv/win32builder/fixed_3104/build/win64/lib/pkgconfig/freetype2.pc

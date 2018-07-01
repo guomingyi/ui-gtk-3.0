@@ -1,0 +1,12 @@
+prefix=/home/mingyiguo/tools/gtk+-bundle_3.10.4-20131202_win64
+exec_prefix="/srv/win32builder/fixed_3104/build/win64"
+libdir="/srv/win32builder/fixed_3104/build/win64/lib"
+includedir="/srv/win32builder/fixed_3104/build/win64/include/freetype2"
+
+Name: FreeType 2
+Description: A free, high-quality, and portable font engine.
+Version: 17.0.11
+Requires:
+Libs: -L${libdir} -lfreetype
+Libs.private: -lz   
+Cflags: -I${includedir}

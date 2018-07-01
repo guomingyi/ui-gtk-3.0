@@ -1,17 +1,29 @@
-OUT := test.exe
+OUT := test
 
-CC := x86_64-w64-mingw32-gcc
+# linxu gcc
+CC := x86_64-linux-gnu-gcc
+
+# windows gcc
+CC_WIN := x86_64-w64-mingw32-gcc
+
+ARCH := amd64
+
 CFLAGS := `pkg-config --cflags --libs gtk+-3.0`
-CONFIG = ~/tools/gtk+-bundle_3.10.4-20131202_win64/lib/pkgconfig
 
 SRC := main.c
 
-all:
-	@export PKG_CONFIG_PATH=$(CONFIG)
-	$(CC) $(SRC) -o $(OUT) $(CFLAGS)
-	@mv $(OUT) build
+
+all: clean windows linux
+
+windows:
+	$(CC_WIN)  $(SRC) -o $(OUT)-windows-$(ARCH).exe $(CFLAGS)
+	@mv $(OUT)-windows-$(ARCH).exe build && tree build|grep $(OUT)
+
+linux:
+	$(CC) $(SRC) -o $(OUT)-linux-$(ARCH) $(CFLAGS)
+	@mv $(OUT)-linux-$(ARCH) build && tree build|grep $(OUT)
 
 clean:
-	@rm -rf build/$(OUT)
+	@rm -rf build/$(OUT)*
 
 
