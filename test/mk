@@ -1,39 +1,37 @@
 #!/bin/bash
 
-mydir=$PWD
 cmd=$1
-
 gtk=/usr/lib/x86_64-linux-gnu/pkgconfig
-win_gtk=$mydir/libs/gtk+-bundle_3.10.4-20131202_win64/lib/pkgconfig
+win_gtk=$PWD/libs/windows/gtk+-bundle_3.10.4-20131202_win64/lib/pkgconfig
 
 export PATH=$PATH:$PWD/build
 
-
 if [ ! -n "$1" ]; then
     export PKG_CONFIG_PATH=$gtk
-    make linux
+    make linux BUILD=linux-amd64
     exit 0
 fi
 
 
 if [ "y$cmd" = "yw" ]; then
     export PKG_CONFIG_PATH=$win_gtk
-    make windows
+    make windows BUILD=win-amd64
     exit 0
 fi
 
 
 if [ "y$cmd" = "yl" ]; then
     export PKG_CONFIG_PATH=$gtk
-    make linux
+    make linux BUILD=linux-amd64
     exit 0
 fi
 
 if [ "y$cmd" = "yall" ]; then
     export PKG_CONFIG_PATH=$gtk
-    make linux
+    make linux BUILD=linux-amd64
+
     export PKG_CONFIG_PATH=$win_gtk
-    make windows
+    make windows BUILD=win-amd64
     exit 0
 fi
 
