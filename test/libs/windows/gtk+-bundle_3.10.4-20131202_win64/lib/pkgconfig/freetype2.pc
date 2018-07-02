@@ -1,4 +1,4 @@
-prefix=/home/mingyiguo/tools/gtk+-bundle_3.10.4-20131202_win64
+prefix=/home/gmy/work/ui-gtk-3.0/test/libs/windows/gtk+-bundle_3.10.4-20131202_win64
 exec_prefix="/srv/win32builder/fixed_3104/build/win64"
 libdir="/srv/win32builder/fixed_3104/build/win64/lib"
 includedir="/srv/win32builder/fixed_3104/build/win64/include/freetype2"
