@@ -5,6 +5,7 @@ gtk=/usr/lib/x86_64-linux-gnu/pkgconfig
 win_gtk=$PWD/libs/windows/gtk+-bundle_3.10.4-20131202_win64/lib/pkgconfig
 
 export PATH=$PATH:$PWD/build
+cp -f builder.ui build
 
 if [ ! -n "$1" ]; then
     export PKG_CONFIG_PATH=$gtk
