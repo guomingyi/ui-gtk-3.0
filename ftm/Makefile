@@ -1,24 +1,32 @@
 OUT := test
 ARCH := amd64
 
-CC := x86_64-linux-gnu-gcc # linxu gcc
-CC_WIN := x86_64-w64-mingw32-gcc # windows gcc
+# linxu gcc
+CC := x86_64-linux-gnu-gcc
 
-SRC := \
-  main.c \
-  listdevs.c \
-  usb.c \
-  usb-hid-api.c
+# windows gcc
+CC_WIN := x86_64-w64-mingw32-gcc
+
+SRC := 
+SRC += listdevs.c
+SRC += usb.c
+SRC += usb-hid-api.c
+
+SRC_BTN := test_pcba_btn.c
+SRC_BTN_OLED := test_pcba_btn_oled.c
+SRC_BTN_OLED_FW := test_pcba_btn_oled_fw.c
+SRC_FW_PROGRAM := test_fw_program.c
 
 # libusb.
 LIBNAME  := -lusb-1.0
-ifeq ($(strip $(BUILD)), win-amd64)
-  LIBLOAD  := -L ./libs/windows/libusb-1.0.22/MinGW64/static
-  LIBINC := -I ./libs/windows/libusb-1.0.22/include/libusb-1.0
-else 
-# linux-amd64
+ifeq ($(strip $(BUILD)), linux-amd64)
   LIBLOAD  := -L ./libs/linux/lib
   LIBINC := -I ./libs/linux/include/libusb-1.0
+  exec :=
+else 
+  LIBLOAD  := -L ./libs/windows/libusb-1.0.22/MinGW64/static
+  LIBINC := -I ./libs/windows/libusb-1.0.22/include/libusb-1.0
+  exec := .exe
 endif
 
 # gtk+3.0
@@ -27,13 +35,51 @@ CFLAGS += $(LIBNAME) $(LIBLOAD) $(LIBINC)
 
 all: clean windows linux
 
-windows:
-	$(CC_WIN) $(SRC) -o $(OUT)-windows-$(ARCH).exe $(CFLAGS)
-	@mv $(OUT)-windows-$(ARCH).exe build && tree build|grep $(OUT)
+linux: btn btn_oled btn_oled_fw_erase fw_program
 
-linux:
-	$(CC) $(SRC) -o $(OUT)-linux-$(ARCH) $(CFLAGS)
-	@mv $(OUT)-linux-$(ARCH) build && tree build|grep $(OUT)
+windows: btn-win btn_oled-win btn_oled_fw_erase-win fw_program-win
+
+btn:
+	$(CC) $(SRC_BTN) $(SRC) -o build/$(OUT) $(CFLAGS)
+	@mv build/$(OUT) build/$(OUT)_btn-linux-$(ARCH)
+	@tree build|grep $(OUT)
+
+btn_oled:
+	$(CC) $(SRC_BTN_OLED) $(SRC) -o build/$(OUT) $(CFLAGS)
+	@mv build/$(OUT) build/$(OUT)_btn_oled-linux-$(ARCH)
+	@tree build|grep $(OUT)
+
+btn_oled_fw_erase:
+	$(CC) $(SRC_BTN_OLED_FW) $(SRC) -o build/$(OUT) $(CFLAGS)
+	@mv build/$(OUT) build/$(OUT)_btn_oled_fw_erase-linux-$(ARCH)
+	@tree build|grep $(OUT)
+
+fw_program:
+	$(CC) $(SRC_FW_PROGRAM) $(SRC) -o build/$(OUT) $(CFLAGS)
+	@mv build/$(OUT) build/$(OUT)_fw_program-linux-$(ARCH)
+	@tree build|grep $(OUT)
+
+btn-win:
+	$(CC_WIN) $(SRC_BTN) $(SRC) -o build/$(OUT) $(CFLAGS)
+	@mv build/$(OUT) build/$(OUT)_btn-windows-$(ARCH).exe
+	@tree build|grep $(OUT)
+
+btn_oled-win:
+	$(CC_WIN) $(SRC_BTN_OLED) $(SRC) -o build/$(OUT) $(CFLAGS)
+	@mv build/$(OUT) build/$(OUT)_btn_oled-windows-$(ARCH).exe
+	@tree build|grep $(OUT)
+
+btn_oled_fw_erase-win:
+	$(CC_WIN) $(SRC_BTN_OLED_FW) $(SRC) -o build/$(OUT) $(CFLAGS)
+	@mv build/$(OUT) build/$(OUT)_btn_oled_fw_erase-windows-$(ARCH).exe
+	@tree build|grep $(OUT)
+
+fw_program-win:
+	$(CC_WIN) $(SRC_FW_PROGRAM) $(SRC) -o build/$(OUT) $(CFLAGS)
+	@mv build/$(OUT) build/$(OUT)_fw_program-windows-$(ARCH).exe
+	@tree build|grep $(OUT)
+
+
 
 clean:
 	@rm -rf build/$(OUT)*
