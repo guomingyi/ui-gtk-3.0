@@ -1,0 +1,117 @@
+make  all-recursive
+make[1]: Entering directory `/srv/win32builder/fixed_3104/libs/51_atk/atk-2.10.0'
+Making all in atk
+make[2]: Entering directory `/srv/win32builder/fixed_3104/libs/51_atk/atk-2.10.0/atk'
+  GEN    stamp-atkmarshal.h
+  GEN    stamp-atkmarshal.c
+  GEN    s-enum-types-h
+  GEN    s-enum-types-c
+make  all-am
+make[3]: Entering directory `/srv/win32builder/fixed_3104/libs/51_atk/atk-2.10.0/atk'
+  CC     atkaction.lo
+  CC     atkcomponent.lo
+  CC     atkdocument.lo
+  CC     atkeditabletext.lo
+  CC     atkgobjectaccessible.lo
+  CC     atkhyperlink.lo
+  CC     atkhyperlinkimpl.lo
+  CC     atkhypertext.lo
+  CC     atkimage.lo
+  CC     atknoopobject.lo
+  CC     atknoopobjectfactory.lo
+  CC     atkobject.lo
+  CC     atkobjectfactory.lo
+  CC     atkplug.lo
+  CC     atkregistry.lo
+  CC     atkrelation.lo
+atkrelation.c: In function 'atk_relation_new':
+atkrelation.c:254:3: warning: 'g_value_array_new' is deprecated (declared at /srv/win32builder/fixed_3104/build/win64/include/glib-2.0/gobject/gvaluearray.h:69): Use 'GArray' instead
+atkrelation.c:260:5: warning: 'g_value_array_append' is deprecated (declared at /srv/win32builder/fixed_3104/build/win64/include/glib-2.0/gobject/gvaluearray.h:82): Use 'GArray' instead
+atkrelation.c:270:3: warning: 'g_value_array_free' is deprecated (declared at /srv/win32builder/fixed_3104/build/win64/include/glib-2.0/gobject/gvaluearray.h:72): Use 'GArray' instead
+atkrelation.c: In function 'atk_relation_get_ptr_array_from_value_array':
+atkrelation.c:476:7: warning: 'g_value_array_get_nth' is deprecated (declared at /srv/win32builder/fixed_3104/build/win64/include/glib-2.0/gobject/gvaluearray.h:65): Use 'GArray' instead
+atkrelation.c: In function 'atk_relation_get_value_array_from_ptr_array':
+atkrelation.c:492:3: warning: 'g_value_array_new' is deprecated (declared at /srv/win32builder/fixed_3104/build/win64/include/glib-2.0/gobject/gvaluearray.h:69): Use 'GArray' instead
+atkrelation.c:498:7: warning: 'g_value_array_append' is deprecated (declared at /srv/win32builder/fixed_3104/build/win64/include/glib-2.0/gobject/gvaluearray.h:82): Use 'GArray' instead
+  CC     atkrelationset.lo
+  CC     atkselection.lo
+  CC     atksocket.lo
+  CC     atkstate.lo
+  CC     atkstateset.lo
+  CC     atkstreamablecontent.lo
+  CC     atktable.lo
+  CC     atktext.lo
+atktext.c: In function 'atk_text_real_get_bounded_ranges':
+atktext.c:1410:3: warning: 'atk_text_get_text_at_offset' is deprecated (declared at atktext.c:460): Use 'atk_text_get_string_at_offset' instead
+atktext.c:1414:3: warning: 'atk_text_get_text_at_offset' is deprecated (declared at atktext.c:460): Use 'atk_text_get_string_at_offset' instead
+  CC     atkutil.lo
+  CC     atkmisc.lo
+  CC     atkvalue.lo
+  CC     atkversion.lo
+  CC     atkwindow.lo
+  CC     atk-enum-types.lo
+x86_64-w64-mingw32-windres atk.rc atk-win32-res.o
+(echo -e EXPORTS; x86_64-w64-mingw32-gcc -E -P -DINCLUDE_VARIABLES -DG_OS_WIN32 -DALL_FILES - <./atk.symbols | sed -e '/^$/d' -e 's/^/	/' -e 's/G_GNUC_[^ ]*//g') > atk.def
+  CCLD   libatk-1.0.la
+Creating library file: .libs/libatk-1.0.dll.a
+make[3]: Leaving directory `/srv/win32builder/fixed_3104/libs/51_atk/atk-2.10.0/atk'
+make[2]: Leaving directory `/srv/win32builder/fixed_3104/libs/51_atk/atk-2.10.0/atk'
+Making all in tests
+make[2]: Entering directory `/srv/win32builder/fixed_3104/libs/51_atk/atk-2.10.0/tests'
+  CC     testrole.o
+  CCLD   testrole.exe
+libtool: link: Could not determine the host path corresponding to
+libtool: link:   `/srv/win32builder/fixed_3104/libs/51_atk/atk-2.10.0/atk/.libs:/srv/win32builder/fixed_3104/build/win64/lib:/srv/win32builder/fixed_3104/build/win64/lib/../lib64'
+libtool: link: Continuing, but uninstalled executables may not work.
+libtool: link: Could not determine the host path corresponding to
+libtool: link:   `/srv/win32builder/fixed_3104/build/win64/lib:/srv/win32builder/fixed_3104/build/win64/bin:/srv/win32builder/fixed_3104/build/win64/lib64:/srv/win32builder/fixed_3104/libs/51_atk/atk-2.10.0/atk/.libs:/srv/win32builder/fixed_3104/build/win64/lib/../lib64'
+libtool: link: Continuing, but uninstalled executables may not work.
+  CC     testrelation.o
+  CCLD   testrelation.exe
+libtool: link: Could not determine the host path corresponding to
+libtool: link:   `/srv/win32builder/fixed_3104/libs/51_atk/atk-2.10.0/atk/.libs:/srv/win32builder/fixed_3104/build/win64/lib:/srv/win32builder/fixed_3104/build/win64/lib/../lib64'
+libtool: link: Continuing, but uninstalled executables may not work.
+libtool: link: Could not determine the host path corresponding to
+libtool: link:   `/srv/win32builder/fixed_3104/build/win64/lib:/srv/win32builder/fixed_3104/build/win64/bin:/srv/win32builder/fixed_3104/build/win64/lib64:/srv/win32builder/fixed_3104/libs/51_atk/atk-2.10.0/atk/.libs:/srv/win32builder/fixed_3104/build/win64/lib/../lib64'
+libtool: link: Continuing, but uninstalled executables may not work.
+  CC     teststateset.o
+  CCLD   teststateset.exe
+libtool: link: Could not determine the host path corresponding to
+libtool: link:   `/srv/win32builder/fixed_3104/libs/51_atk/atk-2.10.0/atk/.libs:/srv/win32builder/fixed_3104/build/win64/lib:/srv/win32builder/fixed_3104/build/win64/lib/../lib64'
+libtool: link: Continuing, but uninstalled executables may not work.
+libtool: link: Could not determine the host path corresponding to
+libtool: link:   `/srv/win32builder/fixed_3104/build/win64/lib:/srv/win32builder/fixed_3104/build/win64/bin:/srv/win32builder/fixed_3104/build/win64/lib64:/srv/win32builder/fixed_3104/libs/51_atk/atk-2.10.0/atk/.libs:/srv/win32builder/fixed_3104/build/win64/lib/../lib64'
+libtool: link: Continuing, but uninstalled executables may not work.
+make[2]: Leaving directory `/srv/win32builder/fixed_3104/libs/51_atk/atk-2.10.0/tests'
+Making all in docs
+make[2]: Entering directory `/srv/win32builder/fixed_3104/libs/51_atk/atk-2.10.0/docs'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/srv/win32builder/fixed_3104/libs/51_atk/atk-2.10.0/docs'
+Making all in po
+make[2]: Entering directory `/srv/win32builder/fixed_3104/libs/51_atk/atk-2.10.0/po'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/srv/win32builder/fixed_3104/libs/51_atk/atk-2.10.0/po'
+Making all in build
+make[2]: Entering directory `/srv/win32builder/fixed_3104/libs/51_atk/atk-2.10.0/build'
+Making all in win32
+make[3]: Entering directory `/srv/win32builder/fixed_3104/libs/51_atk/atk-2.10.0/build/win32'
+Making all in vs9
+make[4]: Entering directory `/srv/win32builder/fixed_3104/libs/51_atk/atk-2.10.0/build/win32/vs9'
+make[4]: Nothing to be done for `all'.
+make[4]: Leaving directory `/srv/win32builder/fixed_3104/libs/51_atk/atk-2.10.0/build/win32/vs9'
+Making all in vs10
+make[4]: Entering directory `/srv/win32builder/fixed_3104/libs/51_atk/atk-2.10.0/build/win32/vs10'
+make[4]: Nothing to be done for `all'.
+make[4]: Leaving directory `/srv/win32builder/fixed_3104/libs/51_atk/atk-2.10.0/build/win32/vs10'
+make[4]: Entering directory `/srv/win32builder/fixed_3104/libs/51_atk/atk-2.10.0/build/win32'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/srv/win32builder/fixed_3104/libs/51_atk/atk-2.10.0/build/win32'
+make[3]: Leaving directory `/srv/win32builder/fixed_3104/libs/51_atk/atk-2.10.0/build/win32'
+make[3]: Entering directory `/srv/win32builder/fixed_3104/libs/51_atk/atk-2.10.0/build'
+make[3]: Nothing to be done for `all-am'.
+make[3]: Leaving directory `/srv/win32builder/fixed_3104/libs/51_atk/atk-2.10.0/build'
+make[2]: Leaving directory `/srv/win32builder/fixed_3104/libs/51_atk/atk-2.10.0/build'
+make[2]: Entering directory `/srv/win32builder/fixed_3104/libs/51_atk/atk-2.10.0'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/srv/win32builder/fixed_3104/libs/51_atk/atk-2.10.0'
+make[1]: Leaving directory `/srv/win32builder/fixed_3104/libs/51_atk/atk-2.10.0'

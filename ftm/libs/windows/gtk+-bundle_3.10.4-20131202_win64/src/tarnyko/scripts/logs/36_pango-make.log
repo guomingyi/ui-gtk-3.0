@@ -1,0 +1,279 @@
+make  all-recursive
+make[1]: Entering directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1'
+Making all in pango
+make[2]: Entering directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/pango'
+  GEN      s-enum-types-h
+  GEN      s-enum-types-c
+make  all-recursive
+make[3]: Entering directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/pango'
+Making all in mini-fribidi
+make[4]: Entering directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/pango/mini-fribidi'
+  CC       fribidi.lo
+  CC       fribidi_char_type.lo
+  CC       fribidi_types.lo
+  CCLD     libmini-fribidi.la
+make[4]: Leaving directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/pango/mini-fribidi'
+make[4]: Entering directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/pango'
+  CC       break.lo
+  CC       ellipsize.lo
+  CC       fonts.lo
+  CC       glyphstring.lo
+  CC       modules.lo
+  CC       pango-attributes.lo
+  CC       pango-bidi-type.lo
+  CC       pango-color.lo
+  CC       pango-context.lo
+  CC       pango-coverage.lo
+  CC       pango-engine.lo
+  CC       pango-fontmap.lo
+  CC       pango-fontset.lo
+  CC       pango-glyph-item.lo
+  CC       pango-gravity.lo
+  CC       pango-item.lo
+  CC       pango-language.lo
+  CC       pango-layout.lo
+  CC       pango-markup.lo
+  CC       pango-matrix.lo
+  CC       pango-renderer.lo
+  CC       pango-script.lo
+  CC       pango-tabs.lo
+  CC       pango-utils.lo
+  CC       reorder-items.lo
+  CC       shape.lo
+  CC       pango-enum-types.lo
+  CC       module-defs-lang.lo
+  GEN      included-modules
+make[5]: Entering directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/modules'
+make[6]: Entering directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/modules/arabic'
+  CC       libpango_arabic_lang_la-arabic-lang.lo
+  CCLD     libpango-arabic-lang.la
+make[6]: Leaving directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/modules/arabic'
+make[6]: Entering directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/modules/basic'
+  CC       libpango_basic_win32_la-basic-win32.lo
+basic-win32.c: In function 'itemize_shape_and_place':
+basic-win32.c:536:41: warning: cast from pointer to integer of different size
+basic-win32.c: In function 'basic_engine_win32_class_init':
+basic-win32.c:830:23: warning: assignment from incompatible pointer type
+  CCLD     libpango-basic-win32.la
+make[6]: Leaving directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/modules/basic'
+make[6]: Entering directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/modules/indic'
+  CC       libpango_indic_lang_la-indic-lang.lo
+  CCLD     libpango-indic-lang.la
+make[6]: Leaving directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/modules/indic'
+make[6]: Entering directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/modules/thai'
+make[6]: Nothing to be done for `included-modules'.
+make[6]: Leaving directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/modules/thai'
+make[5]: Leaving directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/modules'
+  GEN      ../modules/arabic/libpango-arabic-lang.la
+  GEN      ../modules/indic/libpango-indic-lang.la
+  GEN      pango-win32-res.o
+  CCLD     libpango-1.0.la
+Creating library file: .libs/libpango-1.0.dll.a
+  CC       pangocairo-context.lo
+  CC       pangocairo-font.lo
+  CC       pangocairo-fontmap.lo
+  CC       pangocairo-render.lo
+  CC       pangocairo-win32font.lo
+  CC       pangocairo-win32fontmap.lo
+  GEN      pangocairo-win32-res.o
+  CC       module-defs-win32.lo
+  CC       pangowin32.lo
+  CC       pangowin32-fontcache.lo
+  CC       pangowin32-fontmap.lo
+  GEN      ../modules/basic/libpango-basic-win32.la
+  GEN      pangowin32-win32-res.o
+  CCLD     libpangowin32-1.0.la
+Creating library file: .libs/libpangowin32-1.0.dll.a
+  CCLD     libpangocairo-1.0.la
+Creating library file: .libs/libpangocairo-1.0.dll.a
+  CC       querymodules.o
+  CCLD     pango-querymodules.exe
+libtool: link: Could not determine the host path corresponding to
+libtool: link:   `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/pango/.libs:/srv/win32builder/fixed_3104/build/win64/lib:/srv/win32builder/fixed_3104/build/win64/lib/../lib64'
+libtool: link: Continuing, but uninstalled executables may not work.
+libtool: link: Could not determine the host path corresponding to
+libtool: link:   `/srv/win32builder/fixed_3104/build/win64/lib:/srv/win32builder/fixed_3104/build/win64/bin:/srv/win32builder/fixed_3104/build/win64/lib64:/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/pango/.libs:/srv/win32builder/fixed_3104/build/win64/lib/../lib64'
+libtool: link: Continuing, but uninstalled executables may not work.
+make[4]: Leaving directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/pango'
+make[3]: Leaving directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/pango'
+make[2]: Leaving directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/pango'
+Making all in modules
+make[2]: Entering directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/modules'
+Making all in arabic
+make[3]: Entering directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/modules/arabic'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/modules/arabic'
+Making all in basic
+make[3]: Entering directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/modules/basic'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/modules/basic'
+Making all in indic
+make[3]: Entering directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/modules/indic'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/modules/indic'
+Making all in thai
+make[3]: Entering directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/modules/thai'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/modules/thai'
+make[3]: Entering directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/modules'
+make[3]: Nothing to be done for `all-am'.
+make[3]: Leaving directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/modules'
+make[2]: Leaving directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/modules'
+Making all in pango-view
+make[2]: Entering directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/pango-view'
+cp ./../modules/pangorc pangorc
+make  all-am
+make[3]: Entering directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/pango-view'
+  CC       viewer-render.o
+  CC       viewer-main.o
+  CC       pango-view.o
+  CC       viewer-cairo.o
+  CC       viewer-pangocairo.o
+  CCLD     pango-view.exe
+libtool: link: Could not determine the host path corresponding to
+libtool: link:   `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/pango/.libs:/srv/win32builder/fixed_3104/build/win64/lib:/srv/win32builder/fixed_3104/build/win64/lib/../lib64'
+libtool: link: Continuing, but uninstalled executables may not work.
+libtool: link: Could not determine the host path corresponding to
+libtool: link:   `/srv/win32builder/fixed_3104/build/win64/lib:/srv/win32builder/fixed_3104/build/win64/bin:/srv/win32builder/fixed_3104/build/win64/lib64:/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/pango/.libs:/srv/win32builder/fixed_3104/build/win64/lib/../lib64'
+libtool: link: Continuing, but uninstalled executables may not work.
+  GEN      pango-view.1
+make[4]: Entering directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/pango-view'
+make[4]: `pango-view.1.in' is up to date.
+make[4]: Leaving directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/pango-view'
+make[3]: Leaving directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/pango-view'
+make[2]: Leaving directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/pango-view'
+Making all in examples
+make[2]: Entering directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/examples'
+  CC       cairosimple.o
+  CCLD     cairosimple.exe
+libtool: link: Could not determine the host path corresponding to
+libtool: link:   `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/pango/.libs:/srv/win32builder/fixed_3104/build/win64/lib:/srv/win32builder/fixed_3104/build/win64/lib/../lib64'
+libtool: link: Continuing, but uninstalled executables may not work.
+libtool: link: Could not determine the host path corresponding to
+libtool: link:   `/srv/win32builder/fixed_3104/build/win64/lib:/srv/win32builder/fixed_3104/build/win64/bin:/srv/win32builder/fixed_3104/build/win64/lib64:/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/pango/.libs:/srv/win32builder/fixed_3104/build/win64/lib/../lib64'
+libtool: link: Continuing, but uninstalled executables may not work.
+  CC       cairotwisted.o
+  CCLD     cairotwisted.exe
+libtool: link: Could not determine the host path corresponding to
+libtool: link:   `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/pango/.libs:/srv/win32builder/fixed_3104/build/win64/lib:/srv/win32builder/fixed_3104/build/win64/lib/../lib64'
+libtool: link: Continuing, but uninstalled executables may not work.
+libtool: link: Could not determine the host path corresponding to
+libtool: link:   `/srv/win32builder/fixed_3104/build/win64/lib:/srv/win32builder/fixed_3104/build/win64/bin:/srv/win32builder/fixed_3104/build/win64/lib64:/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/pango/.libs:/srv/win32builder/fixed_3104/build/win64/lib/../lib64'
+libtool: link: Continuing, but uninstalled executables may not work.
+  CC       cairoshape.o
+  CCLD     cairoshape.exe
+libtool: link: Could not determine the host path corresponding to
+libtool: link:   `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/pango/.libs:/srv/win32builder/fixed_3104/build/win64/lib:/srv/win32builder/fixed_3104/build/win64/lib/../lib64'
+libtool: link: Continuing, but uninstalled executables may not work.
+libtool: link: Could not determine the host path corresponding to
+libtool: link:   `/srv/win32builder/fixed_3104/build/win64/lib:/srv/win32builder/fixed_3104/build/win64/bin:/srv/win32builder/fixed_3104/build/win64/lib64:/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/pango/.libs:/srv/win32builder/fixed_3104/build/win64/lib/../lib64'
+libtool: link: Continuing, but uninstalled executables may not work.
+make[2]: Leaving directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/examples'
+Making all in docs
+make[2]: Entering directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/docs'
+make  all-am
+make[3]: Entering directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/docs'
+make[3]: Nothing to be done for `all-am'.
+make[3]: Leaving directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/docs'
+make[2]: Leaving directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/docs'
+Making all in tools
+make[2]: Entering directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/tools'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/tools'
+Making all in tests
+make[2]: Entering directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/tests'
+  CC       testboundaries.o
+cp ./../modules/pangorc pangorc
+  CCLD     testboundaries.exe
+libtool: link: Could not determine the host path corresponding to
+libtool: link:   `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/pango/.libs:/srv/win32builder/fixed_3104/build/win64/lib:/srv/win32builder/fixed_3104/build/win64/lib/../lib64'
+libtool: link: Continuing, but uninstalled executables may not work.
+libtool: link: Could not determine the host path corresponding to
+libtool: link:   `/srv/win32builder/fixed_3104/build/win64/lib:/srv/win32builder/fixed_3104/build/win64/bin:/srv/win32builder/fixed_3104/build/win64/lib64:/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/pango/.libs:/srv/win32builder/fixed_3104/build/win64/lib/../lib64'
+libtool: link: Continuing, but uninstalled executables may not work.
+  CC       testboundaries_ucd.o
+  CCLD     testboundaries_ucd.exe
+libtool: link: Could not determine the host path corresponding to
+libtool: link:   `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/pango/.libs:/srv/win32builder/fixed_3104/build/win64/lib:/srv/win32builder/fixed_3104/build/win64/lib/../lib64'
+libtool: link: Continuing, but uninstalled executables may not work.
+libtool: link: Could not determine the host path corresponding to
+libtool: link:   `/srv/win32builder/fixed_3104/build/win64/lib:/srv/win32builder/fixed_3104/build/win64/bin:/srv/win32builder/fixed_3104/build/win64/lib64:/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/pango/.libs:/srv/win32builder/fixed_3104/build/win64/lib/../lib64'
+libtool: link: Continuing, but uninstalled executables may not work.
+  CC       testcolor.o
+  CCLD     testcolor.exe
+libtool: link: Could not determine the host path corresponding to
+libtool: link:   `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/pango/.libs:/srv/win32builder/fixed_3104/build/win64/lib:/srv/win32builder/fixed_3104/build/win64/lib/../lib64'
+libtool: link: Continuing, but uninstalled executables may not work.
+libtool: link: Could not determine the host path corresponding to
+libtool: link:   `/srv/win32builder/fixed_3104/build/win64/lib:/srv/win32builder/fixed_3104/build/win64/bin:/srv/win32builder/fixed_3104/build/win64/lib64:/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/pango/.libs:/srv/win32builder/fixed_3104/build/win64/lib/../lib64'
+libtool: link: Continuing, but uninstalled executables may not work.
+  CC       testscript.o
+  CCLD     testscript.exe
+libtool: link: Could not determine the host path corresponding to
+libtool: link:   `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/pango/.libs:/srv/win32builder/fixed_3104/build/win64/lib:/srv/win32builder/fixed_3104/build/win64/lib/../lib64'
+libtool: link: Continuing, but uninstalled executables may not work.
+libtool: link: Could not determine the host path corresponding to
+libtool: link:   `/srv/win32builder/fixed_3104/build/win64/lib:/srv/win32builder/fixed_3104/build/win64/bin:/srv/win32builder/fixed_3104/build/win64/lib64:/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/pango/.libs:/srv/win32builder/fixed_3104/build/win64/lib/../lib64'
+libtool: link: Continuing, but uninstalled executables may not work.
+  CC       testiter.o
+  CCLD     testiter.exe
+libtool: link: Could not determine the host path corresponding to
+libtool: link:   `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/pango/.libs:/srv/win32builder/fixed_3104/build/win64/lib:/srv/win32builder/fixed_3104/build/win64/lib/../lib64'
+libtool: link: Continuing, but uninstalled executables may not work.
+libtool: link: Could not determine the host path corresponding to
+libtool: link:   `/srv/win32builder/fixed_3104/build/win64/lib:/srv/win32builder/fixed_3104/build/win64/bin:/srv/win32builder/fixed_3104/build/win64/lib64:/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/pango/.libs:/srv/win32builder/fixed_3104/build/win64/lib/../lib64'
+libtool: link: Continuing, but uninstalled executables may not work.
+  CC       test-pangocairo-threads.o
+  CCLD     test-pangocairo-threads.exe
+libtool: link: Could not determine the host path corresponding to
+libtool: link:   `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/pango/.libs:/srv/win32builder/fixed_3104/build/win64/lib:/srv/win32builder/fixed_3104/build/win64/lib/../lib64'
+libtool: link: Continuing, but uninstalled executables may not work.
+libtool: link: Could not determine the host path corresponding to
+libtool: link:   `/srv/win32builder/fixed_3104/build/win64/lib:/srv/win32builder/fixed_3104/build/win64/bin:/srv/win32builder/fixed_3104/build/win64/lib64:/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/pango/.libs:/srv/win32builder/fixed_3104/build/win64/lib/../lib64'
+libtool: link: Continuing, but uninstalled executables may not work.
+  CXX      cxx-test.o
+  CXXLD    cxx-test.exe
+libtool: link: Could not determine the host path corresponding to
+libtool: link:   `/srv/win32builder/fixed_3104/build/win64/lib:/srv/win32builder/fixed_3104/build/win64/bin:/srv/win32builder/fixed_3104/build/win64/lib64'
+libtool: link: Continuing, but uninstalled executables may not work.
+  CC       gen-all-unicode.o
+  CCLD     gen-all-unicode.exe
+libtool: link: Could not determine the host path corresponding to
+libtool: link:   `/srv/win32builder/fixed_3104/build/win64/lib:/srv/win32builder/fixed_3104/build/win64/lib/../lib64'
+libtool: link: Continuing, but uninstalled executables may not work.
+libtool: link: Could not determine the host path corresponding to
+libtool: link:   `/srv/win32builder/fixed_3104/build/win64/lib:/srv/win32builder/fixed_3104/build/win64/bin:/srv/win32builder/fixed_3104/build/win64/lib64:/srv/win32builder/fixed_3104/build/win64/lib/../lib64'
+libtool: link: Continuing, but uninstalled executables may not work.
+  CC       dump-boundaries.o
+  CCLD     dump-boundaries.exe
+libtool: link: Could not determine the host path corresponding to
+libtool: link:   `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/pango/.libs:/srv/win32builder/fixed_3104/build/win64/lib:/srv/win32builder/fixed_3104/build/win64/lib/../lib64'
+libtool: link: Continuing, but uninstalled executables may not work.
+libtool: link: Could not determine the host path corresponding to
+libtool: link:   `/srv/win32builder/fixed_3104/build/win64/lib:/srv/win32builder/fixed_3104/build/win64/bin:/srv/win32builder/fixed_3104/build/win64/lib64:/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/pango/.libs:/srv/win32builder/fixed_3104/build/win64/lib/../lib64'
+libtool: link: Continuing, but uninstalled executables may not work.
+make[2]: Leaving directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/tests'
+Making all in build
+make[2]: Entering directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/build'
+Making all in win32
+make[3]: Entering directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/build/win32'
+Making all in vs9
+make[4]: Entering directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/build/win32/vs9'
+make[4]: Nothing to be done for `all'.
+make[4]: Leaving directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/build/win32/vs9'
+Making all in vs10
+make[4]: Entering directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/build/win32/vs10'
+make[4]: Nothing to be done for `all'.
+make[4]: Leaving directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/build/win32/vs10'
+make[4]: Entering directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/build/win32'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/build/win32'
+make[3]: Leaving directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/build/win32'
+make[3]: Entering directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/build'
+make[3]: Nothing to be done for `all-am'.
+make[3]: Leaving directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/build'
+make[2]: Leaving directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1/build'
+make[2]: Entering directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1'
+make[1]: Leaving directory `/srv/win32builder/fixed_3104/libs/36_pango/pango-1.36.1'

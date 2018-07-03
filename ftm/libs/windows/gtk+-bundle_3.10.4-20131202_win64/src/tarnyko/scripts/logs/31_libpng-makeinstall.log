@@ -1,0 +1,77 @@
+make  install-am
+make[1]: Entering directory `/srv/win32builder/fixed_3104/libs/31_libpng/libpng-1.6.7'
+make[2]: Entering directory `/srv/win32builder/fixed_3104/libs/31_libpng/libpng-1.6.7'
+ /bin/mkdir -p '/srv/win32builder/fixed_3104/build/win64/lib'
+ /bin/sh ./libtool   --mode=install /usr/bin/install -c   libpng16.la '/srv/win32builder/fixed_3104/build/win64/lib'
+libtool: install: /usr/bin/install -c .libs/libpng16.dll.a /srv/win32builder/fixed_3104/build/win64/lib/libpng16.dll.a
+libtool: install: base_file=`basename libpng16.la`
+libtool: install:  dlpath=`/bin/sh 2>&1 -c '. .libs/'libpng16.la'i; echo libpng16-16.dll'`
+libtool: install:  dldir=/srv/win32builder/fixed_3104/build/win64/lib/`dirname ../bin/libpng16-16.dll`
+libtool: install:  test -d /srv/win32builder/fixed_3104/build/win64/lib/../bin || mkdir -p /srv/win32builder/fixed_3104/build/win64/lib/../bin
+libtool: install:  /usr/bin/install -c .libs/libpng16-16.dll /srv/win32builder/fixed_3104/build/win64/lib/../bin/libpng16-16.dll
+libtool: install:  chmod a+x /srv/win32builder/fixed_3104/build/win64/lib/../bin/libpng16-16.dll
+libtool: install:  if test -n '' && test -n 'x86_64-w64-mingw32-strip --strip-unneeded'; then eval 'x86_64-w64-mingw32-strip --strip-unneeded /srv/win32builder/fixed_3104/build/win64/lib/../bin/libpng16-16.dll' || exit 0; fi
+libtool: install: /usr/bin/install -c .libs/libpng16.lai /srv/win32builder/fixed_3104/build/win64/lib/libpng16.la
+libtool: install: /usr/bin/install -c .libs/libpng16.a /srv/win32builder/fixed_3104/build/win64/lib/libpng16.a
+libtool: install: chmod 644 /srv/win32builder/fixed_3104/build/win64/lib/libpng16.a
+libtool: install: x86_64-w64-mingw32-ranlib /srv/win32builder/fixed_3104/build/win64/lib/libpng16.a
+ /bin/mkdir -p '/srv/win32builder/fixed_3104/build/win64/bin'
+  /bin/sh ./libtool   --mode=install /usr/bin/install -c pngfix.exe png-fix-itxt.exe '/srv/win32builder/fixed_3104/build/win64/bin'
+libtool: install: /usr/bin/install -c .libs/pngfix.exe /srv/win32builder/fixed_3104/build/win64/bin/pngfix.exe
+libtool: install: /usr/bin/install -c .libs/png-fix-itxt.exe /srv/win32builder/fixed_3104/build/win64/bin/png-fix-itxt.exe
+ /bin/mkdir -p '/srv/win32builder/fixed_3104/build/win64/bin'
+ /usr/bin/install -c libpng16-config '/srv/win32builder/fixed_3104/build/win64/bin'
+make  install-exec-hook
+make[3]: Entering directory `/srv/win32builder/fixed_3104/libs/31_libpng/libpng-1.6.7'
+cd '/srv/win32builder/fixed_3104/build/win64/bin'; rm -f libpng-config
+cd '/srv/win32builder/fixed_3104/build/win64/bin';\
+	   ln -s libpng16-config libpng-config
++ cd /srv/win32builder/fixed_3104/build/win64/lib
++ for ext in a la so so.16.7 sl dylib dll.a
++ rm -f libpng.a
++ test -f libpng16.a
++ ln -s libpng16.a libpng.a
++ for ext in a la so so.16.7 sl dylib dll.a
++ rm -f libpng.la
++ test -f libpng16.la
++ ln -s libpng16.la libpng.la
++ for ext in a la so so.16.7 sl dylib dll.a
++ rm -f libpng.so
++ test -f libpng16.so
++ for ext in a la so so.16.7 sl dylib dll.a
++ rm -f libpng.so.16.7
++ test -f libpng16.so.16.7
++ for ext in a la so so.16.7 sl dylib dll.a
++ rm -f libpng.sl
++ test -f libpng16.sl
++ for ext in a la so so.16.7 sl dylib dll.a
++ rm -f libpng.dylib
++ test -f libpng16.dylib
++ for ext in a la so so.16.7 sl dylib dll.a
++ rm -f libpng.dll.a
++ test -f libpng16.dll.a
++ ln -s libpng16.dll.a libpng.dll.a
+make[3]: Leaving directory `/srv/win32builder/fixed_3104/libs/31_libpng/libpng-1.6.7'
+ /bin/mkdir -p '/srv/win32builder/fixed_3104/build/win64/share/man/man3'
+ /usr/bin/install -c -m 644 libpng.3 libpngpf.3 '/srv/win32builder/fixed_3104/build/win64/share/man/man3'
+ /bin/mkdir -p '/srv/win32builder/fixed_3104/build/win64/share/man/man5'
+ /usr/bin/install -c -m 644 png.5 '/srv/win32builder/fixed_3104/build/win64/share/man/man5'
+ /bin/mkdir -p '/srv/win32builder/fixed_3104/build/win64/include/libpng16'
+ /usr/bin/install -c -m 644 pnglibconf.h '/srv/win32builder/fixed_3104/build/win64/include/libpng16'
+ /bin/mkdir -p '/srv/win32builder/fixed_3104/build/win64/lib/pkgconfig'
+ /usr/bin/install -c -m 644 libpng16.pc '/srv/win32builder/fixed_3104/build/win64/lib/pkgconfig'
+ /bin/mkdir -p '/srv/win32builder/fixed_3104/build/win64/include/libpng16'
+ /usr/bin/install -c -m 644 png.h pngconf.h '/srv/win32builder/fixed_3104/build/win64/include/libpng16'
+make  install-data-hook
+make[3]: Entering directory `/srv/win32builder/fixed_3104/libs/31_libpng/libpng-1.6.7'
+cd '/srv/win32builder/fixed_3104/build/win64/include'; rm -f png.h pngconf.h pnglibconf.h
+cd '/srv/win32builder/fixed_3104/build/win64/include'; ln -s libpng16/png.h png.h
+cd '/srv/win32builder/fixed_3104/build/win64/include'; ln -s libpng16/pngconf.h \
+		pngconf.h
+cd '/srv/win32builder/fixed_3104/build/win64/include'; ln -s libpng16/pnglibconf.h \
+		pnglibconf.h
+cd '/srv/win32builder/fixed_3104/build/win64/lib/pkgconfig'; rm -f libpng.pc
+cd '/srv/win32builder/fixed_3104/build/win64/lib/pkgconfig'; ln -s libpng16.pc libpng.pc
+make[3]: Leaving directory `/srv/win32builder/fixed_3104/libs/31_libpng/libpng-1.6.7'
+make[2]: Leaving directory `/srv/win32builder/fixed_3104/libs/31_libpng/libpng-1.6.7'
+make[1]: Leaving directory `/srv/win32builder/fixed_3104/libs/31_libpng/libpng-1.6.7'

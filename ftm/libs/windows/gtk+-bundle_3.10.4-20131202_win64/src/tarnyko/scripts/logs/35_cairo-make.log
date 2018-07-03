@@ -1,0 +1,886 @@
+make  all-recursive
+make[1]: Entering directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16'
+Making all in src
+make[2]: Entering directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/src'
+make  all-am
+make[3]: Entering directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/src'
+  CC     cairo-analysis-surface.lo
+  CC     cairo-arc.lo
+  CC     cairo-array.lo
+  CC     cairo-atomic.lo
+  CC     cairo-base64-stream.lo
+  CC     cairo-base85-stream.lo
+  CC     cairo-bentley-ottmann.lo
+  CC     cairo-bentley-ottmann-rectangular.lo
+  CC     cairo-bentley-ottmann-rectilinear.lo
+  CC     cairo-botor-scan-converter.lo
+cairo-botor-scan-converter.c:2076:1: warning: 'botor_add_edge' defined but not used
+  CC     cairo-boxes.lo
+  CC     cairo-boxes-intersect.lo
+  CC     cairo.lo
+  CC     cairo-cache.lo
+  CC     cairo-clip.lo
+  CC     cairo-clip-boxes.lo
+  CC     cairo-clip-polygon.lo
+  CC     cairo-clip-region.lo
+  CC     cairo-clip-surface.lo
+  CC     cairo-color.lo
+  CC     cairo-composite-rectangles.lo
+  CC     cairo-compositor.lo
+  CC     cairo-contour.lo
+  CC     cairo-damage.lo
+  CC     cairo-debug.lo
+  CC     cairo-default-context.lo
+  CC     cairo-device.lo
+  CC     cairo-error.lo
+  CC     cairo-fallback-compositor.lo
+  CC     cairo-fixed.lo
+  CC     cairo-font-face.lo
+  CC     cairo-font-face-twin.lo
+  CC     cairo-font-face-twin-data.lo
+  CC     cairo-font-options.lo
+  CC     cairo-freelist.lo
+  CC     cairo-freed-pool.lo
+  CC     cairo-gstate.lo
+  CC     cairo-hash.lo
+  CC     cairo-hull.lo
+  CC     cairo-image-compositor.lo
+cairo-image-compositor.c: In function '_cairo_image_scaled_glyph_fini':
+cairo-image-compositor.c:795:6: warning: cast to pointer from integer of different size
+cairo-image-compositor.c: In function 'composite_glyphs':
+cairo-image-compositor.c:843:62: warning: cast to pointer from integer of different size
+cairo-image-compositor.c:861:66: warning: cast to pointer from integer of different size
+  CC     cairo-image-info.lo
+  CC     cairo-image-source.lo
+  CC     cairo-image-surface.lo
+cairo-image-surface.c: In function '_cairo_format_from_pixman_format':
+cairo-image-surface.c:94:5: warning: enumeration value 'PIXMAN_a8r8g8b8_sRGB' not handled in switch
+  CC     cairo-lzw.lo
+  CC     cairo-matrix.lo
+  CC     cairo-mask-compositor.lo
+  CC     cairo-mesh-pattern-rasterizer.lo
+  CC     cairo-mempool.lo
+cairo-mempool.c: In function '_cairo_mempool_init':
+cairo-mempool.c:292:12: warning: cast from pointer to integer of different size
+cairo-mempool.c:299:5: warning: cast from pointer to integer of different size
+  CC     cairo-misc.lo
+  CC     cairo-mono-scan-converter.lo
+  CC     cairo-mutex.lo
+  CC     cairo-no-compositor.lo
+  CC     cairo-observer.lo
+  CC     cairo-output-stream.lo
+  CC     cairo-paginated-surface.lo
+  CC     cairo-path-bounds.lo
+  CC     cairo-path.lo
+  CC     cairo-path-fill.lo
+  CC     cairo-path-fixed.lo
+  CC     cairo-path-in-fill.lo
+  CC     cairo-path-stroke.lo
+  CC     cairo-path-stroke-boxes.lo
+  CC     cairo-path-stroke-polygon.lo
+cairo-path-stroke-polygon.c: In function 'close_path':
+cairo-path-stroke-polygon.c:1226:29: warning: ignoring return value of '_cairo_polygon_add_contour', declared with attribute warn_unused_result
+cairo-path-stroke-polygon.c:1227:29: warning: ignoring return value of '_cairo_polygon_add_contour', declared with attribute warn_unused_result
+cairo-path-stroke-polygon.c: In function 'add_caps':
+cairo-path-stroke-polygon.c:944:29: warning: ignoring return value of '_cairo_polygon_add_contour', declared with attribute warn_unused_result
+cairo-path-stroke-polygon.c:961:29: warning: ignoring return value of '_cairo_polygon_add_contour', declared with attribute warn_unused_result
+cairo-path-stroke-polygon.c:976:33: warning: ignoring return value of '_cairo_polygon_add_contour', declared with attribute warn_unused_result
+cairo-path-stroke-polygon.c:981:29: warning: ignoring return value of '_cairo_polygon_add_contour', declared with attribute warn_unused_result
+  CC     cairo-path-stroke-traps.lo
+  CC     cairo-path-stroke-tristrip.lo
+  CC     cairo-pattern.lo
+  CC     cairo-pen.lo
+  CC     cairo-polygon.lo
+  CC     cairo-polygon-intersect.lo
+cairo-polygon-intersect.c: In function '_cairo_polygon_intersect_with_boxes':
+cairo-polygon-intersect.c:1519:39: warning: ignoring return value of '_cairo_polygon_add_external_edge', declared with attribute warn_unused_result
+cairo-polygon-intersect.c:1522:39: warning: ignoring return value of '_cairo_polygon_add_external_edge', declared with attribute warn_unused_result
+cairo-polygon-intersect.c: In function 'edges_end':
+cairo-polygon-intersect.c:1162:26: warning: ignoring return value of '_cairo_polygon_add_line', declared with attribute warn_unused_result
+cairo-polygon-intersect.c:1163:26: warning: ignoring return value of '_cairo_polygon_add_line', declared with attribute warn_unused_result
+  CC     cairo-polygon-reduce.lo
+cairo-polygon-reduce.c: In function '_cairo_bo_edge_end':
+cairo-polygon-reduce.c:1163:26: warning: ignoring return value of '_cairo_polygon_add_line', declared with attribute warn_unused_result
+cairo-polygon-reduce.c:1167:26: warning: ignoring return value of '_cairo_polygon_add_line', declared with attribute warn_unused_result
+  CC     cairo-raster-source-pattern.lo
+  CC     cairo-recording-surface.lo
+  CC     cairo-rectangle.lo
+  CC     cairo-rectangular-scan-converter.lo
+cairo-rectangular-scan-converter.c: In function 'generate_row':
+cairo-rectangular-scan-converter.c:625:27: warning: ignoring return value of function declared with attribute warn_unused_result
+  CC     cairo-region.lo
+  CC     cairo-rtree.lo
+  CC     cairo-scaled-font.lo
+cairo-scaled-font.c: In function '_cairo_scaled_glyph_page_pluck':
+cairo-scaled-font.c:480:19: warning: cast to pointer from integer of different size
+cairo-scaled-font.c: In function '_cairo_scaled_font_compute_hash':
+cairo-scaled-font.c:642:13: warning: cast from pointer to integer of different size
+cairo-scaled-font.c: In function '_cairo_scaled_glyph_page_can_remove':
+cairo-scaled-font.c:2827:19: warning: cast to pointer from integer of different size
+cairo-scaled-font.c: In function '_cairo_scaled_font_allocate_glyph':
+cairo-scaled-font.c:2855:30: warning: cast from pointer to integer of different size
+  CC     cairo-shape-mask-compositor.lo
+  CC     cairo-slope.lo
+  CC     cairo-spans.lo
+  CC     cairo-spans-compositor.lo
+  CC     cairo-spline.lo
+  CC     cairo-stroke-dash.lo
+  CC     cairo-stroke-style.lo
+  CC     cairo-surface.lo
+  CC     cairo-surface-clipper.lo
+  CC     cairo-surface-fallback.lo
+  CC     cairo-surface-observer.lo
+cairo-surface-observer.c: In function 'sync':
+cairo-surface-observer.c:665:32: warning: ignoring return value of '_cairo_surface_unmap_image', declared with attribute warn_unused_result
+  CC     cairo-surface-offset.lo
+  CC     cairo-surface-snapshot.lo
+  CC     cairo-surface-subsurface.lo
+  CC     cairo-surface-wrapper.lo
+  CC     cairo-time.lo
+  CC     cairo-tor-scan-converter.lo
+  CC     cairo-tor22-scan-converter.lo
+  CC     cairo-clip-tor-scan-converter.lo
+  CC     cairo-toy-font-face.lo
+  CC     cairo-traps.lo
+  CC     cairo-tristrip.lo
+  CC     cairo-traps-compositor.lo
+  CC     cairo-unicode.lo
+  CC     cairo-user-font.lo
+  CC     cairo-version.lo
+  CC     cairo-wideint.lo
+  CC     cairo-cff-subset.lo
+  CC     cairo-scaled-font-subsets.lo
+cairo-scaled-font-subsets.c: In function '_cairo_sub_font_init_key':
+cairo-scaled-font-subsets.c:257:31: warning: cast from pointer to integer of different size
+cairo-scaled-font-subsets.c:262:31: warning: cast from pointer to integer of different size
+  CC     cairo-truetype-subset.lo
+  CC     cairo-type1-fallback.lo
+  CC     cairo-type1-glyph-names.lo
+  CC     cairo-type1-subset.lo
+  CC     cairo-type3-glyph-surface.lo
+  CC     cairo-pdf-operators.lo
+  CC     cairo-pdf-shading.lo
+  CC     cairo-deflate-stream.lo
+  CC     cairo-win32-debug.lo
+  CC     cairo-win32-device.lo
+  CC     cairo-win32-gdi-compositor.lo
+  CC     cairo-win32-system.lo
+  CC     cairo-win32-surface.lo
+  CC     cairo-win32-display-surface.lo
+  CC     cairo-win32-printing-surface.lo
+win32/cairo-win32-printing-surface.c: In function '_cairo_win32_printing_surface_paint_recording_pattern':
+win32/cairo-win32-printing-surface.c:513:6: warning: comparison between 'cairo_status_t' and 'enum _cairo_int_status'
+win32/cairo-win32-printing-surface.c: In function '_cairo_win32_printing_surface_paint_image_pattern':
+win32/cairo-win32-printing-surface.c:663:16: warning: comparison between 'cairo_status_t' and 'enum _cairo_int_status'
+win32/cairo-win32-printing-surface.c: In function '_cairo_win32_printing_surface_paint_pattern':
+win32/cairo-win32-printing-surface.c:961:5: warning: enumeration value 'CAIRO_PATTERN_TYPE_RASTER_SOURCE' not handled in switch
+  CC     cairo-win32-font.lo
+win32/cairo-win32-font.c:733:1: warning: '_cairo_win32_scaled_font_text_to_glyphs' defined but not used
+  CC     cairo-png.lo
+  CC     cairo-script-surface.lo
+cairo-script-surface.c: In function '_emit_scaled_glyph_vector':
+cairo-script-surface.c:3027:33: warning: cast to pointer from integer of different size
+cairo-script-surface.c: In function '_emit_scaled_glyph_bitmap':
+cairo-script-surface.c:3075:33: warning: cast to pointer from integer of different size
+cairo-script-surface.c: In function '_cairo_script_surface_show_text_glyphs':
+cairo-script-surface.c:3375:10: warning: cast from pointer to integer of different size
+cairo-script-surface.c:3446:17: warning: cast from pointer to integer of different size
+cairo-script-surface.c:3455:11: warning: cast from pointer to integer of different size
+  CC     cairo-ft-font.lo
+cairo-ft-font.c: In function '_cairo_ft_unscaled_font_init_key':
+cairo-ft-font.c:375:14: warning: cast from pointer to integer of different size
+  CC     cairo-ps-surface.lo
+cairo-ps-surface.c: In function '_cairo_ps_surface_emit_header':
+cairo-ps-surface.c:189:10: warning: unused variable 'ctime_buf'
+  CC     cairo-pdf-surface.lo
+  CC     cairo-svg-surface.lo
+Generating cairo.def
+  CCLD   libcairo.la
+Creating library file: .libs/libcairo.dll.a
+make[3]: Leaving directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/src'
+make[2]: Leaving directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/src'
+Making all in doc
+make[2]: Entering directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/doc'
+make  all-recursive
+make[3]: Entering directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/doc'
+Making all in public
+make[4]: Entering directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/doc/public'
+make  all-am
+make[5]: Entering directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/doc/public'
+make[5]: Nothing to be done for `all-am'.
+make[5]: Leaving directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/doc/public'
+make[4]: Leaving directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/doc/public'
+make[4]: Entering directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/doc'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/doc'
+make[3]: Leaving directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/doc'
+make[2]: Leaving directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/doc'
+Making all in util
+make[2]: Entering directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/util'
+make  all-recursive
+make[3]: Entering directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/util'
+Making all in .
+make[4]: Entering directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/util'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/util'
+Making all in cairo-missing
+make[4]: Entering directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/util/cairo-missing'
+  CC     strndup.lo
+  CC     getline.lo
+  CCLD   libcairo-missing.la
+make[4]: Leaving directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/util/cairo-missing'
+Making all in cairo-gobject
+make[4]: Entering directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/util/cairo-gobject'
+  CC     libcairo_gobject_la-cairo-gobject-enums.lo
+  CC     libcairo_gobject_la-cairo-gobject-structs.lo
+  CCLD   libcairo-gobject.la
+Creating library file: .libs/libcairo-gobject.dll.a
+make[4]: Leaving directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/util/cairo-gobject'
+Making all in cairo-script
+make[4]: Entering directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/util/cairo-script'
+Making all in examples
+make[5]: Entering directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/util/cairo-script/examples'
+make[5]: Nothing to be done for `all'.
+make[5]: Leaving directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/util/cairo-script/examples'
+make[5]: Entering directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/util/cairo-script'
+  CC     libcairo_script_interpreter_la-cairo-script-file.lo
+cairo-script-file.c: In function 'csi_file_new_from_string':
+cairo-script-file.c:173:2: warning: enumeration value 'LZO' not handled in switch
+  CC     libcairo_script_interpreter_la-cairo-script-hash.lo
+  CC     libcairo_script_interpreter_la-cairo-script-interpreter.lo
+cairo-script-interpreter.c: In function '_init_dictionaries':
+cairo-script-interpreter.c:307:37: warning: cast from pointer to integer of different size
+cairo-script-interpreter.c:310:37: warning: cast from pointer to integer of different size
+cairo-script-interpreter.c: In function 'cairo_script_interpreter_finish':
+cairo-script-interpreter.c:637:23: warning: comparison between 'csi_status_t' and 'enum _cairo_status'
+  CC     libcairo_script_interpreter_la-cairo-script-objects.lo
+cairo-script-objects.c: In function 'csi_name_new':
+cairo-script-objects.c:455:23: warning: cast from pointer to integer of different size
+cairo-script-objects.c: In function 'csi_name_new_static':
+cairo-script-objects.c:472:23: warning: cast from pointer to integer of different size
+cairo-script-objects.c: In function 'csi_object_eq':
+cairo-script-objects.c:820:25: warning: cast to pointer from integer of different size
+cairo-script-objects.c: In function 'csi_object_compare':
+cairo-script-objects.c:863:22: warning: cast to pointer from integer of different size
+cairo-script-objects.c:864:22: warning: cast to pointer from integer of different size
+cairo-script-objects.c:919:25: warning: cast to pointer from integer of different size
+  CC     libcairo_script_interpreter_la-cairo-script-operators.lo
+cairo-script-operators.c: In function '_csi_ostack_get_string_constant':
+cairo-script-operators.c:558:9: warning: cast to pointer from integer of different size
+cairo-script-operators.c: In function '_type3_lookup':
+cairo-script-operators.c:1543:14: warning: cast to pointer from integer of different size
+cairo-script-operators.c: In function 'inflate_string':
+cairo-script-operators.c:1766:5: warning: enumeration value 'LZO' not handled in switch
+cairo-script-operators.c: In function '_ft_create_for_pattern':
+cairo-script-operators.c:1926:21: warning: unused variable 'vec'
+cairo-script-operators.c: In function '_context_get':
+cairo-script-operators.c:2390:17: warning: cast to pointer from integer of different size
+cairo-script-operators.c:2403:24: warning: cast to pointer from integer of different size
+cairo-script-operators.c:2406:24: warning: cast to pointer from integer of different size
+cairo-script-operators.c:2409:24: warning: cast to pointer from integer of different size
+cairo-script-operators.c:2412:24: warning: cast to pointer from integer of different size
+cairo-script-operators.c:2415:24: warning: cast to pointer from integer of different size
+cairo-script-operators.c: In function '_pattern_get':
+cairo-script-operators.c:2441:17: warning: cast to pointer from integer of different size
+cairo-script-operators.c:2444:17: warning: cast to pointer from integer of different size
+cairo-script-operators.c:2447:17: warning: cast to pointer from integer of different size
+cairo-script-operators.c:2450:17: warning: cast to pointer from integer of different size
+cairo-script-operators.c: In function '_surface_get':
+cairo-script-operators.c:2480:17: warning: cast to pointer from integer of different size
+cairo-script-operators.c:2484:17: warning: cast to pointer from integer of different size
+cairo-script-operators.c: In function '_image_read_raw':
+cairo-script-operators.c:2966:2: warning: enumeration value 'LZO' not handled in switch
+cairo-script-operators.c: In function '_image_load_from_dictionary':
+cairo-script-operators.c:3355:14: warning: cast to pointer from integer of different size
+cairo-script-operators.c: In function '_context_set':
+cairo-script-operators.c:4657:17: warning: cast to pointer from integer of different size
+cairo-script-operators.c:4666:17: warning: cast to pointer from integer of different size
+cairo-script-operators.c:4675:17: warning: cast to pointer from integer of different size
+cairo-script-operators.c: In function '_debug_print':
+cairo-script-operators.c:6346:33: warning: cast to pointer from integer of different size
+  CC     libcairo_script_interpreter_la-cairo-script-scanner.lo
+cairo-script-scanner.c: In function 'fprintf_obj':
+cairo-script-scanner.c:103:37: warning: cast to pointer from integer of different size
+cairo-script-scanner.c: In function '_translate_name':
+cairo-script-scanner.c:1445:16: warning: cast to pointer from integer of different size
+cairo-script-scanner.c:1446:17: warning: cast to pointer from integer of different size
+cairo-script-scanner.c: In function 'build_opcodes':
+cairo-script-scanner.c:1842:46: warning: cast from pointer to integer of different size
+  CC     libcairo_script_interpreter_la-cairo-script-stack.lo
+  CCLD   libcairo-script-interpreter.la
+Creating library file: .libs/libcairo-script-interpreter.dll.a
+make[5]: Leaving directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/util/cairo-script'
+make[4]: Leaving directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/util/cairo-script'
+make[3]: Leaving directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/util'
+make[2]: Leaving directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/util'
+Making all in boilerplate
+make[2]: Entering directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/boilerplate'
+(cd . && sh ./make-cairo-boilerplate-constructors.sh cairo-boilerplate-getopt.c cairo-boilerplate-system.c cairo-boilerplate.c           cairo-boilerplate-win32.c cairo-boilerplate-win32-printing.c                cairo-boilerplate-script.c   cairo-boilerplate-ps.c cairo-boilerplate-pdf.c cairo-boilerplate-svg.c                                                          ) > cairo-boilerplate-constructors.c
+make  all-am
+make[3]: Entering directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/boilerplate'
+make[3]: Nothing to be done for `all-am'.
+make[3]: Leaving directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/boilerplate'
+make[2]: Leaving directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/boilerplate'
+Making all in test
+make[2]: Entering directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/test'
+(cd . && sh ./make-cairo-test-constructors.sh a1-bug.c a1-clip.c a1-fill.c a1-image-sample.c a1-mask.c a1-mask-sample.c a1-sample.c a1-traps-sample.c a1-rasterisation.c a8-clear.c a8-mask.c aliasing.c alpha-similar.c arc-direction.c arc-infinite-loop.c arc-looping-dash.c api-special-cases.c big-line.c big-empty-box.c big-empty-triangle.c big-little-box.c big-little-triangle.c bug-spline.c big-trap.c bilevel-image.c bug-40410.c bug-51910.c bug-bo-rectangular.c bug-bo-collins.c bug-bo-ricotz.c bug-source-cu.c bug-extents.c bug-seams.c caps.c checkerboard.c caps-joins.c caps-joins-alpha.c caps-joins-curve.c caps-tails-curve.c caps-sub-paths.c clear.c clear-source.c clip-all.c clip-complex-bug61592.c clip-complex-shape.c clip-contexts.c clip-disjoint.c clip-disjoint-hatching.c clip-disjoint-quad.c clip-device-offset.c clip-double-free.c clip-draw-unbounded.c clip-empty.c clip-empty-group.c clip-empty-save.c clip-fill.c clip-fill-no-op.c clip-fill-rule.c clip-fill-rule-pixel-aligned.c clip-group-shapes.c clip-image.c clip-intersect.c clip-mixed-antialias.c clip-nesting.c clip-operator.c clip-push-group.c clip-polygons.c clip-rectilinear.c clip-shape.c clip-stroke.c clip-stroke-no-op.c clip-text.c clip-twice.c clip-twice-rectangle.c clip-unbounded.c clip-zero.c clipped-group.c clipped-surface.c close-path.c close-path-current-point.c composite-integer-translate-source.c composite-integer-translate-over.c composite-integer-translate-over-repeat.c copy-disjoint.c copy-path.c coverage.c create-for-stream.c create-from-png.c create-from-png-stream.c culled-glyphs.c curve-to-as-line-to.c dash-caps-joins.c dash-curve.c dash-infinite-loop.c dash-no-dash.c dash-offset.c dash-offset-negative.c dash-scale.c dash-state.c dash-zero-length.c degenerate-arc.c degenerate-arcs.c degenerate-curve-to.c degenerate-dash.c degenerate-linear-gradient.c degenerate-path.c degenerate-pen.c degenerate-radial-gradient.c degenerate-rel-curve-to.c degenerate-solid-dash.c drunkard-tails.c device-offset.c device-offset-fractional.c device-offset-positive.c device-offset-scale.c error-setters.c extend-pad.c extend-pad-border.c extend-pad-similar.c extend-reflect.c extend-reflect-similar.c extend-repeat.c extend-repeat-similar.c extended-blend.c fallback.c fill-alpha.c fill-alpha-pattern.c fill-and-stroke.c fill-and-stroke-alpha.c fill-and-stroke-alpha-add.c fill-degenerate-sort-order.c fill-disjoint.c fill-empty.c fill-image.c fill-missed-stop.c fill-rule.c filter-bilinear-extents.c filter-nearest-offset.c filter-nearest-transformed.c finer-grained-fallbacks.c font-face-get-type.c font-matrix-translation.c font-options.c glyph-cache-pressure.c get-and-set.c get-clip.c get-group-target.c get-path-extents.c gradient-alpha.c gradient-constant-alpha.c gradient-zero-stops.c gradient-zero-stops-mask.c group-clip.c group-paint.c group-state.c group-unaligned.c half-coverage.c halo.c hatchings.c horizontal-clip.c huge-linear.c huge-radial.c image-surface-source.c image-bug-710072.c implicit-close.c infinite-join.c in-fill-empty-trapezoid.c in-fill-trapezoid.c invalid-matrix.c inverse-text.c inverted-clip.c joins.c joins-loop.c joins-star.c joins-retrace.c large-clip.c large-font.c large-source.c large-source-roi.c large-twin-antialias-mixed.c leaky-dash.c leaky-dashed-rectangle.c leaky-dashed-stroke.c leaky-polygon.c line-width.c line-width-large-overlap.c line-width-overlap.c line-width-scale.c line-width-tolerance.c line-width-zero.c linear-gradient.c linear-gradient-extend.c linear-gradient-large.c linear-gradient-one-stop.c linear-gradient-reflect.c linear-gradient-subset.c linear-step-function.c linear-uniform.c long-dashed-lines.c long-lines.c map-to-image.c mask.c mask-alpha.c mask-ctm.c mask-glyphs.c mask-surface-ctm.c mask-transformed-image.c mask-transformed-similar.c mesh-pattern.c mesh-pattern-accuracy.c mesh-pattern-conical.c mesh-pattern-control-points.c mesh-pattern-fold.c mesh-pattern-overlap.c mesh-pattern-transformed.c mime-data.c mime-surface-api.c miter-precision.c move-to-show-surface.c negative-stride-image.c new-sub-path.c nil-surface.c operator.c operator-alpha.c operator-alpha-alpha.c operator-clear.c operator-source.c outline-tolerance.c over-above-source.c over-around-source.c over-below-source.c over-between-source.c overlapping-boxes.c overlapping-glyphs.c overlapping-dash-caps.c paint.c paint-clip-fill.c paint-repeat.c paint-source-alpha.c paint-with-alpha.c partial-clip-text.c partial-coverage.c pass-through.c path-append.c path-stroke-twice.c path-precision.c pattern-get-type.c pattern-getters.c pdf-isolated-group.c pixman-rotate.c png.c push-group.c push-group-color.c push-group-path-offset.c radial-gradient.c radial-gradient-extend.c radial-outer-focus.c random-clips.c random-intersections-eo.c random-intersections-nonzero.c random-intersections-curves-eo.c random-intersections-curves-nz.c raster-source.c record.c record1414x.c record2x.c record90.c recordflip.c record-extend.c record-mesh.c recording-surface-pattern.c recording-surface-extend.c rectangle-rounding-error.c rectilinear-fill.c rectilinear-grid.c rectilinear-miter-limit.c rectilinear-dash.c rectilinear-dash-scale.c rectilinear-stroke.c reflected-stroke.c rel-path.c rgb24-ignore-alpha.c rotate-image-surface-paint.c rotated-clip.c rounded-rectangle-fill.c rounded-rectangle-stroke.c sample.c scale-down-source-surface-paint.c scale-offset-image.c scale-offset-similar.c scale-source-surface-paint.c scaled-font-zero-matrix.c stroke-ctm-caps.c stroke-clipped.c stroke-image.c stroke-open-box.c select-font-face.c select-font-no-show-text.c self-copy.c self-copy-overlap.c self-intersecting.c set-source.c show-glyphs-advance.c show-glyphs-many.c show-text-current-point.c shape-general-convex.c shape-sierpinski.c skew-extreme.c smask.c smask-fill.c smask-image-mask.c smask-mask.c smask-paint.c smask-stroke.c smask-text.c solid-pattern-cache-stress.c source-clip.c source-clip-scale.c source-surface-scale-paint.c spline-decomposition.c stride-12-image.c stroke-pattern.c subsurface.c subsurface-image-repeat.c subsurface-repeat.c subsurface-reflect.c subsurface-pad.c subsurface-modify-child.c subsurface-modify-parent.c subsurface-outside-target.c subsurface-scale.c subsurface-similar-repeat.c surface-finish-twice.c surface-pattern.c surface-pattern-big-scale-down.c surface-pattern-operator.c surface-pattern-scale-down.c surface-pattern-scale-down-extend.c surface-pattern-scale-up.c text-antialias.c text-antialias-subpixel.c text-cache-crash.c text-glyph-range.c text-pattern.c text-rotate.c text-transform.c text-zero-len.c tighten-bounds.c tiger.c toy-font-face.c transforms.c translate-show-surface.c trap-clip.c twin.c twin-antialias-gray.c twin-antialias-mixed.c twin-antialias-none.c twin-antialias-subpixel.c unaligned-box.c unantialiased-shapes.c unbounded-operator.c unclosed-strokes.c user-data.c user-font.c user-font-mask.c user-font-proxy.c user-font-rescale.c world-map.c white-in-noop.c xcb-huge-image-shm.c xcb-huge-subimage.c xcb-stress-cache.c xcb-snapshot-assert.c xcomposite-projection.c xlib-expose-event.c zero-alpha.c zero-mask.c pthread-same-source.c pthread-show-text.c pthread-similar.c  bitmap-font.c ft-font-create-for-ft-face.c ft-show-glyphs-positioning.c ft-show-glyphs-table.c ft-text-vertical-layout-type1.c ft-text-vertical-layout-type3.c ft-text-antialias-none.c   pdf-features.c pdf-mime-data.c pdf-surface-source.c ps-eps.c ps-features.c ps-surface-source.c svg-surface.c svg-clip.c svg-surface-source.c     multi-page.c fallback-resolution.c) > cairo-test-constructors.c
+make  all-recursive
+make[3]: Entering directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/test'
+Making all in pdiff
+make[4]: Entering directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/test/pdiff'
+make  all-am
+make[5]: Entering directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/test/pdiff'
+  CC     lpyramid.lo
+  CC     pdiff.lo
+  CCLD   libpdiff.la
+make[5]: Leaving directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/test/pdiff'
+make[4]: Leaving directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/test/pdiff'
+Making all in .
+make[4]: Entering directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/test'
+  CC     cairo_test_suite-buffer-diff.o
+  CC     cairo_test_suite-cairo-test.o
+cairo-test.c: In function '_cairo_test_context_run_for_target':
+cairo-test.c:1503:19: warning: unused variable 'old_sigalrm_handler'
+cairo-test.c:1501:19: warning: unused variable 'old_sigpipe_handler'
+  CC     cairo_test_suite-cairo-test-runner.o
+  CC     cairo_test_suite-a1-bug.o
+  CC     cairo_test_suite-a1-clip.o
+  CC     cairo_test_suite-a1-fill.o
+  CC     cairo_test_suite-a1-image-sample.o
+  CC     cairo_test_suite-a1-mask.o
+  CC     cairo_test_suite-a1-mask-sample.o
+  CC     cairo_test_suite-a1-sample.o
+  CC     cairo_test_suite-a1-traps-sample.o
+  CC     cairo_test_suite-a1-rasterisation.o
+  CC     cairo_test_suite-a8-clear.o
+  CC     cairo_test_suite-a8-mask.o
+  CC     cairo_test_suite-aliasing.o
+  CC     cairo_test_suite-alpha-similar.o
+  CC     cairo_test_suite-arc-direction.o
+  CC     cairo_test_suite-arc-infinite-loop.o
+  CC     cairo_test_suite-arc-looping-dash.o
+  CC     cairo_test_suite-api-special-cases.o
+  CC     cairo_test_suite-big-line.o
+  CC     cairo_test_suite-big-empty-box.o
+  CC     cairo_test_suite-big-empty-triangle.o
+  CC     cairo_test_suite-big-little-box.o
+  CC     cairo_test_suite-big-little-triangle.o
+  CC     cairo_test_suite-bug-spline.o
+  CC     cairo_test_suite-big-trap.o
+  CC     cairo_test_suite-bilevel-image.o
+  CC     cairo_test_suite-bug-40410.o
+  CC     cairo_test_suite-bug-51910.o
+  CC     cairo_test_suite-bug-bo-rectangular.o
+  CC     cairo_test_suite-bug-bo-collins.o
+  CC     cairo_test_suite-bug-bo-ricotz.o
+  CC     cairo_test_suite-bug-source-cu.o
+  CC     cairo_test_suite-bug-extents.o
+  CC     cairo_test_suite-bug-seams.o
+  CC     cairo_test_suite-caps.o
+  CC     cairo_test_suite-checkerboard.o
+  CC     cairo_test_suite-caps-joins.o
+  CC     cairo_test_suite-caps-joins-alpha.o
+  CC     cairo_test_suite-caps-joins-curve.o
+  CC     cairo_test_suite-caps-tails-curve.o
+  CC     cairo_test_suite-caps-sub-paths.o
+  CC     cairo_test_suite-clear.o
+  CC     cairo_test_suite-clear-source.o
+  CC     cairo_test_suite-clip-all.o
+  CC     cairo_test_suite-clip-complex-bug61592.o
+  CC     cairo_test_suite-clip-complex-shape.o
+  CC     cairo_test_suite-clip-contexts.o
+  CC     cairo_test_suite-clip-disjoint.o
+  CC     cairo_test_suite-clip-disjoint-hatching.o
+  CC     cairo_test_suite-clip-disjoint-quad.o
+  CC     cairo_test_suite-clip-device-offset.o
+  CC     cairo_test_suite-clip-double-free.o
+  CC     cairo_test_suite-clip-draw-unbounded.o
+  CC     cairo_test_suite-clip-empty.o
+  CC     cairo_test_suite-clip-empty-group.o
+  CC     cairo_test_suite-clip-empty-save.o
+  CC     cairo_test_suite-clip-fill.o
+  CC     cairo_test_suite-clip-fill-no-op.o
+  CC     cairo_test_suite-clip-fill-rule.o
+  CC     cairo_test_suite-clip-fill-rule-pixel-aligned.o
+  CC     cairo_test_suite-clip-group-shapes.o
+  CC     cairo_test_suite-clip-image.o
+  CC     cairo_test_suite-clip-intersect.o
+  CC     cairo_test_suite-clip-mixed-antialias.o
+  CC     cairo_test_suite-clip-nesting.o
+  CC     cairo_test_suite-clip-operator.o
+  CC     cairo_test_suite-clip-push-group.o
+  CC     cairo_test_suite-clip-polygons.o
+  CC     cairo_test_suite-clip-rectilinear.o
+  CC     cairo_test_suite-clip-shape.o
+  CC     cairo_test_suite-clip-stroke.o
+  CC     cairo_test_suite-clip-stroke-no-op.o
+  CC     cairo_test_suite-clip-text.o
+  CC     cairo_test_suite-clip-twice.o
+  CC     cairo_test_suite-clip-twice-rectangle.o
+  CC     cairo_test_suite-clip-unbounded.o
+  CC     cairo_test_suite-clip-zero.o
+  CC     cairo_test_suite-clipped-group.o
+  CC     cairo_test_suite-clipped-surface.o
+  CC     cairo_test_suite-close-path.o
+  CC     cairo_test_suite-close-path-current-point.o
+  CC     cairo_test_suite-composite-integer-translate-source.o
+  CC     cairo_test_suite-composite-integer-translate-over.o
+  CC     cairo_test_suite-composite-integer-translate-over-repeat.o
+  CC     cairo_test_suite-copy-disjoint.o
+  CC     cairo_test_suite-copy-path.o
+  CC     cairo_test_suite-coverage.o
+  CC     cairo_test_suite-create-for-stream.o
+  CC     cairo_test_suite-create-from-png.o
+  CC     cairo_test_suite-create-from-png-stream.o
+  CC     cairo_test_suite-culled-glyphs.o
+  CC     cairo_test_suite-curve-to-as-line-to.o
+  CC     cairo_test_suite-dash-caps-joins.o
+  CC     cairo_test_suite-dash-curve.o
+  CC     cairo_test_suite-dash-infinite-loop.o
+  CC     cairo_test_suite-dash-no-dash.o
+  CC     cairo_test_suite-dash-offset.o
+  CC     cairo_test_suite-dash-offset-negative.o
+  CC     cairo_test_suite-dash-scale.o
+  CC     cairo_test_suite-dash-state.o
+  CC     cairo_test_suite-dash-zero-length.o
+  CC     cairo_test_suite-degenerate-arc.o
+  CC     cairo_test_suite-degenerate-arcs.o
+  CC     cairo_test_suite-degenerate-curve-to.o
+  CC     cairo_test_suite-degenerate-dash.o
+  CC     cairo_test_suite-degenerate-linear-gradient.o
+  CC     cairo_test_suite-degenerate-path.o
+  CC     cairo_test_suite-degenerate-pen.o
+  CC     cairo_test_suite-degenerate-radial-gradient.o
+  CC     cairo_test_suite-degenerate-rel-curve-to.o
+  CC     cairo_test_suite-degenerate-solid-dash.o
+  CC     cairo_test_suite-drunkard-tails.o
+  CC     cairo_test_suite-device-offset.o
+  CC     cairo_test_suite-device-offset-fractional.o
+  CC     cairo_test_suite-device-offset-positive.o
+  CC     cairo_test_suite-device-offset-scale.o
+  CC     cairo_test_suite-error-setters.o
+  CC     cairo_test_suite-extend-pad.o
+  CC     cairo_test_suite-extend-pad-border.o
+  CC     cairo_test_suite-extend-pad-similar.o
+  CC     cairo_test_suite-extend-reflect.o
+  CC     cairo_test_suite-extend-reflect-similar.o
+  CC     cairo_test_suite-extend-repeat.o
+  CC     cairo_test_suite-extend-repeat-similar.o
+  CC     cairo_test_suite-extended-blend.o
+  CC     cairo_test_suite-fallback.o
+  CC     cairo_test_suite-fill-alpha.o
+  CC     cairo_test_suite-fill-alpha-pattern.o
+  CC     cairo_test_suite-fill-and-stroke.o
+  CC     cairo_test_suite-fill-and-stroke-alpha.o
+  CC     cairo_test_suite-fill-and-stroke-alpha-add.o
+  CC     cairo_test_suite-fill-degenerate-sort-order.o
+  CC     cairo_test_suite-fill-disjoint.o
+  CC     cairo_test_suite-fill-empty.o
+  CC     cairo_test_suite-fill-image.o
+  CC     cairo_test_suite-fill-missed-stop.o
+  CC     cairo_test_suite-fill-rule.o
+  CC     cairo_test_suite-filter-bilinear-extents.o
+  CC     cairo_test_suite-filter-nearest-offset.o
+  CC     cairo_test_suite-filter-nearest-transformed.o
+  CC     cairo_test_suite-finer-grained-fallbacks.o
+  CC     cairo_test_suite-font-face-get-type.o
+  CC     cairo_test_suite-font-matrix-translation.o
+  CC     cairo_test_suite-font-options.o
+  CC     cairo_test_suite-glyph-cache-pressure.o
+  CC     cairo_test_suite-get-and-set.o
+  CC     cairo_test_suite-get-clip.o
+  CC     cairo_test_suite-get-group-target.o
+  CC     cairo_test_suite-get-path-extents.o
+  CC     cairo_test_suite-gradient-alpha.o
+  CC     cairo_test_suite-gradient-constant-alpha.o
+  CC     cairo_test_suite-gradient-zero-stops.o
+  CC     cairo_test_suite-gradient-zero-stops-mask.o
+  CC     cairo_test_suite-group-clip.o
+  CC     cairo_test_suite-group-paint.o
+  CC     cairo_test_suite-group-state.o
+  CC     cairo_test_suite-group-unaligned.o
+  CC     cairo_test_suite-half-coverage.o
+  CC     cairo_test_suite-halo.o
+  CC     cairo_test_suite-hatchings.o
+  CC     cairo_test_suite-horizontal-clip.o
+  CC     cairo_test_suite-huge-linear.o
+  CC     cairo_test_suite-huge-radial.o
+  CC     cairo_test_suite-image-surface-source.o
+  CC     cairo_test_suite-image-bug-710072.o
+  CC     cairo_test_suite-implicit-close.o
+  CC     cairo_test_suite-infinite-join.o
+  CC     cairo_test_suite-in-fill-empty-trapezoid.o
+  CC     cairo_test_suite-in-fill-trapezoid.o
+  CC     cairo_test_suite-invalid-matrix.o
+  CC     cairo_test_suite-inverse-text.o
+  CC     cairo_test_suite-inverted-clip.o
+  CC     cairo_test_suite-joins.o
+  CC     cairo_test_suite-joins-loop.o
+  CC     cairo_test_suite-joins-star.o
+  CC     cairo_test_suite-joins-retrace.o
+  CC     cairo_test_suite-large-clip.o
+  CC     cairo_test_suite-large-font.o
+  CC     cairo_test_suite-large-source.o
+  CC     cairo_test_suite-large-source-roi.o
+  CC     cairo_test_suite-large-twin-antialias-mixed.o
+  CC     cairo_test_suite-leaky-dash.o
+  CC     cairo_test_suite-leaky-dashed-rectangle.o
+  CC     cairo_test_suite-leaky-dashed-stroke.o
+  CC     cairo_test_suite-leaky-polygon.o
+  CC     cairo_test_suite-line-width.o
+  CC     cairo_test_suite-line-width-large-overlap.o
+  CC     cairo_test_suite-line-width-overlap.o
+  CC     cairo_test_suite-line-width-scale.o
+  CC     cairo_test_suite-line-width-tolerance.o
+  CC     cairo_test_suite-line-width-zero.o
+  CC     cairo_test_suite-linear-gradient.o
+  CC     cairo_test_suite-linear-gradient-extend.o
+  CC     cairo_test_suite-linear-gradient-large.o
+  CC     cairo_test_suite-linear-gradient-one-stop.o
+  CC     cairo_test_suite-linear-gradient-reflect.o
+  CC     cairo_test_suite-linear-gradient-subset.o
+  CC     cairo_test_suite-linear-step-function.o
+  CC     cairo_test_suite-linear-uniform.o
+  CC     cairo_test_suite-long-dashed-lines.o
+  CC     cairo_test_suite-long-lines.o
+  CC     cairo_test_suite-map-to-image.o
+  CC     cairo_test_suite-mask.o
+  CC     cairo_test_suite-mask-alpha.o
+  CC     cairo_test_suite-mask-ctm.o
+  CC     cairo_test_suite-mask-glyphs.o
+  CC     cairo_test_suite-mask-surface-ctm.o
+  CC     cairo_test_suite-mask-transformed-image.o
+  CC     cairo_test_suite-mask-transformed-similar.o
+  CC     cairo_test_suite-mesh-pattern.o
+  CC     cairo_test_suite-mesh-pattern-accuracy.o
+  CC     cairo_test_suite-mesh-pattern-conical.o
+  CC     cairo_test_suite-mesh-pattern-control-points.o
+  CC     cairo_test_suite-mesh-pattern-fold.o
+  CC     cairo_test_suite-mesh-pattern-overlap.o
+  CC     cairo_test_suite-mesh-pattern-transformed.o
+  CC     cairo_test_suite-mime-data.o
+  CC     cairo_test_suite-mime-surface-api.o
+  CC     cairo_test_suite-miter-precision.o
+  CC     cairo_test_suite-move-to-show-surface.o
+  CC     cairo_test_suite-negative-stride-image.o
+  CC     cairo_test_suite-new-sub-path.o
+  CC     cairo_test_suite-nil-surface.o
+  CC     cairo_test_suite-operator.o
+  CC     cairo_test_suite-operator-alpha.o
+  CC     cairo_test_suite-operator-alpha-alpha.o
+  CC     cairo_test_suite-operator-clear.o
+  CC     cairo_test_suite-operator-source.o
+  CC     cairo_test_suite-outline-tolerance.o
+  CC     cairo_test_suite-over-above-source.o
+  CC     cairo_test_suite-over-around-source.o
+  CC     cairo_test_suite-over-below-source.o
+  CC     cairo_test_suite-over-between-source.o
+  CC     cairo_test_suite-overlapping-boxes.o
+  CC     cairo_test_suite-overlapping-glyphs.o
+  CC     cairo_test_suite-overlapping-dash-caps.o
+  CC     cairo_test_suite-paint.o
+  CC     cairo_test_suite-paint-clip-fill.o
+  CC     cairo_test_suite-paint-repeat.o
+  CC     cairo_test_suite-paint-source-alpha.o
+  CC     cairo_test_suite-paint-with-alpha.o
+  CC     cairo_test_suite-partial-clip-text.o
+  CC     cairo_test_suite-partial-coverage.o
+  CC     cairo_test_suite-pass-through.o
+  CC     cairo_test_suite-path-append.o
+  CC     cairo_test_suite-path-stroke-twice.o
+  CC     cairo_test_suite-path-precision.o
+  CC     cairo_test_suite-pattern-get-type.o
+  CC     cairo_test_suite-pattern-getters.o
+  CC     cairo_test_suite-pdf-isolated-group.o
+  CC     cairo_test_suite-pixman-rotate.o
+  CC     cairo_test_suite-png.o
+  CC     cairo_test_suite-push-group.o
+  CC     cairo_test_suite-push-group-color.o
+  CC     cairo_test_suite-push-group-path-offset.o
+  CC     cairo_test_suite-radial-gradient.o
+  CC     cairo_test_suite-radial-gradient-extend.o
+  CC     cairo_test_suite-radial-outer-focus.o
+  CC     cairo_test_suite-random-clips.o
+  CC     cairo_test_suite-random-intersections-eo.o
+  CC     cairo_test_suite-random-intersections-nonzero.o
+  CC     cairo_test_suite-random-intersections-curves-eo.o
+  CC     cairo_test_suite-random-intersections-curves-nz.o
+  CC     cairo_test_suite-raster-source.o
+  CC     cairo_test_suite-record.o
+  CC     cairo_test_suite-record1414x.o
+  CC     cairo_test_suite-record2x.o
+  CC     cairo_test_suite-record90.o
+  CC     cairo_test_suite-recordflip.o
+  CC     cairo_test_suite-record-extend.o
+  CC     cairo_test_suite-record-mesh.o
+  CC     cairo_test_suite-recording-surface-pattern.o
+  CC     cairo_test_suite-recording-surface-extend.o
+  CC     cairo_test_suite-rectangle-rounding-error.o
+  CC     cairo_test_suite-rectilinear-fill.o
+  CC     cairo_test_suite-rectilinear-grid.o
+  CC     cairo_test_suite-rectilinear-miter-limit.o
+  CC     cairo_test_suite-rectilinear-dash.o
+  CC     cairo_test_suite-rectilinear-dash-scale.o
+  CC     cairo_test_suite-rectilinear-stroke.o
+  CC     cairo_test_suite-reflected-stroke.o
+  CC     cairo_test_suite-rel-path.o
+  CC     cairo_test_suite-rgb24-ignore-alpha.o
+  CC     cairo_test_suite-rotate-image-surface-paint.o
+  CC     cairo_test_suite-rotated-clip.o
+  CC     cairo_test_suite-rounded-rectangle-fill.o
+  CC     cairo_test_suite-rounded-rectangle-stroke.o
+  CC     cairo_test_suite-sample.o
+  CC     cairo_test_suite-scale-down-source-surface-paint.o
+  CC     cairo_test_suite-scale-offset-image.o
+  CC     cairo_test_suite-scale-offset-similar.o
+  CC     cairo_test_suite-scale-source-surface-paint.o
+  CC     cairo_test_suite-scaled-font-zero-matrix.o
+  CC     cairo_test_suite-stroke-ctm-caps.o
+  CC     cairo_test_suite-stroke-clipped.o
+  CC     cairo_test_suite-stroke-image.o
+  CC     cairo_test_suite-stroke-open-box.o
+  CC     cairo_test_suite-select-font-face.o
+  CC     cairo_test_suite-select-font-no-show-text.o
+  CC     cairo_test_suite-self-copy.o
+  CC     cairo_test_suite-self-copy-overlap.o
+  CC     cairo_test_suite-self-intersecting.o
+  CC     cairo_test_suite-set-source.o
+  CC     cairo_test_suite-show-glyphs-advance.o
+  CC     cairo_test_suite-show-glyphs-many.o
+  CC     cairo_test_suite-show-text-current-point.o
+  CC     cairo_test_suite-shape-general-convex.o
+  CC     cairo_test_suite-shape-sierpinski.o
+  CC     cairo_test_suite-skew-extreme.o
+  CC     cairo_test_suite-smask.o
+  CC     cairo_test_suite-smask-fill.o
+  CC     cairo_test_suite-smask-image-mask.o
+  CC     cairo_test_suite-smask-mask.o
+  CC     cairo_test_suite-smask-paint.o
+  CC     cairo_test_suite-smask-stroke.o
+  CC     cairo_test_suite-smask-text.o
+  CC     cairo_test_suite-solid-pattern-cache-stress.o
+  CC     cairo_test_suite-source-clip.o
+  CC     cairo_test_suite-source-clip-scale.o
+  CC     cairo_test_suite-source-surface-scale-paint.o
+  CC     cairo_test_suite-spline-decomposition.o
+  CC     cairo_test_suite-stride-12-image.o
+  CC     cairo_test_suite-stroke-pattern.o
+  CC     cairo_test_suite-subsurface.o
+  CC     cairo_test_suite-subsurface-image-repeat.o
+  CC     cairo_test_suite-subsurface-repeat.o
+  CC     cairo_test_suite-subsurface-reflect.o
+  CC     cairo_test_suite-subsurface-pad.o
+  CC     cairo_test_suite-subsurface-modify-child.o
+  CC     cairo_test_suite-subsurface-modify-parent.o
+  CC     cairo_test_suite-subsurface-outside-target.o
+  CC     cairo_test_suite-subsurface-scale.o
+  CC     cairo_test_suite-subsurface-similar-repeat.o
+  CC     cairo_test_suite-surface-finish-twice.o
+  CC     cairo_test_suite-surface-pattern.o
+  CC     cairo_test_suite-surface-pattern-big-scale-down.o
+  CC     cairo_test_suite-surface-pattern-operator.o
+  CC     cairo_test_suite-surface-pattern-scale-down.o
+  CC     cairo_test_suite-surface-pattern-scale-down-extend.o
+  CC     cairo_test_suite-surface-pattern-scale-up.o
+  CC     cairo_test_suite-text-antialias.o
+  CC     cairo_test_suite-text-antialias-subpixel.o
+  CC     cairo_test_suite-text-cache-crash.o
+  CC     cairo_test_suite-text-glyph-range.o
+  CC     cairo_test_suite-text-pattern.o
+  CC     cairo_test_suite-text-rotate.o
+  CC     cairo_test_suite-text-transform.o
+  CC     cairo_test_suite-text-zero-len.o
+  CC     cairo_test_suite-tighten-bounds.o
+  CC     cairo_test_suite-tiger.o
+  CC     cairo_test_suite-toy-font-face.o
+  CC     cairo_test_suite-transforms.o
+  CC     cairo_test_suite-translate-show-surface.o
+  CC     cairo_test_suite-trap-clip.o
+  CC     cairo_test_suite-twin.o
+  CC     cairo_test_suite-twin-antialias-gray.o
+  CC     cairo_test_suite-twin-antialias-mixed.o
+  CC     cairo_test_suite-twin-antialias-none.o
+  CC     cairo_test_suite-twin-antialias-subpixel.o
+  CC     cairo_test_suite-unaligned-box.o
+  CC     cairo_test_suite-unantialiased-shapes.o
+  CC     cairo_test_suite-unbounded-operator.o
+  CC     cairo_test_suite-unclosed-strokes.o
+  CC     cairo_test_suite-user-data.o
+  CC     cairo_test_suite-user-font.o
+  CC     cairo_test_suite-user-font-mask.o
+  CC     cairo_test_suite-user-font-proxy.o
+  CC     cairo_test_suite-user-font-rescale.o
+  CC     cairo_test_suite-world-map.o
+  CC     cairo_test_suite-white-in-noop.o
+  CC     cairo_test_suite-xcb-huge-image-shm.o
+  CC     cairo_test_suite-xcb-huge-subimage.o
+  CC     cairo_test_suite-xcb-stress-cache.o
+  CC     cairo_test_suite-xcb-snapshot-assert.o
+  CC     cairo_test_suite-xcomposite-projection.o
+  CC     cairo_test_suite-xlib-expose-event.o
+  CC     cairo_test_suite-zero-alpha.o
+  CC     cairo_test_suite-zero-mask.o
+  CC     cairo_test_suite-pthread-same-source.o
+  CC     cairo_test_suite-pthread-show-text.o
+  CC     cairo_test_suite-pthread-similar.o
+  CC     cairo_test_suite-bitmap-font.o
+  CC     cairo_test_suite-ft-font-create-for-ft-face.o
+  CC     cairo_test_suite-ft-show-glyphs-positioning.o
+  CC     cairo_test_suite-ft-show-glyphs-table.o
+  CC     cairo_test_suite-ft-text-vertical-layout-type1.o
+  CC     cairo_test_suite-ft-text-vertical-layout-type3.o
+  CC     cairo_test_suite-ft-text-antialias-none.o
+  CC     cairo_test_suite-pdf-features.o
+  CC     cairo_test_suite-pdf-mime-data.o
+  CC     cairo_test_suite-pdf-surface-source.o
+  CC     cairo_test_suite-ps-eps.o
+  CC     cairo_test_suite-ps-features.o
+  CC     cairo_test_suite-ps-surface-source.o
+  CC     cairo_test_suite-svg-surface.o
+  CC     cairo_test_suite-svg-clip.o
+  CC     cairo_test_suite-svg-surface-source.o
+  CC     cairo_test_suite-multi-page.o
+  CC     cairo_test_suite-fallback-resolution.o
+  CC     cairo_test_suite-cairo-test-constructors.o
+cd ../boilerplate && make  libcairoboilerplate.la
+make[5]: Entering directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/boilerplate'
+  CC     cairo-boilerplate-getopt.lo
+  CC     cairo-boilerplate-system.lo
+  CC     cairo-boilerplate.lo
+  CC     cairo-boilerplate-win32.lo
+  CC     cairo-boilerplate-win32-printing.lo
+  CC     cairo-boilerplate-script.lo
+  CC     cairo-boilerplate-ps.lo
+  CC     cairo-boilerplate-pdf.lo
+  CC     cairo-boilerplate-svg.lo
+  CC     cairo-boilerplate-constructors.lo
+  CCLD   libcairoboilerplate.la
+make[5]: Leaving directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/boilerplate'
+  CC     any2ppm-any2ppm.o
+  CCLD   any2ppm.exe
+libtool: link: Could not determine the host path corresponding to
+libtool: link:   `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/util/cairo-script/.libs:/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/src/.libs:/srv/win32builder/fixed_3104/build/win64/lib'
+libtool: link: Continuing, but uninstalled executables may not work.
+libtool: link: Could not determine the host path corresponding to
+libtool: link:   `/srv/win32builder/fixed_3104/build/win64/lib:/srv/win32builder/fixed_3104/build/win64/bin:/srv/win32builder/fixed_3104/build/win64/lib64:/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/util/cairo-script/.libs:/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/src/.libs'
+libtool: link: Continuing, but uninstalled executables may not work.
+  CCLD   cairo-test-suite.exe
+libtool: link: Could not determine the host path corresponding to
+libtool: link:   `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/src/.libs:/srv/win32builder/fixed_3104/build/win64/lib'
+libtool: link: Continuing, but uninstalled executables may not work.
+libtool: link: Could not determine the host path corresponding to
+libtool: link:   `/srv/win32builder/fixed_3104/build/win64/lib:/srv/win32builder/fixed_3104/build/win64/bin:/srv/win32builder/fixed_3104/build/win64/lib64:/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/src/.libs'
+libtool: link: Continuing, but uninstalled executables may not work.
+make[4]: Leaving directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/test'
+make[3]: Leaving directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/test'
+make[2]: Leaving directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/test'
+Making all in perf
+make[2]: Entering directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/perf'
+make  all-recursive
+make[3]: Entering directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/perf'
+Making all in micro
+make[4]: Entering directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/perf/micro'
+make  all-am
+make[5]: Entering directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/perf/micro'
+  CC     cairo-perf-cover.lo
+  CC     box-outline.lo
+  CC     composite-checker.lo
+  CC     disjoint.lo
+  CC     fill.lo
+  CC     hatching.lo
+  CC     hash-table.lo
+  CC     line.lo
+  CC     a1-line.lo
+  CC     long-lines.lo
+  CC     mosaic.lo
+  CC     paint.lo
+  CC     paint-with-alpha.lo
+  CC     mask.lo
+  CC     pattern_create_radial.lo
+  CC     rectangles.lo
+  CC     rounded-rectangles.lo
+  CC     stroke.lo
+  CC     subimage_copy.lo
+  CC     tessellate.lo
+  CC     text.lo
+  CC     tiger.lo
+  CC     glyphs.lo
+  CC     twin.lo
+  CC     unaligned-clip.lo
+  CC     wave.lo
+  CC     world-map.lo
+  CC     zrusin.lo
+  CC     long-dashed-lines.lo
+  CC     dragon.lo
+  CC     pythagoras-tree.lo
+  CC     intersections.lo
+  CC     many-strokes.lo
+  CC     wide-strokes.lo
+  CC     many-fills.lo
+  CC     wide-fills.lo
+  CC     many-curves.lo
+  CC     curve.lo
+  CC     a1-curve.lo
+  CC     spiral.lo
+  CC     pixel.lo
+  CC     sierpinski.lo
+  CC     fill-clip.lo
+  CCLD   libcairo-perf-micro.la
+make[5]: Leaving directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/perf/micro'
+make[4]: Leaving directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/perf/micro'
+make[4]: Entering directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/perf'
+  CC     cairo-analyse-trace.o
+  CC     cairo-error.o
+  CC     cairo-perf.lo
+  CC     cairo-perf-report.lo
+  CC     cairo-stats.lo
+  CC     cairo-time.lo
+  CCLD   libcairoperf.la
+  CCLD   cairo-analyse-trace.exe
+libtool: link: Could not determine the host path corresponding to
+libtool: link:   `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/util/cairo-script/.libs:/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/src/.libs:/srv/win32builder/fixed_3104/build/win64/lib'
+libtool: link: Continuing, but uninstalled executables may not work.
+libtool: link: Could not determine the host path corresponding to
+libtool: link:   `/srv/win32builder/fixed_3104/build/win64/lib:/srv/win32builder/fixed_3104/build/win64/bin:/srv/win32builder/fixed_3104/build/win64/lib64:/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/util/cairo-script/.libs:/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/src/.libs'
+libtool: link: Continuing, but uninstalled executables may not work.
+  CC     cairo-perf-trace.o
+cairo-perf-trace.c: In function 'cairo_perf_trace':
+cairo-perf-trace.c:805:6: warning: unknown conversion type character 'l' in format
+cairo-perf-trace.c:805:6: warning: too many arguments for format
+  CC     cairo-hash.o
+  CCLD   cairo-perf-trace.exe
+libtool: link: Could not determine the host path corresponding to
+libtool: link:   `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/util/cairo-script/.libs:/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/src/.libs:/srv/win32builder/fixed_3104/build/win64/lib'
+libtool: link: Continuing, but uninstalled executables may not work.
+libtool: link: Could not determine the host path corresponding to
+libtool: link:   `/srv/win32builder/fixed_3104/build/win64/lib:/srv/win32builder/fixed_3104/build/win64/bin:/srv/win32builder/fixed_3104/build/win64/lib64:/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/util/cairo-script/.libs:/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/src/.libs'
+libtool: link: Continuing, but uninstalled executables may not work.
+  CC     cairo-perf-micro.o
+cairo-perf-micro.c: In function 'cairo_perf_run':
+cairo-perf-micro.c:271:3: warning: unknown conversion type character 'l' in format
+cairo-perf-micro.c:271:3: warning: too many arguments for format
+cairo-perf-micro.c:301:5: warning: unknown conversion type character 'l' in format
+cairo-perf-micro.c:301:5: warning: format '%d' expects type 'int', but argument 4 has type 'cairo_time_t'
+cairo-perf-micro.c:301:5: warning: format '%#8.3f' expects type 'double', but argument 5 has type 'unsigned int'
+cairo-perf-micro.c:301:5: warning: format '%3d' expects type 'int', but argument 8 has type 'double'
+cairo-perf-micro.c:301:5: warning: format '%.2f' expects type 'double', but argument 9 has type 'int'
+cairo-perf-micro.c:301:5: warning: too many arguments for format
+cairo-perf-micro.c:309:5: warning: unknown conversion type character 'l' in format
+cairo-perf-micro.c:309:5: warning: format '%d' expects type 'int', but argument 4 has type 'cairo_time_t'
+cairo-perf-micro.c:309:5: warning: format '%#8.3f' expects type 'double', but argument 5 has type 'unsigned int'
+cairo-perf-micro.c:309:5: warning: format '%3d' expects type 'int', but argument 8 has type 'double'
+cairo-perf-micro.c:309:5: warning: too many arguments for format
+  CCLD   cairo-perf-micro.exe
+libtool: link: Could not determine the host path corresponding to
+libtool: link:   `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/src/.libs:/srv/win32builder/fixed_3104/build/win64/lib'
+libtool: link: Continuing, but uninstalled executables may not work.
+libtool: link: Could not determine the host path corresponding to
+libtool: link:   `/srv/win32builder/fixed_3104/build/win64/lib:/srv/win32builder/fixed_3104/build/win64/bin:/srv/win32builder/fixed_3104/build/win64/lib64:/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/src/.libs'
+libtool: link: Continuing, but uninstalled executables may not work.
+make[4]: Leaving directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/perf'
+make[3]: Leaving directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/perf'
+make[2]: Leaving directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16/perf'
+make[2]: Entering directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16'
+make[1]: Leaving directory `/srv/win32builder/fixed_3104/libs/35_cairo/cairo-1.12.16'

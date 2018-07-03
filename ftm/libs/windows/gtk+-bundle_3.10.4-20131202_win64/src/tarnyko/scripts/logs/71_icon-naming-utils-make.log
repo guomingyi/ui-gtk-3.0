@@ -1,0 +1,3 @@
+sed -e "s#\@PERL\@#/usr/bin/perl#g"		\
+	    -e "s#\@DATADIR\@#/srv/win32builder/fixed_3104/build/win64/share/icon-naming-utils#g"	\
+	< icon-name-mapping.pl.in > icon-name-mapping

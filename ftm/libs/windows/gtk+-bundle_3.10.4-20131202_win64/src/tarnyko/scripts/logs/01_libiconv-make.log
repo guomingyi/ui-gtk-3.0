@@ -1,0 +1,1320 @@
+builddir="`pwd`"; cd libcharset && make all && make install-lib libdir="$builddir/lib" includedir="$builddir/lib"
+make[1]: Entering directory `/srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/libcharset'
+if [ ! -d include ] ; then mkdir include ; fi
+cp ./include/libcharset.h.in include/libcharset.h
+cd lib && make all
+make[2]: Entering directory `/srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/libcharset/lib'
+/bin/sh ../libtool --mode=compile x86_64-w64-mingw32-gcc -I. -I. -I.. -I./.. -I../include -I/srv/win32builder/fixed_3104/build/win64/include -fvisibility=hidden -I/srv/win32builder/fixed_3104/build/win64/include -DLIBDIR=\"/srv/win32builder/fixed_3104/build/win64/lib\" -DBUILDING_LIBCHARSET -DBUILDING_DLL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/srv/win32builder/fixed_3104/build/win64/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libcharset_set_relocation_prefix -Drelocate=libcharset_relocate -DHAVE_CONFIG_H -c ./localcharset.c
+libtool: compile:  x86_64-w64-mingw32-gcc -I. -I. -I.. -I./.. -I../include -I/srv/win32builder/fixed_3104/build/win64/include -fvisibility=hidden -I/srv/win32builder/fixed_3104/build/win64/include -DLIBDIR=\"/srv/win32builder/fixed_3104/build/win64/lib\" -DBUILDING_LIBCHARSET -DBUILDING_DLL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/srv/win32builder/fixed_3104/build/win64/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libcharset_set_relocation_prefix -Drelocate=libcharset_relocate -DHAVE_CONFIG_H -c ./localcharset.c  -DDLL_EXPORT -DPIC -o .libs/localcharset.o
+libtool: compile:  x86_64-w64-mingw32-gcc -I. -I. -I.. -I./.. -I../include -I/srv/win32builder/fixed_3104/build/win64/include -fvisibility=hidden -I/srv/win32builder/fixed_3104/build/win64/include -DLIBDIR=\"/srv/win32builder/fixed_3104/build/win64/lib\" -DBUILDING_LIBCHARSET -DBUILDING_DLL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/srv/win32builder/fixed_3104/build/win64/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libcharset_set_relocation_prefix -Drelocate=libcharset_relocate -DHAVE_CONFIG_H -c ./localcharset.c -o localcharset.o >/dev/null 2>&1
+/bin/sh ../libtool --mode=compile x86_64-w64-mingw32-gcc -I. -I. -I.. -I./.. -I../include -I/srv/win32builder/fixed_3104/build/win64/include -fvisibility=hidden -I/srv/win32builder/fixed_3104/build/win64/include -DLIBDIR=\"/srv/win32builder/fixed_3104/build/win64/lib\" -DBUILDING_LIBCHARSET -DBUILDING_DLL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/srv/win32builder/fixed_3104/build/win64/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libcharset_set_relocation_prefix -Drelocate=libcharset_relocate -DHAVE_CONFIG_H -c ./relocatable.c
+libtool: compile:  x86_64-w64-mingw32-gcc -I. -I. -I.. -I./.. -I../include -I/srv/win32builder/fixed_3104/build/win64/include -fvisibility=hidden -I/srv/win32builder/fixed_3104/build/win64/include -DLIBDIR=\"/srv/win32builder/fixed_3104/build/win64/lib\" -DBUILDING_LIBCHARSET -DBUILDING_DLL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/srv/win32builder/fixed_3104/build/win64/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libcharset_set_relocation_prefix -Drelocate=libcharset_relocate -DHAVE_CONFIG_H -c ./relocatable.c  -DDLL_EXPORT -DPIC -o .libs/relocatable.o
+./relocatable.c: In function 'DllMain':
+./relocatable.c:337:1: warning: visibility attribute not supported in this configuration; ignored
+./relocatable.c: In function 'libcharset_relocate':
+./relocatable.c:491:1: warning: visibility attribute not supported in this configuration; ignored
+libtool: compile:  x86_64-w64-mingw32-gcc -I. -I. -I.. -I./.. -I../include -I/srv/win32builder/fixed_3104/build/win64/include -fvisibility=hidden -I/srv/win32builder/fixed_3104/build/win64/include -DLIBDIR=\"/srv/win32builder/fixed_3104/build/win64/lib\" -DBUILDING_LIBCHARSET -DBUILDING_DLL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/srv/win32builder/fixed_3104/build/win64/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libcharset_set_relocation_prefix -Drelocate=libcharset_relocate -DHAVE_CONFIG_H -c ./relocatable.c -o relocatable.o >/dev/null 2>&1
+/bin/sh ../libtool --mode=link x86_64-w64-mingw32-gcc -L/srv/win32builder/fixed_3104/build/win64/lib -L/srv/win32builder/fixed_3104/build/win64/lib64 -I/srv/win32builder/fixed_3104/build/win64/include -fvisibility=hidden -o libcharset.la -rpath /srv/win32builder/fixed_3104/build/win64/lib -version-info 1:0:0 -no-undefined localcharset.lo relocatable.lo
+libtool: link: x86_64-w64-mingw32-gcc -shared  .libs/localcharset.o .libs/relocatable.o   -L/srv/win32builder/fixed_3104/build/win64/lib -L/srv/win32builder/fixed_3104/build/win64/lib64    -o .libs/libcharset-1.dll -Wl,--enable-auto-image-base -Xlinker --out-implib -Xlinker .libs/libcharset.dll.a
+Creating library file: .libs/libcharset.dll.a
+libtool: link: x86_64-w64-mingw32-ar cru .libs/libcharset.a  localcharset.o relocatable.o
+libtool: link: x86_64-w64-mingw32-ranlib .libs/libcharset.a
+libtool: link: ( cd ".libs" && rm -f "libcharset.la" && ln -s "../libcharset.la" "libcharset.la" )
+/bin/sh ./config.charset 'x86_64-w64-mingw32' > t-charset.alias
+mv t-charset.alias charset.alias
+sed -e '/^#/d' -e 's/@''PACKAGE''@//g' ./ref-add.sin > t-ref-add.sed
+mv t-ref-add.sed ref-add.sed
+sed -e '/^#/d' -e 's/@''PACKAGE''@//g' ./ref-del.sin > t-ref-del.sed
+mv t-ref-del.sed ref-del.sed
+make[2]: Leaving directory `/srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/libcharset/lib'
+make[1]: Leaving directory `/srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/libcharset'
+make[1]: Entering directory `/srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/libcharset'
+cd lib && make all
+make[2]: Entering directory `/srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/libcharset/lib'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/libcharset/lib'
+cd lib && make install-lib libdir='/srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/lib' includedir='/srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/lib'
+make[2]: Entering directory `/srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/libcharset/lib'
+/bin/sh ../build-aux/mkinstalldirs /srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/lib
+/bin/sh ../libtool --mode=install /usr/bin/install -c -m 644 libcharset.la /srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/lib/libcharset.la
+libtool: install: /usr/bin/install -c -m 644 .libs/libcharset.dll.a /srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/lib/libcharset.dll.a
+libtool: install: base_file=`basename libcharset.la`
+libtool: install:  dlpath=`/bin/sh 2>&1 -c '. .libs/'libcharset.la'i; echo libcharset-1.dll'`
+libtool: install:  dldir=/srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/lib/`dirname ../bin/libcharset-1.dll`
+libtool: install:  test -d /srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/lib/../bin || mkdir -p /srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/lib/../bin
+libtool: install:  /usr/bin/install -c -m 644 .libs/libcharset-1.dll /srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/lib/../bin/libcharset-1.dll
+libtool: install:  chmod a+x /srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/lib/../bin/libcharset-1.dll
+libtool: install:  if test -n '' && test -n 'x86_64-w64-mingw32-strip --strip-unneeded'; then eval 'x86_64-w64-mingw32-strip --strip-unneeded /srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/lib/../bin/libcharset-1.dll' || exit 0; fi
+libtool: install: /usr/bin/install -c -m 644 .libs/libcharset.lai /srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/lib/libcharset.la
+libtool: install: /usr/bin/install -c -m 644 .libs/libcharset.a /srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/lib/libcharset.a
+libtool: install: chmod 644 /srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/lib/libcharset.a
+libtool: install: x86_64-w64-mingw32-ranlib /srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/lib/libcharset.a
+libtool: install: warning: remember to run `libtool --finish /srv/win32builder/fixed_3104/build/win64/lib'
+test -f /srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/lib/charset.alias && orig=/srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/lib/charset.alias \
+	                                || orig=charset.alias; \
+	sed -f ref-add.sed $orig > /srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/lib/t-charset.alias; \
+	/usr/bin/install -c -m 644 /srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/lib/t-charset.alias /srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/lib/charset.alias; \
+	rm -f /srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/lib/t-charset.alias
+make[2]: Leaving directory `/srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/libcharset/lib'
+/bin/sh ./build-aux/mkinstalldirs /srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/lib
+/usr/bin/install -c -m 644 include/libcharset.h /srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/lib/libcharset.h
+/usr/bin/install -c -m 644 include/localcharset.h.inst /srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/lib/localcharset.h
+make[1]: Leaving directory `/srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/libcharset'
+cd lib && make all
+make[1]: Entering directory `/srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/lib'
+/bin/sh ../libtool --mode=compile x86_64-w64-mingw32-gcc -I. -I. -I../include -I./../include -I.. -I./.. -I/srv/win32builder/fixed_3104/build/win64/include -I/srv/win32builder/fixed_3104/build/win64/include -fvisibility=hidden -DLIBDIR=\"/srv/win32builder/fixed_3104/build/win64/lib\" -DBUILDING_LIBICONV -DBUILDING_DLL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/srv/win32builder/fixed_3104/build/win64/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libiconv_set_relocation_prefix -Drelocate=libiconv_relocate -DHAVE_CONFIG_H -c ./iconv.c
+libtool: compile:  x86_64-w64-mingw32-gcc -I. -I. -I../include -I./../include -I.. -I./.. -I/srv/win32builder/fixed_3104/build/win64/include -I/srv/win32builder/fixed_3104/build/win64/include -fvisibility=hidden -DLIBDIR=\"/srv/win32builder/fixed_3104/build/win64/lib\" -DBUILDING_LIBICONV -DBUILDING_DLL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/srv/win32builder/fixed_3104/build/win64/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libiconv_set_relocation_prefix -Drelocate=libiconv_relocate -DHAVE_CONFIG_H -c ./iconv.c  -DDLL_EXPORT -DPIC -o .libs/iconv.o
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:308:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:288:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:209:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:353:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:207:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:244:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:174:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:205:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:189:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:203:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:180:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:323:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:186:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:201:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:177:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:51:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:311:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:195:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:57:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:60:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:134:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:76:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:126:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:68:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:151:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:318:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:62:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:139:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:102:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:166:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:78:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:145:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:93:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:159:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:70:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:317:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:120:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:53:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:137:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:94:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:160:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:71:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:140:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:128:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:87:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:154:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:63:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:286:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:227:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:84:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:114:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:350:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:54:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:138:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:95:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:161:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:72:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:141:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:121:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:162:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:88:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:155:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:64:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:59:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:133:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:236:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:75:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:115:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:156:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:125:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:183:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:67:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:328:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:122:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:293:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:16:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:150:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:13:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:252:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:282:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:255:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:107:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:22:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:294:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:257:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:163:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:212:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:117:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:291:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:206:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:327:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:324:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:158:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:283:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:202:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:21:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:86:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:153:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:148:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:149:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:351:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:199:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:330:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:58:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:152:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:109:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:171:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:319:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:197:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:79:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:146:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:341:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:91:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:131:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:24:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:258:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:124:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:269:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:80:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:147:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:165:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:299:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:66:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:329:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:83:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:157:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:275:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:296:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:136:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:256:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:144:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:264:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:234:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:247:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:74:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:30:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:233:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:239:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:129:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:251:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:14:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:61:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:135:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:77:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:246:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:127:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:69:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:249:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:242:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:92:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:241:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:130:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:29:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:38:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:173:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:26:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:168:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:164:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:41:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:35:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:23:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:90:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:167:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:179:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:33:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:82:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:245:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:208:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:298:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:356:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:348:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:335:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:253:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:230:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:340:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:31:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:198:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:12:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:347:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:321:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:336:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:250:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:339:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:218:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:322:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:248:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:176:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:237:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:108:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:142:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:110:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:301:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:85:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:25:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:37:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:235:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:266:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:355:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:226:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:56:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:277:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:101:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:19:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:40:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:15:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:192:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:215:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:43:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:300:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:100:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:354:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:34:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:27:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:290:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:265:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:243:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:284:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:111:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:260:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:292:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:326:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:259:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:285:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:238:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:98:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:46:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:18:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:32:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:113:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:295:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:240:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:17:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:169:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:47:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:36:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:103:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:307:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:320:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:262:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:45:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:175:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:190:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:181:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:187:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:178:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:325:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:196:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:349:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:297:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:104:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:306:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:274:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:39:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:143:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:42:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:224:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:49:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:112:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:210:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:304:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:333:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:287:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:132:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:97:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:276:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:184:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:73:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:89:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:20:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:116:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:331:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:332:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:289:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:229:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:316:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:123:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:170:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:211:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:172:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:279:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:314:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:216:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:225:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:315:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:81:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:345:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:99:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:303:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:338:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:344:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:214:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:204:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:302:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:337:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:310:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:263:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:268:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:267:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:119:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:223:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:278:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:271:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:44:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:220:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:313:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:185:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:281:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:193:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:272:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:182:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:228:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:52:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:188:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:213:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:312:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:334:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:232:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:28:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:309:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:200:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:219:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:55:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:96:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:106:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:231:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:65:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:280:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:273:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:357:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:217:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:254:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:305:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:191:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:48:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:261:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:118:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:50:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:352:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:221:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:105:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:194:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:343:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:270:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:342:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:222:11: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf:346:11: warning: cast from pointer to integer of different size
+In file included from ./aliases2.h:36:0,
+                 from ./iconv.c:172:
+./aliases_dos.h:1:3: warning: cast from pointer to integer of different size
+./aliases_dos.h:2:3: warning: cast from pointer to integer of different size
+./aliases_dos.h:3:3: warning: cast from pointer to integer of different size
+./aliases_dos.h:4:3: warning: cast from pointer to integer of different size
+./aliases_dos.h:5:3: warning: cast from pointer to integer of different size
+./aliases_dos.h:6:3: warning: cast from pointer to integer of different size
+./aliases_dos.h:7:3: warning: cast from pointer to integer of different size
+./aliases_dos.h:8:3: warning: cast from pointer to integer of different size
+./aliases_dos.h:9:3: warning: cast from pointer to integer of different size
+./aliases_dos.h:10:3: warning: cast from pointer to integer of different size
+./aliases_dos.h:11:3: warning: cast from pointer to integer of different size
+./aliases_dos.h:12:3: warning: cast from pointer to integer of different size
+./aliases_dos.h:13:3: warning: cast from pointer to integer of different size
+./aliases_dos.h:14:3: warning: cast from pointer to integer of different size
+./aliases_dos.h:15:3: warning: cast from pointer to integer of different size
+./aliases_dos.h:16:3: warning: cast from pointer to integer of different size
+./aliases_dos.h:17:3: warning: cast from pointer to integer of different size
+./aliases_dos.h:18:3: warning: cast from pointer to integer of different size
+./aliases_dos.h:19:3: warning: cast from pointer to integer of different size
+./aliases_dos.h:20:3: warning: cast from pointer to integer of different size
+./aliases_dos.h:21:3: warning: cast from pointer to integer of different size
+./aliases_dos.h:22:3: warning: cast from pointer to integer of different size
+./aliases_dos.h:23:3: warning: cast from pointer to integer of different size
+./aliases_dos.h:24:3: warning: cast from pointer to integer of different size
+./aliases_dos.h:25:3: warning: cast from pointer to integer of different size
+./aliases_dos.h:26:3: warning: cast from pointer to integer of different size
+./aliases_dos.h:27:3: warning: cast from pointer to integer of different size
+./aliases_dos.h:28:3: warning: cast from pointer to integer of different size
+./aliases_dos.h:29:3: warning: cast from pointer to integer of different size
+./aliases_dos.h:30:3: warning: cast from pointer to integer of different size
+./aliases_dos.h:31:3: warning: cast from pointer to integer of different size
+./aliases_dos.h:32:3: warning: cast from pointer to integer of different size
+./aliases_dos.h:33:3: warning: cast from pointer to integer of different size
+./aliases_dos.h:34:3: warning: cast from pointer to integer of different size
+./aliases_dos.h:35:3: warning: cast from pointer to integer of different size
+./aliases_dos.h:36:3: warning: cast from pointer to integer of different size
+./aliases_dos.h:37:3: warning: cast from pointer to integer of different size
+./aliases_dos.h:38:3: warning: cast from pointer to integer of different size
+./aliases_dos.h:39:3: warning: cast from pointer to integer of different size
+./aliases_dos.h:40:3: warning: cast from pointer to integer of different size
+./aliases_dos.h:41:3: warning: cast from pointer to integer of different size
+./aliases_dos.h:42:3: warning: cast from pointer to integer of different size
+./aliases_dos.h:43:3: warning: cast from pointer to integer of different size
+./aliases_dos.h:44:3: warning: cast from pointer to integer of different size
+./aliases_dos.h:45:3: warning: cast from pointer to integer of different size
+./aliases_dos.h:46:3: warning: cast from pointer to integer of different size
+./aliases_dos.h:47:3: warning: cast from pointer to integer of different size
+./aliases_dos.h:48:3: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:448:0:
+./canonical.h:1:8: warning: cast from pointer to integer of different size
+./canonical.h:2:8: warning: cast from pointer to integer of different size
+./canonical.h:3:8: warning: cast from pointer to integer of different size
+./canonical.h:4:8: warning: cast from pointer to integer of different size
+./canonical.h:5:8: warning: cast from pointer to integer of different size
+./canonical.h:6:8: warning: cast from pointer to integer of different size
+./canonical.h:7:8: warning: cast from pointer to integer of different size
+./canonical.h:8:8: warning: cast from pointer to integer of different size
+./canonical.h:9:8: warning: cast from pointer to integer of different size
+./canonical.h:10:8: warning: cast from pointer to integer of different size
+./canonical.h:11:8: warning: cast from pointer to integer of different size
+./canonical.h:12:8: warning: cast from pointer to integer of different size
+./canonical.h:13:8: warning: cast from pointer to integer of different size
+./canonical.h:14:8: warning: cast from pointer to integer of different size
+./canonical.h:15:8: warning: cast from pointer to integer of different size
+./canonical.h:16:8: warning: cast from pointer to integer of different size
+./canonical.h:17:8: warning: cast from pointer to integer of different size
+./canonical.h:18:8: warning: cast from pointer to integer of different size
+./canonical.h:19:8: warning: cast from pointer to integer of different size
+./canonical.h:20:8: warning: cast from pointer to integer of different size
+./canonical.h:21:8: warning: cast from pointer to integer of different size
+./canonical.h:22:8: warning: cast from pointer to integer of different size
+./canonical.h:23:8: warning: cast from pointer to integer of different size
+./canonical.h:24:8: warning: cast from pointer to integer of different size
+./canonical.h:25:8: warning: cast from pointer to integer of different size
+./canonical.h:26:8: warning: cast from pointer to integer of different size
+./canonical.h:27:8: warning: cast from pointer to integer of different size
+./canonical.h:28:8: warning: cast from pointer to integer of different size
+./canonical.h:29:8: warning: cast from pointer to integer of different size
+./canonical.h:30:8: warning: cast from pointer to integer of different size
+./canonical.h:31:8: warning: cast from pointer to integer of different size
+./canonical.h:32:8: warning: cast from pointer to integer of different size
+./canonical.h:33:8: warning: cast from pointer to integer of different size
+./canonical.h:34:8: warning: cast from pointer to integer of different size
+./canonical.h:35:8: warning: cast from pointer to integer of different size
+./canonical.h:36:8: warning: cast from pointer to integer of different size
+./canonical.h:37:8: warning: cast from pointer to integer of different size
+./canonical.h:38:8: warning: cast from pointer to integer of different size
+./canonical.h:39:8: warning: cast from pointer to integer of different size
+./canonical.h:40:8: warning: cast from pointer to integer of different size
+./canonical.h:41:8: warning: cast from pointer to integer of different size
+./canonical.h:42:8: warning: cast from pointer to integer of different size
+./canonical.h:43:8: warning: cast from pointer to integer of different size
+./canonical.h:44:8: warning: cast from pointer to integer of different size
+./canonical.h:45:8: warning: cast from pointer to integer of different size
+./canonical.h:46:8: warning: cast from pointer to integer of different size
+./canonical.h:47:8: warning: cast from pointer to integer of different size
+./canonical.h:48:8: warning: cast from pointer to integer of different size
+./canonical.h:49:8: warning: cast from pointer to integer of different size
+./canonical.h:50:8: warning: cast from pointer to integer of different size
+./canonical.h:51:8: warning: cast from pointer to integer of different size
+./canonical.h:52:8: warning: cast from pointer to integer of different size
+./canonical.h:53:8: warning: cast from pointer to integer of different size
+./canonical.h:54:8: warning: cast from pointer to integer of different size
+./canonical.h:55:8: warning: cast from pointer to integer of different size
+./canonical.h:56:8: warning: cast from pointer to integer of different size
+./canonical.h:57:8: warning: cast from pointer to integer of different size
+./canonical.h:58:8: warning: cast from pointer to integer of different size
+./canonical.h:59:8: warning: cast from pointer to integer of different size
+./canonical.h:60:8: warning: cast from pointer to integer of different size
+./canonical.h:61:8: warning: cast from pointer to integer of different size
+./canonical.h:62:8: warning: cast from pointer to integer of different size
+./canonical.h:63:8: warning: cast from pointer to integer of different size
+./canonical.h:64:8: warning: cast from pointer to integer of different size
+./canonical.h:65:8: warning: cast from pointer to integer of different size
+./canonical.h:66:8: warning: cast from pointer to integer of different size
+./canonical.h:67:8: warning: cast from pointer to integer of different size
+./canonical.h:68:8: warning: cast from pointer to integer of different size
+./canonical.h:69:8: warning: cast from pointer to integer of different size
+./canonical.h:70:8: warning: cast from pointer to integer of different size
+./canonical.h:71:8: warning: cast from pointer to integer of different size
+./canonical.h:72:8: warning: cast from pointer to integer of different size
+./canonical.h:73:8: warning: cast from pointer to integer of different size
+./canonical.h:74:8: warning: cast from pointer to integer of different size
+./canonical.h:75:8: warning: cast from pointer to integer of different size
+./canonical.h:76:8: warning: cast from pointer to integer of different size
+./canonical.h:77:8: warning: cast from pointer to integer of different size
+./canonical.h:78:8: warning: cast from pointer to integer of different size
+./canonical.h:79:8: warning: cast from pointer to integer of different size
+./canonical.h:80:8: warning: cast from pointer to integer of different size
+./canonical.h:81:8: warning: cast from pointer to integer of different size
+./canonical.h:82:8: warning: cast from pointer to integer of different size
+./canonical.h:83:8: warning: cast from pointer to integer of different size
+./canonical.h:84:8: warning: cast from pointer to integer of different size
+./canonical.h:85:8: warning: cast from pointer to integer of different size
+./canonical.h:86:8: warning: cast from pointer to integer of different size
+./canonical.h:87:8: warning: cast from pointer to integer of different size
+./canonical.h:88:8: warning: cast from pointer to integer of different size
+./canonical.h:89:8: warning: cast from pointer to integer of different size
+./canonical.h:90:8: warning: cast from pointer to integer of different size
+./canonical.h:91:8: warning: cast from pointer to integer of different size
+./canonical.h:92:8: warning: cast from pointer to integer of different size
+./canonical.h:93:8: warning: cast from pointer to integer of different size
+./canonical.h:94:8: warning: cast from pointer to integer of different size
+./canonical.h:95:8: warning: cast from pointer to integer of different size
+./canonical.h:96:8: warning: cast from pointer to integer of different size
+./canonical.h:97:8: warning: cast from pointer to integer of different size
+./canonical.h:98:8: warning: cast from pointer to integer of different size
+./canonical.h:99:8: warning: cast from pointer to integer of different size
+./canonical.h:100:8: warning: cast from pointer to integer of different size
+./canonical.h:101:8: warning: cast from pointer to integer of different size
+./canonical.h:102:8: warning: cast from pointer to integer of different size
+./canonical.h:103:8: warning: cast from pointer to integer of different size
+./canonical.h:104:8: warning: cast from pointer to integer of different size
+./canonical.h:105:8: warning: cast from pointer to integer of different size
+./canonical.h:106:8: warning: cast from pointer to integer of different size
+./canonical.h:107:8: warning: cast from pointer to integer of different size
+./canonical.h:108:8: warning: cast from pointer to integer of different size
+./canonical.h:109:8: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:465:0:
+./canonical_dos.h:1:8: warning: cast from pointer to integer of different size
+./canonical_dos.h:2:8: warning: cast from pointer to integer of different size
+./canonical_dos.h:3:8: warning: cast from pointer to integer of different size
+./canonical_dos.h:4:8: warning: cast from pointer to integer of different size
+./canonical_dos.h:5:8: warning: cast from pointer to integer of different size
+./canonical_dos.h:6:8: warning: cast from pointer to integer of different size
+./canonical_dos.h:7:8: warning: cast from pointer to integer of different size
+./canonical_dos.h:8:8: warning: cast from pointer to integer of different size
+./canonical_dos.h:9:8: warning: cast from pointer to integer of different size
+./canonical_dos.h:10:8: warning: cast from pointer to integer of different size
+./canonical_dos.h:11:8: warning: cast from pointer to integer of different size
+./canonical_dos.h:12:8: warning: cast from pointer to integer of different size
+./canonical_dos.h:13:8: warning: cast from pointer to integer of different size
+./canonical_dos.h:14:8: warning: cast from pointer to integer of different size
+./canonical_dos.h:15:8: warning: cast from pointer to integer of different size
+In file included from ./iconv.c:479:0:
+./canonical_local.h:1:8: warning: cast from pointer to integer of different size
+./canonical_local.h:2:8: warning: cast from pointer to integer of different size
+./iconv.c:576:5: warning: '_libiconv_version' redeclared without dllimport attribute: previous dllimport ignored
+In file included from ./iconv.c:150:0:
+lib/aliases.gperf: In function 'aliases_lookup':
+lib/aliases.gperf:375:1: warning: visibility attribute not supported in this configuration; ignored
+./iconv.c: In function 'aliases2_lookup':
+./iconv.c:187:1: warning: visibility attribute not supported in this configuration; ignored
+libtool: compile:  x86_64-w64-mingw32-gcc -I. -I. -I../include -I./../include -I.. -I./.. -I/srv/win32builder/fixed_3104/build/win64/include -I/srv/win32builder/fixed_3104/build/win64/include -fvisibility=hidden -DLIBDIR=\"/srv/win32builder/fixed_3104/build/win64/lib\" -DBUILDING_LIBICONV -DBUILDING_DLL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/srv/win32builder/fixed_3104/build/win64/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libiconv_set_relocation_prefix -Drelocate=libiconv_relocate -DHAVE_CONFIG_H -c ./iconv.c -o iconv.o >/dev/null 2>&1
+/bin/sh ../libtool --mode=compile x86_64-w64-mingw32-gcc -I. -I. -I../include -I./../include -I.. -I./.. -I/srv/win32builder/fixed_3104/build/win64/include -I/srv/win32builder/fixed_3104/build/win64/include -fvisibility=hidden -DLIBDIR=\"/srv/win32builder/fixed_3104/build/win64/lib\" -DBUILDING_LIBICONV -DBUILDING_DLL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/srv/win32builder/fixed_3104/build/win64/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libiconv_set_relocation_prefix -Drelocate=libiconv_relocate -DHAVE_CONFIG_H -c ./../libcharset/lib/localcharset.c
+libtool: compile:  x86_64-w64-mingw32-gcc -I. -I. -I../include -I./../include -I.. -I./.. -I/srv/win32builder/fixed_3104/build/win64/include -I/srv/win32builder/fixed_3104/build/win64/include -fvisibility=hidden -DLIBDIR=\"/srv/win32builder/fixed_3104/build/win64/lib\" -DBUILDING_LIBICONV -DBUILDING_DLL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/srv/win32builder/fixed_3104/build/win64/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libiconv_set_relocation_prefix -Drelocate=libiconv_relocate -DHAVE_CONFIG_H -c ./../libcharset/lib/localcharset.c  -DDLL_EXPORT -DPIC -o .libs/localcharset.o
+./../libcharset/lib/localcharset.c: In function 'locale_charset':
+./../libcharset/lib/localcharset.c:500:1: warning: visibility attribute not supported in this configuration; ignored
+libtool: compile:  x86_64-w64-mingw32-gcc -I. -I. -I../include -I./../include -I.. -I./.. -I/srv/win32builder/fixed_3104/build/win64/include -I/srv/win32builder/fixed_3104/build/win64/include -fvisibility=hidden -DLIBDIR=\"/srv/win32builder/fixed_3104/build/win64/lib\" -DBUILDING_LIBICONV -DBUILDING_DLL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/srv/win32builder/fixed_3104/build/win64/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libiconv_set_relocation_prefix -Drelocate=libiconv_relocate -DHAVE_CONFIG_H -c ./../libcharset/lib/localcharset.c -o localcharset.o >/dev/null 2>&1
+/bin/sh ../libtool --mode=compile x86_64-w64-mingw32-gcc -I. -I. -I../include -I./../include -I.. -I./.. -I/srv/win32builder/fixed_3104/build/win64/include -I/srv/win32builder/fixed_3104/build/win64/include -fvisibility=hidden -DLIBDIR=\"/srv/win32builder/fixed_3104/build/win64/lib\" -DBUILDING_LIBICONV -DBUILDING_DLL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/srv/win32builder/fixed_3104/build/win64/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libiconv_set_relocation_prefix -Drelocate=libiconv_relocate -DHAVE_CONFIG_H -c ./relocatable.c
+libtool: compile:  x86_64-w64-mingw32-gcc -I. -I. -I../include -I./../include -I.. -I./.. -I/srv/win32builder/fixed_3104/build/win64/include -I/srv/win32builder/fixed_3104/build/win64/include -fvisibility=hidden -DLIBDIR=\"/srv/win32builder/fixed_3104/build/win64/lib\" -DBUILDING_LIBICONV -DBUILDING_DLL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/srv/win32builder/fixed_3104/build/win64/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libiconv_set_relocation_prefix -Drelocate=libiconv_relocate -DHAVE_CONFIG_H -c ./relocatable.c  -DDLL_EXPORT -DPIC -o .libs/relocatable.o
+./relocatable.c: In function 'DllMain':
+./relocatable.c:328:1: warning: visibility attribute not supported in this configuration; ignored
+./relocatable.c: In function 'libiconv_relocate':
+./relocatable.c:466:1: warning: visibility attribute not supported in this configuration; ignored
+libtool: compile:  x86_64-w64-mingw32-gcc -I. -I. -I../include -I./../include -I.. -I./.. -I/srv/win32builder/fixed_3104/build/win64/include -I/srv/win32builder/fixed_3104/build/win64/include -fvisibility=hidden -DLIBDIR=\"/srv/win32builder/fixed_3104/build/win64/lib\" -DBUILDING_LIBICONV -DBUILDING_DLL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/srv/win32builder/fixed_3104/build/win64/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libiconv_set_relocation_prefix -Drelocate=libiconv_relocate -DHAVE_CONFIG_H -c ./relocatable.c -o relocatable.o >/dev/null 2>&1
+/bin/sh ../libtool --mode=compile x86_64-w64-mingw32-gcc -I. -I. -I../include -I./../include -I.. -I./.. -I/srv/win32builder/fixed_3104/build/win64/include -I/srv/win32builder/fixed_3104/build/win64/include -fvisibility=hidden -DLIBDIR=\"/srv/win32builder/fixed_3104/build/win64/lib\" -DBUILDING_LIBICONV -DBUILDING_DLL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/srv/win32builder/fixed_3104/build/win64/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libiconv_set_relocation_prefix -Drelocate=libiconv_relocate -DHAVE_CONFIG_H -c ./../woe32dll/iconv-exports.c
+libtool: compile:  x86_64-w64-mingw32-gcc -I. -I. -I../include -I./../include -I.. -I./.. -I/srv/win32builder/fixed_3104/build/win64/include -I/srv/win32builder/fixed_3104/build/win64/include -fvisibility=hidden -DLIBDIR=\"/srv/win32builder/fixed_3104/build/win64/lib\" -DBUILDING_LIBICONV -DBUILDING_DLL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/srv/win32builder/fixed_3104/build/win64/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libiconv_set_relocation_prefix -Drelocate=libiconv_relocate -DHAVE_CONFIG_H -c ./../woe32dll/iconv-exports.c  -DDLL_EXPORT -DPIC -o .libs/iconv-exports.o
+./../woe32dll/iconv-exports.c:20:1: warning: visibility attribute not supported in this configuration; ignored
+libtool: compile:  x86_64-w64-mingw32-gcc -I. -I. -I../include -I./../include -I.. -I./.. -I/srv/win32builder/fixed_3104/build/win64/include -I/srv/win32builder/fixed_3104/build/win64/include -fvisibility=hidden -DLIBDIR=\"/srv/win32builder/fixed_3104/build/win64/lib\" -DBUILDING_LIBICONV -DBUILDING_DLL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/srv/win32builder/fixed_3104/build/win64/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libiconv_set_relocation_prefix -Drelocate=libiconv_relocate -DHAVE_CONFIG_H -c ./../woe32dll/iconv-exports.c -o iconv-exports.o >/dev/null 2>&1
+/bin/sh ../libtool --mode=compile --tag=RC x86_64-w64-mingw32-windres `/bin/sh ./../windows/windres-options --escape 1.13.1` -i ./../windows/libiconv.rc -o libiconv.res.lo --output-format=coff
+libtool: compile:  x86_64-w64-mingw32-windres -DPACKAGE_VERSION_STRING=\\\"1.13.1\\\" -DPACKAGE_VERSION_MAJOR=1 -DPACKAGE_VERSION_MINOR=13 -DPACKAGE_VERSION_SUBMINOR=1 -i ./../windows/libiconv.rc --output-format=coff  -o .libs/libiconv.res.o
+libtool: compile:  x86_64-w64-mingw32-windres -DPACKAGE_VERSION_STRING=\\\"1.13.1\\\" -DPACKAGE_VERSION_MAJOR=1 -DPACKAGE_VERSION_MINOR=13 -DPACKAGE_VERSION_SUBMINOR=1 -i ./../windows/libiconv.rc --output-format=coff -o libiconv.res.o >/dev/null 2>&1
+/bin/sh ../libtool --mode=link x86_64-w64-mingw32-gcc -L/srv/win32builder/fixed_3104/build/win64/lib -L/srv/win32builder/fixed_3104/build/win64/lib64 -Wl,--export-all-symbols -I/srv/win32builder/fixed_3104/build/win64/include -fvisibility=hidden -o libiconv.la -rpath /srv/win32builder/fixed_3104/build/win64/lib -version-info 7:0:5 -no-undefined iconv.lo localcharset.lo relocatable.lo iconv-exports.lo libiconv.res.lo
+libtool: link: x86_64-w64-mingw32-gcc -shared  .libs/iconv.o .libs/localcharset.o .libs/relocatable.o .libs/iconv-exports.o .libs/libiconv.res.o   -L/srv/win32builder/fixed_3104/build/win64/lib -L/srv/win32builder/fixed_3104/build/win64/lib64  -Wl,--export-all-symbols   -o .libs/libiconv-2.dll -Wl,--enable-auto-image-base -Xlinker --out-implib -Xlinker .libs/libiconv.dll.a
+Creating library file: .libs/libiconv.dll.a
+libtool: link: x86_64-w64-mingw32-ar cru .libs/libiconv.a  iconv.o localcharset.o relocatable.o iconv-exports.o libiconv.res.o
+libtool: link: x86_64-w64-mingw32-ranlib .libs/libiconv.a
+libtool: link: ( cd ".libs" && rm -f "libiconv.la" && ln -s "../libiconv.la" "libiconv.la" )
+make[1]: Leaving directory `/srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/lib'
+cd preload && make all
+make[1]: Entering directory `/srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/preload'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/preload'
+cd srclib && make all
+make[1]: Entering directory `/srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/srclib'
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+	  cat ./alloca.in.h; \
+	} > alloca.h-t
+mv -f alloca.h-t alloca.h
+rm -f errno.h-t errno.h
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */' && \
+	  sed -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+	      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+	      -e 's|@''NEXT_ERRNO_H''@|<errno.h>|g' \
+	      -e 's|@''EMULTIHOP_HIDDEN''@|0|g' \
+	      -e 's|@''EMULTIHOP_VALUE''@||g' \
+	      -e 's|@''ENOLINK_HIDDEN''@|0|g' \
+	      -e 's|@''ENOLINK_VALUE''@||g' \
+	      -e 's|@''EOVERFLOW_HIDDEN''@|0|g' \
+	      -e 's|@''EOVERFLOW_VALUE''@||g' \
+	      < ./errno.in.h; \
+	} > errno.h-t
+mv errno.h-t errno.h
+rm -f signal.h-t signal.h
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */' && \
+	  sed -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+	      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+	      -e 's|@''NEXT_SIGNAL_H''@|<signal.h>|g' \
+	      -e 's|@''GNULIB_SIGNAL_H_SIGPIPE''@|1|g' \
+	      -e 's|@''GNULIB_SIGPROCMASK''@|1|g' \
+	      -e 's|@''GNULIB_SIGACTION''@|0|g' \
+	      -e 's|@''HAVE_POSIX_SIGNALBLOCKING''@|0|g' \
+	      -e 's|@''HAVE_SIGSET_T''@|0|g' \
+	      -e 's|@''HAVE_SIGINFO_T''@|1|g' \
+	      -e 's|@''HAVE_SIGACTION''@|1|g' \
+	      -e 's|@''HAVE_STRUCT_SIGACTION_SA_SIGACTION''@|1|g' \
+	      -e 's|@''HAVE_TYPE_VOLATILE_SIG_ATOMIC_T''@|1|g' \
+	      -e '/definition of GL_LINK_WARNING/r ../build-aux/link-warning.h' \
+	      < ./signal.in.h; \
+	} > signal.h-t
+mv signal.h-t signal.h
+rm -f stdio.h-t stdio.h
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */' && \
+	  sed -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+	      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+	      -e 's|@''NEXT_STDIO_H''@|<stdio.h>|g' \
+	      -e 's|@''GNULIB_FPRINTF''@|1|g' \
+	      -e 's|@''GNULIB_FPRINTF_POSIX''@|0|g' \
+	      -e 's|@''GNULIB_PRINTF''@|1|g' \
+	      -e 's|@''GNULIB_PRINTF_POSIX''@|0|g' \
+	      -e 's|@''GNULIB_SNPRINTF''@|0|g' \
+	      -e 's|@''GNULIB_SPRINTF_POSIX''@|0|g' \
+	      -e 's|@''GNULIB_VFPRINTF''@|1|g' \
+	      -e 's|@''GNULIB_VFPRINTF_POSIX''@|0|g' \
+	      -e 's|@''GNULIB_VPRINTF''@|1|g' \
+	      -e 's|@''GNULIB_VPRINTF_POSIX''@|0|g' \
+	      -e 's|@''GNULIB_VSNPRINTF''@|0|g' \
+	      -e 's|@''GNULIB_VSPRINTF_POSIX''@|0|g' \
+	      -e 's|@''GNULIB_DPRINTF''@|0|g' \
+	      -e 's|@''GNULIB_VDPRINTF''@|0|g' \
+	      -e 's|@''GNULIB_VASPRINTF''@|0|g' \
+	      -e 's|@''GNULIB_OBSTACK_PRINTF''@|0|g' \
+	      -e 's|@''GNULIB_OBSTACK_PRINTF_POSIX''@|0|g' \
+	      -e 's|@''GNULIB_FOPEN''@|0|g' \
+	      -e 's|@''GNULIB_FREOPEN''@|0|g' \
+	      -e 's|@''GNULIB_FSEEK''@|0|g' \
+	      -e 's|@''GNULIB_FSEEKO''@|0|g' \
+	      -e 's|@''GNULIB_FTELL''@|0|g' \
+	      -e 's|@''GNULIB_FTELLO''@|0|g' \
+	      -e 's|@''GNULIB_FFLUSH''@|0|g' \
+	      -e 's|@''GNULIB_FPURGE''@|0|g' \
+	      -e 's|@''GNULIB_FCLOSE''@|0|g' \
+	      -e 's|@''GNULIB_FPUTC''@|1|g' \
+	      -e 's|@''GNULIB_PUTC''@|1|g' \
+	      -e 's|@''GNULIB_PUTCHAR''@|1|g' \
+	      -e 's|@''GNULIB_FPUTS''@|1|g' \
+	      -e 's|@''GNULIB_PUTS''@|1|g' \
+	      -e 's|@''GNULIB_FWRITE''@|1|g' \
+	      -e 's|@''GNULIB_GETDELIM''@|0|g' \
+	      -e 's|@''GNULIB_GETLINE''@|0|g' \
+	      -e 's|@''GNULIB_PERROR''@|0|g' \
+	      -e 's|@''GNULIB_STDIO_H_SIGPIPE''@|1|g' \
+	      -e 's|@''REPLACE_STDIO_WRITE_FUNCS''@|1|g' \
+	      -e 's|@''REPLACE_FPRINTF''@|0|g' \
+	      -e 's|@''REPLACE_VFPRINTF''@|0|g' \
+	      -e 's|@''REPLACE_PRINTF''@|0|g' \
+	      -e 's|@''REPLACE_VPRINTF''@|0|g' \
+	      -e 's|@''REPLACE_SNPRINTF''@|0|g' \
+	      -e 's|@''HAVE_DECL_SNPRINTF''@|1|g' \
+	      -e 's|@''REPLACE_VSNPRINTF''@|0|g' \
+	      -e 's|@''HAVE_DECL_VSNPRINTF''@|1|g' \
+	      -e 's|@''REPLACE_SPRINTF''@|0|g' \
+	      -e 's|@''REPLACE_VSPRINTF''@|0|g' \
+	      -e 's|@''HAVE_DPRINTF''@|1|g' \
+	      -e 's|@''REPLACE_DPRINTF''@|0|g' \
+	      -e 's|@''HAVE_VDPRINTF''@|1|g' \
+	      -e 's|@''REPLACE_VDPRINTF''@|0|g' \
+	      -e 's|@''HAVE_VASPRINTF''@|1|g' \
+	      -e 's|@''REPLACE_VASPRINTF''@|0|g' \
+	      -e 's|@''HAVE_DECL_OBSTACK_PRINTF''@|1|g' \
+	      -e 's|@''REPLACE_OBSTACK_PRINTF''@|0|g' \
+	      -e 's|@''REPLACE_FOPEN''@|0|g' \
+	      -e 's|@''REPLACE_FREOPEN''@|0|g' \
+	      -e 's|@''REPLACE_FSEEKO''@|0|g' \
+	      -e 's|@''REPLACE_FSEEK''@|0|g' \
+	      -e 's|@''REPLACE_FTELLO''@|0|g' \
+	      -e 's|@''REPLACE_FTELL''@|0|g' \
+	      -e 's|@''REPLACE_FFLUSH''@|0|g' \
+	      -e 's|@''REPLACE_FPURGE''@|0|g' \
+	      -e 's|@''HAVE_DECL_FPURGE''@|1|g' \
+	      -e 's|@''REPLACE_FCLOSE''@|0|g' \
+	      -e 's|@''HAVE_DECL_GETDELIM''@|1|g' \
+	      -e 's|@''HAVE_DECL_GETLINE''@|1|g' \
+	      -e 's|@''REPLACE_GETLINE''@|0|g' \
+	      -e 's|@''REPLACE_PERROR''@|0|g' \
+	      -e '/definition of GL_LINK_WARNING/r ../build-aux/link-warning.h' \
+	      < ./stdio.in.h; \
+	} > stdio.h-t
+mv stdio.h-t stdio.h
+rm -f stdlib.h-t stdlib.h
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */' && \
+	  sed -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+	      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+	      -e 's|@''NEXT_STDLIB_H''@|<stdlib.h>|g' \
+	      -e 's|@''HAVE_RANDOM_H''@|0|g' \
+	      -e 's|@''GNULIB_MALLOC_POSIX''@|1|g' \
+	      -e 's|@''GNULIB_REALLOC_POSIX''@|0|g' \
+	      -e 's|@''GNULIB_CALLOC_POSIX''@|0|g' \
+	      -e 's|@''GNULIB_ATOLL''@|0|g' \
+	      -e 's|@''GNULIB_GETLOADAVG''@|0|g' \
+	      -e 's|@''GNULIB_GETSUBOPT''@|0|g' \
+	      -e 's|@''GNULIB_MKDTEMP''@|0|g' \
+	      -e 's|@''GNULIB_MKSTEMP''@|0|g' \
+	      -e 's|@''GNULIB_PUTENV''@|0|g' \
+	      -e 's|@''GNULIB_RANDOM_R''@|0|g' \
+	      -e 's|@''GNULIB_RPMATCH''@|0|g' \
+	      -e 's|@''GNULIB_SETENV''@|0|g' \
+	      -e 's|@''GNULIB_STRTOD''@|0|g' \
+	      -e 's|@''GNULIB_STRTOLL''@|0|g' \
+	      -e 's|@''GNULIB_STRTOULL''@|0|g' \
+	      -e 's|@''GNULIB_UNSETENV''@|0|g' \
+	      -e 's|@''HAVE_ATOLL''@|1|g' \
+	      -e 's|@''HAVE_CALLOC_POSIX''@|1|g' \
+	      -e 's|@''HAVE_GETSUBOPT''@|1|g' \
+	      -e 's|@''HAVE_MALLOC_POSIX''@|0|g' \
+	      -e 's|@''HAVE_MKDTEMP''@|1|g' \
+	      -e 's|@''HAVE_REALLOC_POSIX''@|1|g' \
+	      -e 's|@''HAVE_RANDOM_R''@|1|g' \
+	      -e 's|@''HAVE_RPMATCH''@|1|g' \
+	      -e 's|@''HAVE_SETENV''@|0|g' \
+	      -e 's|@''HAVE_STRTOD''@|1|g' \
+	      -e 's|@''HAVE_STRTOLL''@|1|g' \
+	      -e 's|@''HAVE_STRTOULL''@|1|g' \
+	      -e 's|@''HAVE_STRUCT_RANDOM_DATA''@|0|g' \
+	      -e 's|@''HAVE_SYS_LOADAVG_H''@|0|g' \
+	      -e 's|@''HAVE_UNSETENV''@|1|g' \
+	      -e 's|@''HAVE_DECL_GETLOADAVG''@|1|g' \
+	      -e 's|@''REPLACE_MKSTEMP''@|0|g' \
+	      -e 's|@''REPLACE_PUTENV''@|0|g' \
+	      -e 's|@''REPLACE_STRTOD''@|0|g' \
+	      -e 's|@''VOID_UNSETENV''@|0|g' \
+	      -e '/definition of GL_LINK_WARNING/r ../build-aux/link-warning.h' \
+	      < ./stdlib.in.h; \
+	} > stdlib.h-t
+mv stdlib.h-t stdlib.h
+rm -f string.h-t string.h
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */' && \
+	  sed -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+	      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+	      -e 's|@''NEXT_STRING_H''@|<string.h>|g' \
+	      -e 's|@''GNULIB_MBSLEN''@|0|g' \
+	      -e 's|@''GNULIB_MBSNLEN''@|0|g' \
+	      -e 's|@''GNULIB_MBSCHR''@|0|g' \
+	      -e 's|@''GNULIB_MBSRCHR''@|0|g' \
+	      -e 's|@''GNULIB_MBSSTR''@|0|g' \
+	      -e 's|@''GNULIB_MBSCASECMP''@|0|g' \
+	      -e 's|@''GNULIB_MBSNCASECMP''@|0|g' \
+	      -e 's|@''GNULIB_MBSPCASECMP''@|0|g' \
+	      -e 's|@''GNULIB_MBSCASESTR''@|0|g' \
+	      -e 's|@''GNULIB_MBSCSPN''@|0|g' \
+	      -e 's|@''GNULIB_MBSPBRK''@|0|g' \
+	      -e 's|@''GNULIB_MBSSPN''@|0|g' \
+	      -e 's|@''GNULIB_MBSSEP''@|0|g' \
+	      -e 's|@''GNULIB_MBSTOK_R''@|0|g' \
+	      -e 's|@''GNULIB_MEMCHR''@|0|g' \
+	      -e 's|@''GNULIB_MEMMEM''@|0|g' \
+	      -e 's|@''GNULIB_MEMPCPY''@|0|g' \
+	      -e 's|@''GNULIB_MEMRCHR''@|0|g' \
+	      -e 's|@''GNULIB_RAWMEMCHR''@|0|g' \
+	      -e 's|@''GNULIB_STPCPY''@|0|g' \
+	      -e 's|@''GNULIB_STPNCPY''@|0|g' \
+	      -e 's|@''GNULIB_STRCHRNUL''@|0|g' \
+	      -e 's|@''GNULIB_STRDUP''@|0|g' \
+	      -e 's|@''GNULIB_STRNDUP''@|0|g' \
+	      -e 's|@''GNULIB_STRNLEN''@|0|g' \
+	      -e 's|@''GNULIB_STRPBRK''@|0|g' \
+	      -e 's|@''GNULIB_STRSEP''@|0|g' \
+	      -e 's|@''GNULIB_STRSTR''@|0|g' \
+	      -e 's|@''GNULIB_STRCASESTR''@|0|g' \
+	      -e 's|@''GNULIB_STRTOK_R''@|0|g' \
+	      -e 's|@''GNULIB_STRERROR''@|1|g' \
+	      -e 's|@''GNULIB_STRSIGNAL''@|0|g' \
+	      -e 's|@''GNULIB_STRVERSCMP''@|0|g' \
+	      -e 's|@''HAVE_DECL_MEMMEM''@|1|g' \
+	      -e 's|@''HAVE_MEMPCPY''@|1|g' \
+	      -e 's|@''HAVE_DECL_MEMRCHR''@|1|g' \
+	      -e 's|@''HAVE_RAWMEMCHR''@|1|g' \
+	      -e 's|@''HAVE_STPCPY''@|1|g' \
+	      -e 's|@''HAVE_STPNCPY''@|1|g' \
+	      -e 's|@''HAVE_STRCHRNUL''@|1|g' \
+	      -e 's|@''HAVE_DECL_STRDUP''@|1|g' \
+	      -e 's|@''HAVE_STRNDUP''@|1|g' \
+	      -e 's|@''HAVE_DECL_STRNDUP''@|1|g' \
+	      -e 's|@''HAVE_DECL_STRNLEN''@|1|g' \
+	      -e 's|@''HAVE_STRPBRK''@|1|g' \
+	      -e 's|@''HAVE_STRSEP''@|1|g' \
+	      -e 's|@''HAVE_STRCASESTR''@|1|g' \
+	      -e 's|@''HAVE_DECL_STRTOK_R''@|1|g' \
+	      -e 's|@''HAVE_DECL_STRERROR''@|1|g' \
+	      -e 's|@''HAVE_DECL_STRSIGNAL''@|1|g' \
+	      -e 's|@''HAVE_STRVERSCMP''@|1|g' \
+	      -e 's|@''REPLACE_MEMCHR''@|0|g' \
+	      -e 's|@''REPLACE_MEMMEM''@|0|g' \
+	      -e 's|@''REPLACE_STRCASESTR''@|0|g' \
+	      -e 's|@''REPLACE_STRDUP''@|0|g' \
+	      -e 's|@''REPLACE_STRSTR''@|0|g' \
+	      -e 's|@''REPLACE_STRERROR''@|1|g' \
+	      -e 's|@''REPLACE_STRSIGNAL''@|0|g' \
+	      -e '/definition of GL_LINK_WARNING/r ../build-aux/link-warning.h' \
+	      < ./string.in.h; \
+	} > string.h-t
+mv string.h-t string.h
+rm -f unistd.h-t unistd.h
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+	  sed -e 's|@''HAVE_UNISTD_H''@|1|g' \
+	      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+	      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+	      -e 's|@''NEXT_UNISTD_H''@|<unistd.h>|g' \
+	      -e 's|@''GNULIB_CHOWN''@|0|g' \
+	      -e 's|@''GNULIB_CLOSE''@|0|g' \
+	      -e 's|@''GNULIB_DUP2''@|0|g' \
+	      -e 's|@''GNULIB_ENVIRON''@|1|g' \
+	      -e 's|@''GNULIB_EUIDACCESS''@|0|g' \
+	      -e 's|@''GNULIB_FCHDIR''@|0|g' \
+	      -e 's|@''GNULIB_FSYNC''@|0|g' \
+	      -e 's|@''GNULIB_FTRUNCATE''@|0|g' \
+	      -e 's|@''GNULIB_GETCWD''@|0|g' \
+	      -e 's|@''GNULIB_GETDOMAINNAME''@|0|g' \
+	      -e 's|@''GNULIB_GETDTABLESIZE''@|0|g' \
+	      -e 's|@''GNULIB_GETHOSTNAME''@|0|g' \
+	      -e 's|@''GNULIB_GETLOGIN_R''@|0|g' \
+	      -e 's|@''GNULIB_GETPAGESIZE''@|0|g' \
+	      -e 's|@''GNULIB_GETUSERSHELL''@|0|g' \
+	      -e 's|@''GNULIB_LCHOWN''@|0|g' \
+	      -e 's|@''GNULIB_LINK''@|0|g' \
+	      -e 's|@''GNULIB_LSEEK''@|0|g' \
+	      -e 's|@''GNULIB_READLINK''@|1|g' \
+	      -e 's|@''GNULIB_SLEEP''@|0|g' \
+	      -e 's|@''GNULIB_UNISTD_H_SIGPIPE''@|1|g' \
+	      -e 's|@''GNULIB_WRITE''@|0|g' \
+	      -e 's|@''HAVE_DUP2''@|1|g' \
+	      -e 's|@''HAVE_EUIDACCESS''@|1|g' \
+	      -e 's|@''HAVE_FSYNC''@|1|g' \
+	      -e 's|@''HAVE_FTRUNCATE''@|1|g' \
+	      -e 's|@''HAVE_GETDOMAINNAME''@|1|g' \
+	      -e 's|@''HAVE_GETDTABLESIZE''@|1|g' \
+	      -e 's|@''HAVE_GETHOSTNAME''@|1|g' \
+	      -e 's|@''HAVE_GETPAGESIZE''@|1|g' \
+	      -e 's|@''HAVE_GETUSERSHELL''@|1|g' \
+	      -e 's|@''HAVE_LINK''@|1|g' \
+	      -e 's|@''HAVE_READLINK''@|0|g' \
+	      -e 's|@''HAVE_SLEEP''@|1|g' \
+	      -e 's|@''HAVE_DECL_ENVIRON''@|0|g' \
+	      -e 's|@''HAVE_DECL_GETLOGIN_R''@|1|g' \
+	      -e 's|@''HAVE_OS_H''@|0|g' \
+	      -e 's|@''HAVE_SYS_PARAM_H''@|0|g' \
+	      -e 's|@''REPLACE_CHOWN''@|0|g' \
+	      -e 's|@''REPLACE_CLOSE''@|0|g' \
+	      -e 's|@''REPLACE_FCHDIR''@|0|g' \
+	      -e 's|@''REPLACE_GETCWD''@|0|g' \
+	      -e 's|@''REPLACE_GETPAGESIZE''@|0|g' \
+	      -e 's|@''REPLACE_LCHOWN''@|0|g' \
+	      -e 's|@''REPLACE_LSEEK''@|0|g' \
+	      -e 's|@''REPLACE_WRITE''@|0|g' \
+	      -e 's|@''UNISTD_H_HAVE_WINSOCK2_H''@|0|g' \
+	      -e '/definition of GL_LINK_WARNING/r ../build-aux/link-warning.h' \
+	      < ./unistd.in.h; \
+	} > unistd.h-t
+mv unistd.h-t unistd.h
+make  all-am
+make[2]: Entering directory `/srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/srclib'
+x86_64-w64-mingw32-gcc -DHAVE_CONFIG_H -DEXEEXT=\".exe\" -I. -I.. -I../lib  -I../intl -DDEPENDS_ON_LIBICONV=1 -DDEPENDS_ON_LIBINTL=1 -I/srv/win32builder/fixed_3104/build/win64/include  -I/srv/win32builder/fixed_3104/build/win64/include -c areadlink.c
+x86_64-w64-mingw32-gcc -DHAVE_CONFIG_H -DEXEEXT=\".exe\" -I. -I.. -I../lib  -I../intl -DDEPENDS_ON_LIBICONV=1 -DDEPENDS_ON_LIBINTL=1 -I/srv/win32builder/fixed_3104/build/win64/include  -I/srv/win32builder/fixed_3104/build/win64/include -c malloca.c
+malloca.c: In function 'mmalloca':
+malloca.c:86:11: warning: cast from pointer to integer of different size
+malloca.c: In function 'freea':
+malloca.c:119:18: warning: cast from pointer to integer of different size
+x86_64-w64-mingw32-gcc -DHAVE_CONFIG_H -DEXEEXT=\".exe\" -I. -I.. -I../lib  -I../intl -DDEPENDS_ON_LIBICONV=1 -DDEPENDS_ON_LIBINTL=1 -I/srv/win32builder/fixed_3104/build/win64/include  -I/srv/win32builder/fixed_3104/build/win64/include -c progname.c
+x86_64-w64-mingw32-gcc -DHAVE_CONFIG_H -DEXEEXT=\".exe\" -I. -I.. -I../lib  -I../intl -DDEPENDS_ON_LIBICONV=1 -DDEPENDS_ON_LIBINTL=1 -I/srv/win32builder/fixed_3104/build/win64/include  -I/srv/win32builder/fixed_3104/build/win64/include -c -o width.o `test -f 'uniwidth/width.c' || echo './'`uniwidth/width.c
+x86_64-w64-mingw32-gcc -DHAVE_CONFIG_H -DEXEEXT=\".exe\" -I. -I.. -I../lib  -I../intl -DDEPENDS_ON_LIBICONV=1 -DDEPENDS_ON_LIBINTL=1 -I/srv/win32builder/fixed_3104/build/win64/include  -I/srv/win32builder/fixed_3104/build/win64/include -c xmalloc.c
+x86_64-w64-mingw32-gcc -DHAVE_CONFIG_H -DEXEEXT=\".exe\" -I. -I.. -I../lib  -I../intl -DDEPENDS_ON_LIBICONV=1 -DDEPENDS_ON_LIBINTL=1 -I/srv/win32builder/fixed_3104/build/win64/include  -I/srv/win32builder/fixed_3104/build/win64/include -c xstrdup.c
+x86_64-w64-mingw32-gcc -DHAVE_CONFIG_H -DEXEEXT=\".exe\" -I. -I.. -I../lib  -I../intl -DDEPENDS_ON_LIBICONV=1 -DDEPENDS_ON_LIBINTL=1 -I/srv/win32builder/fixed_3104/build/win64/include  -I/srv/win32builder/fixed_3104/build/win64/include -c xreadlink.c
+x86_64-w64-mingw32-gcc -DHAVE_CONFIG_H -DEXEEXT=\".exe\" -I. -I.. -I../lib  -I../intl -DDEPENDS_ON_LIBICONV=1 -DDEPENDS_ON_LIBINTL=1 -I/srv/win32builder/fixed_3104/build/win64/include  -I/srv/win32builder/fixed_3104/build/win64/include -c canonicalize-lgpl.c
+x86_64-w64-mingw32-gcc -DHAVE_CONFIG_H -DEXEEXT=\".exe\" -I. -I.. -I../lib  -I../intl -DDEPENDS_ON_LIBICONV=1 -DDEPENDS_ON_LIBINTL=1 -I/srv/win32builder/fixed_3104/build/win64/include  -I/srv/win32builder/fixed_3104/build/win64/include -c error.c
+x86_64-w64-mingw32-gcc -DHAVE_CONFIG_H -DEXEEXT=\".exe\" -I. -I.. -I../lib  -I../intl -DDEPENDS_ON_LIBICONV=1 -DDEPENDS_ON_LIBINTL=1 -I/srv/win32builder/fixed_3104/build/win64/include  -I/srv/win32builder/fixed_3104/build/win64/include -c malloc.c
+x86_64-w64-mingw32-gcc -DHAVE_CONFIG_H -DEXEEXT=\".exe\" -I. -I.. -I../lib  -I../intl -DDEPENDS_ON_LIBICONV=1 -DDEPENDS_ON_LIBINTL=1 -I/srv/win32builder/fixed_3104/build/win64/include  -I/srv/win32builder/fixed_3104/build/win64/include -c readlink.c
+x86_64-w64-mingw32-gcc -DHAVE_CONFIG_H -DEXEEXT=\".exe\" -I. -I.. -I../lib  -I../intl -DDEPENDS_ON_LIBICONV=1 -DDEPENDS_ON_LIBINTL=1 -I/srv/win32builder/fixed_3104/build/win64/include  -I/srv/win32builder/fixed_3104/build/win64/include -c sigprocmask.c
+x86_64-w64-mingw32-gcc -DHAVE_CONFIG_H -DEXEEXT=\".exe\" -I. -I.. -I../lib  -I../intl -DDEPENDS_ON_LIBICONV=1 -DDEPENDS_ON_LIBINTL=1 -I/srv/win32builder/fixed_3104/build/win64/include  -I/srv/win32builder/fixed_3104/build/win64/include -c stdio-write.c
+x86_64-w64-mingw32-gcc -DHAVE_CONFIG_H -DEXEEXT=\".exe\" -I. -I.. -I../lib  -I../intl -DDEPENDS_ON_LIBICONV=1 -DDEPENDS_ON_LIBINTL=1 -I/srv/win32builder/fixed_3104/build/win64/include  -I/srv/win32builder/fixed_3104/build/win64/include -c strerror.c
+rm -f libicrt.a
+x86_64-w64-mingw32-ar cru libicrt.a areadlink.o malloca.o progname.o width.o xmalloc.o xstrdup.o xreadlink.o canonicalize-lgpl.o error.o malloc.o readlink.o sigprocmask.o stdio-write.o strerror.o
+x86_64-w64-mingw32-ranlib libicrt.a
+make[2]: Leaving directory `/srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/srclib'
+make[1]: Leaving directory `/srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/srclib'
+cd src && make all
+make[1]: Entering directory `/srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/src'
+x86_64-w64-mingw32-gcc -c -I. -I. -I.. -I../include -I./../include -I../srclib -I./../srclib -I../lib -I/srv/win32builder/fixed_3104/build/win64/include -I/srv/win32builder/fixed_3104/build/win64/include -DINSTALLDIR=\"/srv/win32builder/fixed_3104/build/win64/bin\" -DLOCALEDIR=\"/srv/win32builder/fixed_3104/build/win64/share/locale\" ./iconv_no_i18n.c
+x86_64-w64-mingw32-windres `/bin/sh ./../windows/windres-options --escape 1.13.1` -i ./../windows/iconv.rc -o iconv.res --output-format=coff
+/bin/sh ../libtool --mode=link x86_64-w64-mingw32-gcc -L/srv/win32builder/fixed_3104/build/win64/lib -L/srv/win32builder/fixed_3104/build/win64/lib64 -I/srv/win32builder/fixed_3104/build/win64/include iconv_no_i18n.o ../srclib/libicrt.a ../lib/libiconv.la iconv.res -o iconv_no_i18n
+libtool: link: x86_64-w64-mingw32-gcc -I/srv/win32builder/fixed_3104/build/win64/include iconv_no_i18n.o iconv.res -o .libs/iconv_no_i18n  -L/srv/win32builder/fixed_3104/build/win64/lib -L/srv/win32builder/fixed_3104/build/win64/lib64 ../srclib/libicrt.a ../lib/.libs/libiconv.dll.a -L/srv/win32builder/fixed_3104/build/win64/lib
+libtool: link: Could not determine host path corresponding to
+libtool: link:   '/srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/lib/.libs'
+libtool: link: Continuing, but uninstalled executables may not work.
+libtool: link: Could not determine host path corresponding to
+libtool: link:   '/srv/win32builder/fixed_3104/build/win64/lib'
+libtool: link: Continuing, but uninstalled executables may not work.
+libtool: link: Could not determine host path corresponding to
+libtool: link:   '/srv/win32builder/fixed_3104/build/win64/bin'
+libtool: link: Continuing, but uninstalled executables may not work.
+libtool: link: Could not determine host path corresponding to
+libtool: link:   '/srv/win32builder/fixed_3104/build/win64/lib64'
+libtool: link: Continuing, but uninstalled executables may not work.
+libtool: link: Could not determine host path corresponding to
+libtool: link:   '/srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/lib/.libs'
+libtool: link: Continuing, but uninstalled executables may not work.
+x86_64-w64-mingw32-gcc -c -I. -I. -I.. -I../include -I./../include -I../srclib -I./../srclib -I../lib -I/srv/win32builder/fixed_3104/build/win64/include -I/srv/win32builder/fixed_3104/build/win64/include -DINSTALLDIR=\"/srv/win32builder/fixed_3104/build/win64/bin\" -DLOCALEDIR=\"/srv/win32builder/fixed_3104/build/win64/share/locale\" ./iconv.c
+test `ls -ld . | sed -e 's/^d\(.........\).*/\1/'` = rwxrwxrwx || chmod 777 .
+make[1]: Leaving directory `/srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/src'
+cd po && make all
+make[1]: Entering directory `/srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/po'
+make[1]: Leaving directory `/srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/po'
+cd man && make all
+make[1]: Entering directory `/srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/man'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/man'
+if test -d tests; then cd tests && make all; fi
+make[1]: Entering directory `/srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/tests'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/srv/win32builder/fixed_3104/libs/01_libiconv/libiconv-1.13.1/tests'
