@@ -4,6 +4,11 @@
 
 #include "usb.h"
 
+
+#define TEST_BTN_AND_OLED_ONLY 
+#define TEST_FULL_TEST
+
+
 #define BTN_TEST_TIMEOUT 5 //s
 
 #define RESULT_PASS_STR "<span foreground='black'>PASS</span>"
@@ -105,9 +110,15 @@ static void test_item_ui_reset(void)
 {
 	update_btn_test_show_info(TEST_HW_BTN_LEFT, RESULT_RESET);
 	update_btn_test_show_info(TEST_HW_BTN_RIGHT, RESULT_RESET);
+
+#ifdef TEST_BTN_AND_OLED_ONLY
 	update_btn_test_show_info(TEST_OLED_LIGHT, RESULT_RESET);
 	update_btn_test_show_info(TEST_OLED_DARK, RESULT_RESET);
+#endif
+
+#ifdef TEST_FULL_TEST
 	update_btn_test_show_info(TEST_FIRMWARE_ERASE, RESULT_RESET);
+#endif
 }
 static void callback_for_hw_btn_test(GtkWidget *wid, GtkWidget *win)
 {
@@ -155,7 +166,7 @@ static void usb_msg_callback(int resp_id, int result)
 
 					// test key 2
 					TEST_CMD_SEND("#test_hw_key#");
-					test_item_id = TEST_HW_BTN_RIGHT;
+					test_item_id++;
 					update_btn_test_show_info(test_item_id, RESULT_TEST_KEY_CANCEL);
 				}
                 break;
@@ -164,11 +175,15 @@ static void usb_msg_callback(int resp_id, int result)
 				if (result == RESULT_PASS) {
 					printf("[%s:%s] %d,%d, TEST_HW_BTN_RIGHT test pass !\n", __FILE__, __func__);
 					hw_btn_right_test_ok = 1;
-
+					
+                #ifdef TEST_BTN_AND_OLED_ONLY
                     // test screen light
 					TEST_CMD_SEND("#test_screen_light_display#");
-					test_item_id = TEST_OLED_LIGHT;
+					test_item_id++;
 					update_btn_test_show_info(test_item_id, RESULT_TEST_OLED_LIGHT);
+				#else
+                    reset_test_state();
+				#endif
 				}
                 break;
 				
@@ -179,7 +194,7 @@ static void usb_msg_callback(int resp_id, int result)
 
                     // test screen dark
 					TEST_CMD_SEND("#test_screen_dark_display#");
-					test_item_id = TEST_OLED_DARK;
+					test_item_id++;
 					update_btn_test_show_info(test_item_id, RESULT_TEST_OLED_DARK);
 				}
 				else {
@@ -191,11 +206,15 @@ static void usb_msg_callback(int resp_id, int result)
 				if (result == RESULT_PASS) {
 					printf("[%s:%s] %d,%d, TEST_OLED_DARK test pass !\n", __FILE__, __func__);
 					screen_dark_test_ok = 1;
-
+					
+                #ifdef TEST_FULL_TEST
                     // test firmware erase.
 					TEST_CMD_SEND("#Erase fw#");
-					test_item_id = TEST_FIRMWARE_ERASE;
+					test_item_id++;
 					update_btn_test_show_info(test_item_id, RESULT_TEST_FW_EARSE_START);
+                #else
+                    reset_test_state();
+                #endif
 				}
 				else {
                     reset_test_state();
@@ -305,6 +324,8 @@ int main(int argc,char *argv[])
         printf("connot load builder.ui file!\n");
         return -1;
     }
+	
+	gdk_color_parse("grey51", &grey51);
 
 	PangoFontDescription *button_font = pango_font_description_from_string("Sans");
 	pango_font_description_set_size(button_font, 20*PANGO_SCALE);
@@ -337,38 +358,67 @@ int main(int argc,char *argv[])
     gtk_widget_modify_bg(label_btn_right_result,GTK_STATE_NORMAL, &black);
 	gtk_widget_modify_font(GTK_LABEL(label_btn_right_result), test_item_font);
 
+
     // TEST_OLED_LIGHT
     label_oled_full_lg_item = GTK_LABEL(gtk_builder_get_object(builder, "label_test_item3"));
 	gtk_widget_modify_font(GTK_LABEL(label_oled_full_lg_item), test_item_font);
-    //gtk_widget_modify_bg(label_oled_full_lg_item,GTK_STATE_NORMAL, &grey51);
-    //gtk_label_set_markup(GTK_LABEL(label_oled_full_lg_item),RESULT_EMPTY);
+
+#ifndef TEST_BTN_AND_OLED_ONLY
+	gtk_widget_modify_bg(label_oled_full_lg_item,GTK_STATE_NORMAL, &grey51);
+	gtk_widget_set_sensitive(GTK_LABEL(label_oled_full_lg_item), FALSE);
+#endif
 
     label_oled_full_light = GTK_LABEL(gtk_builder_get_object(builder, "label_result3"));
     gtk_label_set_markup(GTK_LABEL(label_oled_full_light),RESULT_RESET_STR);
-    gtk_widget_modify_bg(label_oled_full_light,GTK_STATE_NORMAL, &black);
 	gtk_widget_modify_font(GTK_LABEL(label_oled_full_light), test_item_font);
+
+#ifdef TEST_BTN_AND_OLED_ONLY
+	gtk_widget_modify_bg(label_oled_full_light,GTK_STATE_NORMAL, &black);
+#else
+	gtk_widget_modify_bg(label_oled_full_light,GTK_STATE_NORMAL, &grey51);
+	gtk_widget_set_sensitive(GTK_LABEL(label_oled_full_light), FALSE);
+#endif
 
     // TEST_OLED_DARK
     label_oled_full_dk_item = GTK_GRID(gtk_builder_get_object(builder, "label_test_item4"));
 	gtk_widget_modify_font(GTK_LABEL(label_oled_full_dk_item), test_item_font);
-    //gtk_widget_modify_bg(label_oled_full_dk_item,GTK_STATE_NORMAL, &grey51);
-    //gtk_label_set_markup(GTK_LABEL(label_oled_full_dk_item),RESULT_EMPTY);
+	
+#ifndef TEST_BTN_AND_OLED_ONLY
+	gtk_widget_modify_bg(label_oled_full_dk_item,GTK_STATE_NORMAL, &grey51);
+	gtk_widget_set_sensitive(GTK_LABEL(label_oled_full_dk_item), FALSE);
+#endif
 
     label_oled_full_dark= GTK_LABEL(gtk_builder_get_object(builder, "label_result4"));
     gtk_label_set_markup(GTK_LABEL(label_oled_full_dark),RESULT_RESET_STR);
-    gtk_widget_modify_bg(label_oled_full_dark,GTK_STATE_NORMAL, &black);
 	gtk_widget_modify_font(GTK_LABEL(label_oled_full_dark), test_item_font);
+
+#ifdef TEST_BTN_AND_OLED_ONLY
+		gtk_widget_modify_bg(label_oled_full_dark,GTK_STATE_NORMAL, &black);
+#else
+		gtk_widget_modify_bg(label_oled_full_dark,GTK_STATE_NORMAL, &grey51);
+		gtk_widget_set_sensitive(GTK_LABEL(label_oled_full_dark), FALSE);
+#endif
+
 
     // TEST_FIRMWARE_ERASE
     label_firmware_erase_item = GTK_LABEL(gtk_builder_get_object(builder, "label_test_item5"));
 	gtk_widget_modify_font(GTK_LABEL(label_firmware_erase_item), test_item_font);
-    //gtk_widget_modify_bg(label_firmware_erase_item,GTK_STATE_NORMAL, &grey51);
-    //gtk_label_set_markup(GTK_LABEL(label_firmware_erase_item),RESULT_EMPTY);
+	
+#ifndef TEST_FULL_TEST
+    gtk_widget_modify_bg(label_firmware_erase_item,GTK_STATE_NORMAL, &grey51);
+    gtk_widget_set_sensitive(GTK_LABEL(label_firmware_erase_item), FALSE);
+#endif
 
     label_firmware_erase = GTK_LABEL(gtk_builder_get_object(builder, "label_result5"));
     gtk_label_set_markup(GTK_LABEL(label_firmware_erase),RESULT_RESET_STR);
-    gtk_widget_modify_bg(label_firmware_erase,GTK_STATE_NORMAL, &black);
 	gtk_widget_modify_font(GTK_LABEL(label_firmware_erase), test_item_font);
+	
+#ifdef TEST_FULL_TEST
+	gtk_widget_modify_bg(label_firmware_erase,GTK_STATE_NORMAL, &black);
+#else
+	gtk_widget_modify_bg(label_firmware_erase,GTK_STATE_NORMAL, &grey51);
+	gtk_widget_set_sensitive(GTK_LABEL(label_firmware_erase), FALSE);
+#endif
 
     gtk_widget_show_all(window);
     gtk_main();
