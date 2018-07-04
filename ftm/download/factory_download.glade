@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.18.3 -->
+<interface>
+  <object class="GtkWindow" id="window_main">
+    <property name="visible">True</property>
+    <property name="width_request">800</property>
+    <property name="height_request">600</property>
+    <property name="can_focus">False</property>
+    <property name="resizable">False</property>
+    <property name="default_width">440</property>
+    <property name="default_height">250</property>
+    <child>
+      <object class="GtkFixed" id="fixed">
+        <property name="width_request">800</property>
+        <property name="height_request">600</property>
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <child>
+          <object class="GtkLayout" id="layout_header">
+            <property name="width_request">800</property>
+            <property name="height_request">80</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="width">800</property>
+            <property name="height">60</property>
+            <child>
+              <object class="GtkSeparator" id="separator1">
+                <property name="width_request">800</property>
+                <property name="height_request">20</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+              </object>
+              <packing>
+                <property name="y">60</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="label_header_left">
+                <property name="width_request">198</property>
+                <property name="height_request">69</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">PCBA软件下载</property>
+                <property name="justify">center</property>
+                <property name="ellipsize">end</property>
+                <property name="angle">0.050000000000000003</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel" id="label_header_center">
+                <property name="width_request">205</property>
+                <property name="height_request">69</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">V1.0</property>
+              </object>
+              <packing>
+                <property name="x">595</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="label_header_cente">
+                <property name="width_request">184</property>
+                <property name="height_request">69</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">JustSafe下载工具</property>
+              </object>
+              <packing>
+                <property name="x">285</property>
+              </packing>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkLayout" id="layout_body">
+            <property name="width_request">800</property>
+            <property name="height_request">520</property>
+            <property name="can_focus">False</property>
+            <property name="width">800</property>
+            <property name="height">520</property>
+            <child>
+              <object class="GtkGrid" id="grid_action">
+                <property name="width_request">800</property>
+                <property name="height_request">46</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <child>
+                  <object class="GtkButton" id="button_load_files">
+                    <property name="label" translatable="yes">加载固件</property>
+                    <property name="width_request">400</property>
+                    <property name="height_request">50</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="relief">half</property>
+                    <property name="yalign">0.4699999988079071</property>
+                    <property name="always_show_image">True</property>
+                  </object>
+                  <packing>
+                    <property name="left_attach">0</property>
+                    <property name="top_attach">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="button_start_download">
+                    <property name="label" translatable="yes">开始下载</property>
+                    <property name="width_request">400</property>
+                    <property name="height_request">50</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="halign">center</property>
+                  </object>
+                  <packing>
+                    <property name="left_attach">1</property>
+                    <property name="top_attach">0</property>
+                  </packing>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkScrolledWindow" id="scrolledwindow_file">
+                <property name="width_request">800</property>
+                <property name="height_request">90</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="hscrollbar_policy">never</property>
+                <property name="shadow_type">in</property>
+                <child>
+                  <object class="GtkTextView" id="textview_loaded_files">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="y">51</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkProgressBar" id="progressbar_download">
+                <property name="width_request">800</property>
+                <property name="height_request">53</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="show_text">True</property>
+                <property name="ellipsize">end</property>
+              </object>
+              <packing>
+                <property name="y">144</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="label_command">
+                <property name="width_request">240</property>
+                <property name="height_request">23</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">日志信息：</property>
+                <property name="ellipsize">end</property>
+                <property name="xalign">0.49000000953674316</property>
+              </object>
+              <packing>
+                <property name="y">199</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkScrolledWindow" id="scrolledwindow_log">
+                <property name="width_request">800</property>
+                <property name="height_request">297</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="hscrollbar_policy">never</property>
+                <property name="shadow_type">in</property>
+                <child>
+                  <object class="GtkTextView" id="textview_download_logs">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="y">222</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="y">82</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
