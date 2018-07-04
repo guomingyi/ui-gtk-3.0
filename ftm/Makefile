@@ -31,7 +31,7 @@ endif
 
 # gtk+3.0
 CFLAGS := `pkg-config --cflags --libs gtk+-3.0`
-CFLAGS += $(LIBNAME) $(LIBLOAD) $(LIBINC)
+CFLAGS += $(LIBNAME) $(LIBLOAD) $(LIBINC) -Wfatal-errors -g -Wall -Wunused-variable
 
 all: clean windows linux
 

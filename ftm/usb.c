@@ -16,9 +16,15 @@ int usb_msg_out(char *buf)
     char data[64] = {0};
     int actual_len = 0;
 
+    if (handle == NULL) { 
+		printf("[%s] EEEEEEEEEEEEEEE out \r\n",__func__);
+		return -1; 
+	}
+	
     sprintf(data, "%s", buf);
     libusb_bulk_transfer(handle, edp2out, data, 64, &actual_len, 0);
     if (actual_len > 0) {
+		printf("[%s] send data: [%s] success.\r\n",__func__, buf);
         return 0;
     }
     printf("[%s] send data err\r\n",__func__);
@@ -31,6 +37,12 @@ int usb_msg_in(char *buf)
     char data[64] = {0};
     int actual_len = 0;
 
+	if (handle == NULL) { 
+		printf("[%s] EEEEEEEEEEEEEEE in \r\n",__func__);
+		return -1; 
+	}
+	
+	printf("[%s] wait read..\r\n",__func__);
     libusb_bulk_transfer(handle, edp2in, data, 64, &actual_len, 0);
     if (actual_len > 0) {
         memcpy(buf, data, 64);
@@ -55,7 +67,7 @@ int usbdev_init(void)
 		return -1;
 	}
 
-    libusb_set_debug(usb_ctx, 3);
+    libusb_set_debug(usb_ctx, LIBUSB_LOG_LEVEL_DEBUG);
     cnt = libusb_get_device_list(NULL, &devs);
     if (cnt < 0) {
         printf("[%s] no usb dev on bus\r\n",__func__);
@@ -63,6 +75,8 @@ int usbdev_init(void)
     }
 	
 	libusb_free_device_list(devs, 1);
+	
+	printf("[%s:%s] success!\r\n",__FILE__, __func__);
 	return 0;
 }
 
