@@ -24,19 +24,11 @@ int usb_enumerate(int vid, int pid)
 	return ret;
 }
 
-static int write_flag = 0;
-
-int usb_wait_state_change(void) 
-{
-
-}
-
 int usb_write(char *data)
 {
     int ret = -1;
 	
 	if (usb_init_success) {
-		write_flag = 1;
 		printf("%s(): %s\n", __func__, data);
 	    ret = usb_msg_out(data);
 	}
@@ -51,7 +43,6 @@ int usb_read(char *data)
 	if (usb_init_success) {
 	    ret = usb_msg_in(data);
 	}
-	write_flag = 0;
 	return ret;
 }
 

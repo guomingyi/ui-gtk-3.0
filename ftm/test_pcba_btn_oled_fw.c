@@ -6,38 +6,29 @@
 #define TEST_BTN_AND_OLED_ONLY 
 #define TEST_FULL_TEST
 
-#define DEVELOP_TEST
+//#define DEVELOP_TEST
 #define MUTI_THREAD_SUPPORT
 
-#ifdef MUTI_THREAD_SUPPORT
-#define threads_init() \
-    do { \
-        gdk_threads_init(); \
-        g_thread_init(NULL); \
-    } while(0)
-
-#define threads_enter() gdk_threads_enter()
-#define threads_leave() gdk_threads_leave()
-#endif
+#define threads_init()
+#define threads_enter()
+#define threads_leave()
 
 #define BTN_TEST_TIMEOUT 5 
 #define RESULT_PASS_STR "<span foreground='black'>成功</span>"
 #define RESULT_FAILED_STR "<span foreground='black'>失败</span>"
 #define RESULT_RESET_STR "<span foreground='black'> </span>"
-#define RESULT_TEST_KEY_OK_STR "<span foreground='red'> 请按 [左键][Y] </span>"
-#define RESULT_TEST_KEY_CANCEL_STR "<span foreground='red'> 请按 [右键][N] </span>"
+#define RESULT_TEST_KEY_OK_STR "<span foreground='red'>请按[左键][Left]</span>"
+#define RESULT_TEST_KEY_CANCEL_STR "<span foreground='red'>请按[右键][Right]</span>"
 
-#define RESULT_TEST_OLED_LIGHT_STR "<span foreground='red'> 屏幕[全亮]显示正常(Y/N) ？ </span>"
-#define RESULT_TEST_OLED_DARK_STR "<span foreground='red'> 屏幕[全暗]显示正常(Y/N) ？ </span>"
+#define RESULT_TEST_OLED_LIGHT_STR "<span foreground='red'>屏[全亮]显示正常(PASS/FAIL) ?</span>"
+#define RESULT_TEST_OLED_DARK_STR "<span foreground='red'>屏[全暗]显示正常(PASS/FAIL) ?</span>"
 
-#define RESULT_TEST_FW_EARSE_START_STR "<span foreground='red'> 正在执行固件擦除.. </span>"
-#define RESULT_TEST_FW_EARSE_EXIT_STR "<span foreground='red'> 固件擦除成功！ </span>"
+#define RESULT_TEST_FW_EARSE_START_STR "<span foreground='red'>正在执行固件擦除..</span>"
+#define RESULT_TEST_FW_EARSE_EXIT_STR "<span foreground='red'>固件擦除成功!</span>"
 #define RESULT_TEST_TIMEOUT_STR "测试超时!"
 
 #define START_BUTTON_GO_STR "开始测试"
 #define START_BUTTON_TESTING_STR "测试中.."
-
-
 
 #define TEST_CMD_SEND(x) \
     do { \
@@ -94,9 +85,15 @@ static int screen_dark_test_ok = 0;
 static GtkWidget *check_oled_dialog = NULL;
 static GtkWidget *frimware_earse_dialog = NULL;
 
+typedef struct USB_RESP_T {
+    int resp;
+    int result;
+};
+
+static struct USB_RESP_T mUsbRespT;
+
 static void update_btn_test_show_info(int id, int result);
 static void usb_msg_callback(int id, int result);
-
 
 static void reset_test_state(void)
 {
@@ -153,7 +150,6 @@ static gboolean test_time_out(gpointer* data)
 	return FALSE;
 }
 
-
 static void callback_for_hw_btn_test(GtkWidget *wid, GtkWidget *win)
 {
     if (!is_in_test) {
@@ -183,7 +179,7 @@ static void callback_for_hw_btn_test(GtkWidget *wid, GtkWidget *win)
     }
 }
 
-static void usb_msg_callback(int resp_id, int result)
+static void g_UI_thread_worker(int resp_id, int result)
 {
     if (test_item_id != resp_id && resp_id != TEST_RESET) {
         printf("[%s:%s] %d,%d, resp_id not current test item return\n", __FILE__, __func__);
@@ -287,6 +283,15 @@ static void usb_msg_callback(int resp_id, int result)
     }
 }
 
+static gint g_idle_thread_worker(void *args)
+{
+    struct USB_RESP_T *m = &mUsbRespT;
+	
+    printf("[%s:%s] resp=%d, result=%d \n", __FILE__, __func__, m->resp, m->result);
+	g_UI_thread_worker(m->resp, m->result);
+    return FALSE;
+}
+
 static void update_btn_test_show_info(int id, int result)
 {
     char *disp = RESULT_FAILED_STR;
@@ -375,6 +380,12 @@ static void update_btn_test_show_info(int id, int result)
     }
 }
 
+static void usb_msg_callback(int resp_id, int result)
+{
+	mUsbRespT.resp = resp_id;
+	mUsbRespT.result = result;
+	g_idle_add_full(G_PRIORITY_HIGH_IDLE, g_idle_thread_worker, &mUsbRespT, NULL);
+}
 
 int main(int argc,char *argv[])
 {
@@ -388,7 +399,6 @@ int main(int argc,char *argv[])
     }
 
     gdk_color_parse("grey51", &grey51);
-
     PangoFontDescription *button_font = pango_font_description_from_string("Sans");
     pango_font_description_set_size(button_font, 20*PANGO_SCALE);
     PangoFontDescription *test_item_font = pango_font_description_from_string("Sans");
