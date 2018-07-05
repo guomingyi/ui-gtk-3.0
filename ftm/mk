@@ -8,8 +8,15 @@ function copy_lib_or_resource()
 
 cmd=$1
 gtk=/usr/lib/x86_64-linux-gnu/pkgconfig
-gtk_windir=libs/windows/gtk+-bundle_3.10.4-20131202_win64
+
+
+gtk_windir=libs/windows/gtk+-bundle_3.6.4-20130921_win32
+#gtk_windir=libs/windows/gtk+-bundle_3.10.4-20131202_win64
+
 win_gtk=$PWD/$gtk_windir/lib/pkgconfig
+
+# export PKG_CONFIG_PATH=/home/gmy/work/ui-gtk-3.0/ftm/libs/windows/gtk+-bundle_3.6.4-20130921_win32/lib/pkgconfig
+# export PKG_CONFIG_PATH=/home/gmy/work/ui-gtk-3.0/ftm/libs/windows/gtk+-bundle_3.10.4-20131202_win64/lib/pkgconfig
 
 rm -rf build
 mkdir build
@@ -17,14 +24,14 @@ cp -f builder.ui build
 
 if [ ! -n "$1" ]; then
     export PKG_CONFIG_PATH=$gtk
-    make linux BUILD=linux-amd64
+    make linux BUILD=linux
     exit 0
 fi
 
 
 if [ "y$cmd" = "yw" ]; then
     export PKG_CONFIG_PATH=$win_gtk
-    make windows BUILD=win-amd64
+    make windows BUILD=windows
     copy_lib_or_resource
     exit 0
 fi
@@ -32,16 +39,16 @@ fi
 
 if [ "y$cmd" = "yl" ]; then
     export PKG_CONFIG_PATH=$gtk
-    make linux BUILD=linux-amd64
+    make linux BUILD=linux
     exit 0
 fi
 
 if [ "y$cmd" = "yall" ]; then
     export PKG_CONFIG_PATH=$gtk
-    make linux BUILD=linux-amd64
+    make linux BUILD=linux
 
     export PKG_CONFIG_PATH=$win_gtk
-    make windows BUILD=win-amd64
+    make windows BUILD=windows
     copy_lib_or_resource
     exit 0
 fi

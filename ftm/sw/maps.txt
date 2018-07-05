@@ -1,0 +1,3 @@
+bootloader-v1.0.bin 0x08000000
+metadata-ftm.bin 0x08008000
+ftm.bin 0x08010000

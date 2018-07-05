@@ -67,7 +67,7 @@ int usbdev_init(void)
 		return -1;
 	}
 
-    libusb_set_debug(usb_ctx, LIBUSB_LOG_LEVEL_DEBUG);
+    libusb_set_debug(usb_ctx, LIBUSB_LOG_LEVEL_INFO);
     cnt = libusb_get_device_list(NULL, &devs);
     if (cnt < 0) {
         printf("[%s] no usb dev on bus\r\n",__func__);

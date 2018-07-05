@@ -1,12 +1,23 @@
 OUT := test
-ARCH := amd64
+
+#ARCH ?= amd64
+ARCH ?= 386
 
 # linxu gcc
 CC := x86_64-linux-gnu-gcc
 
 # windows gcc
-CC_WIN := x86_64-w64-mingw32-gcc
+ifeq ($(strip $(ARCH)), amd64)
+  MINGW := MinGW64
+  CC_WIN := x86_64-w64-mingw32-gcc
+  LIB_WIN := libs/windows/gtk+-bundle_3.10.4-20131202_win64
+else
+  MINGW := MinGW32
+  CC_WIN := i686-w64-mingw32-gcc
+  LIB_WIN := libs/windows/gtk+-bundle_3.6.4-20130921_win32
+endif
 
+##############################################################
 SRC := \
   listdevs.c \
   usb.c \
@@ -26,24 +37,22 @@ SRC_FW_PROGRAM := \
   download/download_callback.c \
   download/factory_download_ui.c \
   download/factory_main_ui.c
-
+##############################################################
 # libusb.
 LIBNAME  := -lusb-1.0
-ifeq ($(strip $(BUILD)), linux-amd64)
+ifeq ($(strip $(BUILD)), linux)
   LIBLOAD  := -L ./libs/linux/lib
   LIBINC := -I ./libs/linux/include/libusb-1.0
-  exec :=
 else 
-  LIBLOAD  := -L ./libs/windows/libusb-1.0.22/MinGW64/static
+  LIBLOAD  := -L ./libs/windows/libusb-1.0.22/$(MINGW)/static
   LIBINC := -I ./libs/windows/libusb-1.0.22/include/libusb-1.0
   exec := .exe
 endif
 
 # gtk+3.0
-CFLAGS := `pkg-config --cflags --libs gtk+-3.0`
+CFLAGS := `pkg-config --cflags --libs gtk+-3.0 gthread-2.0 `
 CFLAGS += $(LIBNAME) $(LIBLOAD) $(LIBINC) -Wfatal-errors -g -Wall -Wunused-variable
-LIB_WIN := libs/windows/gtk+-bundle_3.10.4-20131202_win64
-
+##############################################################
 
 all: clean windows linux
 linux: copy_depends btn btn_oled btn_oled_fw_erase fw_program
@@ -81,11 +90,11 @@ btn_oled-win:
 	tree build|grep $(OUT)
 
 btn_oled_fw_erase-win:
-	$(CC_WIN) $(SRC_BTN_OLED_FW) $(SRC) -o build/$(OUT) $(CFLAGS)
+	$(CC_WIN) "-m32" $(SRC_BTN_OLED_FW) $(SRC) -o build/$(OUT) $(CFLAGS)
 	@mv build/$(OUT) build/$(OUT)_btn_oled_fw_erase-windows-$(ARCH).exe
 	tree build|grep $(OUT)
 
-fw_program-win:
+fw_program-win: copy_depends_win
 	$(CC_WIN) $(SRC_FW_PROGRAM) -o build/$(OUT) $(CFLAGS)
 	@mv build/$(OUT) build/bin/$(OUT)_fw_program-windows-$(ARCH).exe
 	tree build|grep $(OUT)
@@ -93,17 +102,20 @@ fw_program-win:
 copy_depends_win:
 	@[ -d build/bin ] || mkdir -p build/bin
 	@[ -d build/share/glib-2.0 ] || mkdir -p build/share/glib-2.0
-	@cp -f download/factory_download.glade build/bin
-	@cp -a $(LIB_WIN)/share/glib-2.0/schemas build/share/glib-2.0
-	@cp -f $(LIB_WIN)/bin/*.dll build/bin && chmod 644 build/bin/*.dll
-	@cp -f builder.ui build
+	cp -f download/factory_download.glade build/bin
+	cp -f download/download.bat build/bin
+	cp -a $(LIB_WIN)/share/glib-2.0/schemas build/share/glib-2.0
+	cp -f $(LIB_WIN)/bin/*.dll build/bin && chmod 644 build/bin/*.dll
+	cp -f $(LIB_WIN)/bin/*.dll build/ && chmod 644 build/*.dll
+	cp -f builder.ui build
 
 copy_depends:
 	@[ -d build/bin ] || mkdir -p build/bin
-	@cp -f download/factory_download.glade build/bin
-	@cp -f builder.ui build
+	cp -f download/factory_download.glade build/bin
+	cp -f download/download.sh build/bin
+	cp -f builder.ui build
 
 clean:
-	@rm -rf build/$(OUT)* build/bin
+	@rm -rf build/$(OUT)* build/bin build/*.dll
 
 

@@ -3,9 +3,6 @@
 
 #include "usb.h"
 
-#define threads_enter() gdk_threads_enter()
-#define threads_leave() gdk_threads_leave()
-
 static int usb_init_success = 0;
 
 
@@ -31,11 +28,7 @@ static int write_flag = 0;
 
 int usb_wait_state_change(void) 
 {
-    do {
-        printf("%s() wait write_flag == 0\n", __func__);
-		Sleep(100);
-	}
-	while (write_flag == 1);
+
 }
 
 int usb_write(char *data)
@@ -79,60 +72,44 @@ static int usb_msg_update_ui(void *data, char *msg)
     FuncPtrII cb = (FuncPtrII)data;
 	
     if (strncmp(msg, "btn#Y", 5) == 0) {
-		threads_enter();
 		cb(TEST_HW_BTN_LEFT, RESULT_PASS);
-		threads_leave();
 		goto out;
     }
 
     if (strncmp(msg, "btn#N", 5) == 0) {
-		threads_enter();
 		cb(TEST_HW_BTN_RIGHT, RESULT_PASS);
-		threads_leave();
 		goto out;
     }
 
     if (strncmp(msg, "light_screen_good", 17) == 0) {
-		threads_enter();
 		cb(TEST_OLED_LIGHT, RESULT_PASS);
-		threads_leave();
 		goto out;
     }
 	
     if (strncmp(msg, "light_screen_bad", 16) == 0) {
-		threads_enter();
 		cb(TEST_OLED_LIGHT, RESULT_FAILED);
-		threads_leave();
 		goto out;
     }
 
     if (strncmp(msg, "dark_screen_good", 16) == 0) {
-		threads_enter();
 		cb(TEST_OLED_DARK, RESULT_PASS);
-		threads_leave();
 		goto out;
     }
 	
     if (strncmp(msg, "dark_screen_bad", 15) == 0) {
-		threads_enter();
 		cb(TEST_OLED_DARK, RESULT_FAILED);
-		threads_leave();
 		goto out;
     }
 
 	if (strcmp(msg, "#firmware erase success#") == 0) {
 		usb_close();
-		threads_enter();
         cb(TEST_FIRMWARE_ERASE, RESULT_PASS);
-		threads_leave();
 		return 1;
 	}
 
 	if (strcmp(msg, "1Erase fw") == 0) {
 		usb_close();
-		threads_enter();
         cb(TEST_FIRMWARE_ERASE, RESULT_PASS);
-		threads_leave();
 		return 1;
 	}
 

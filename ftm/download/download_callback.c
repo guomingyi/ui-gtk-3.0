@@ -85,13 +85,21 @@ void print_selected_filename(GtkWidget *file_chooser_dialog)
 void show_selected_files_to_textview_panel(GtkWidget *file_chooser_dialog)
 {
     GtkTextBuffer *buffer;
+    //gchar filename[255] = {0};
     gchar *filename;
     gchar infos_to_show[1024];
 
     memset(infos_to_show, 0, sizeof(infos_to_show));
 
-    filename=gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(file_chooser_dialog));
-    memcpy(mBinCfgFilePath,filename,strlen(filename));
+    char *curr = g_get_current_dir();
+		
+	printf("g_get_current_dir = %s\n", curr);
+
+    //filename = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(file_chooser_dialog));
+    //gtk_file_chooser_select_filename(GTK_FILE_CHOOSER(file_chooser_dialog), filename);
+	
+    //memcpy(mBinCfgFilePath,filename,strlen(filename));
+    sprintf(mBinCfgFilePath,"%s\\sw\\maps.txt", curr);
     printf("mBinCfgFilePath = %s\n", mBinCfgFilePath);
     gtk_widget_destroy(file_chooser_dialog);
 
@@ -144,62 +152,73 @@ void show_download_infos_to_textview_panel(char *infos) {
 
 int exec_shell_sh(char *action) {
 
-	char script_file_path[256];
 	char path[256];
 	char log_buff[1024];
+	char buf[256] = {0};
+    char *p = buf, *q = log_buff;
+	
+	char cmd[256] = {0};
 	FILE *fp;
     GtkTextBuffer *buffer;
-    buffer = gtk_text_view_get_buffer(m_textview_download_logs);
+    //buffer = gtk_text_view_get_buffer(m_textview_download_logs);
 
-    strcpy(script_file_path,mBinCfgDirPath);
-#ifdef __unix
-    #ifdef __linux
-        printf("Current System:Linux\n");
-        strcat(script_file_path, "download.sh");
-    #endif
-#else
-    #ifdef WINVER
-        printf("Current System:Windows\n");
-        strcat(script_file_path, "download.bat");
-    #endif
-#endif
+    printf("[%s:%s] enter \n", __FILE__,__func__);
 
-
-    //fp=popen(“cat /etc/passwd”,”r”);
-
-    fp=popen("/home/android/projects/gtk_project/factory_test/test_download_files/download.sh /home/android/projects/gtk_project/factory_test/test_download_files/ b", "r");
-
-    fgets(log_buff,sizeof(log_buff),fp);
-    gtk_text_buffer_set_text (buffer, log_buff, -1);
-
-    while(fgets(log_buff, sizeof(log_buff), fp) != NULL) {
-        if (log_buff[strlen(log_buff) - 1] == '\n') {
-            log_buff[strlen(log_buff) - 1] = '\0';
+    char *curr = g_get_current_dir();
+    sprintf(cmd, "%s\\download.bat %s\\sw %s", curr, curr, action);
+	
+    printf("[%s:%s]----cmd----:%s\n", __FILE__,__func__,cmd);
+    fp = popen(cmd, "r");
+    while(fgets(p, 256, fp) != NULL) {
+        if (p[256 - 1] == '\n') {
+            p[256 - 1] = '\0';
         }
-        //printf("log_buff:%s", log_buff);
-        gtk_text_buffer_set_text (buffer, log_buff, -1);
+		printf("%s\n", p);
+
+		//strstr(q,p);
     }
-    //while(!feof(fp)) {
-   //     fgets(log_buff,sizeof(log_buff),fp);
-        //printf("log_buff:%s", log_buff);
-       // gtk_text_buffer_set_text (buffer, log_buff, -1);
-   // }
-
-    //show_download_infos_to_textview_panel(log_buff);
-
     pclose(fp);
+    
+	gdk_threads_enter();
+	 printf("[%s:%s] gtk_text_buffer_set_text enter \n", __FILE__,__func__);
+	buffer = gtk_text_view_get_buffer(m_textview_download_logs);
+
+    memset(buf, 0, sizeof(buf));
+	sprintf(buf,"gtk_text_buffer_set_text %s \n %s", curr, action);
+	gtk_text_buffer_set_text(buffer, buf, -1);
+	printf("[%s:%s] gtk_text_buffer_set_text exit \n", __FILE__,__func__);
+	gdk_threads_leave();
+		
 	return 0;
 }
 
 
 void exec_stlink_download(char *action) {
+	//printf("[%s:%s]\n", __FILE__,__func__);
 	gint result = exec_shell_sh(action);
-	printf("exec_shell_sh result = %d",result);
+}
+
+void *exec_download_thread_callback(void *args) {
+printf("[%s:%d].\n", __FILE__,__LINE__);
+
+	for (int i = 0; i < 20; i++) {
+		exec_stlink_download("b");
+		exec_stlink_download("ftm-m");
+		exec_stlink_download("ftm-f");
+		//Sleep(100);
+	}
+
+	g_thread_exit(NULL);
+    return NULL;
 }
 
 void start_download_on_clicked(GtkWidget *wid, GtkWidget *win)
 {
-    exec_stlink_download("b");
-    exec_stlink_download("ftm-m");
-    exec_stlink_download("ftm-f");
+    printf("[%s:%s]ENTER \n", __FILE__,__func__);
+    GtkTextBuffer *buffer = gtk_text_view_get_buffer(m_textview_download_logs);
+    gtk_text_buffer_set_text (buffer, "", -1);
+
+	g_thread_new("download thread",exec_download_thread_callback, NULL);
+	
+	printf("[%s:%s] EXIT\n", __FILE__,__func__);
 }
