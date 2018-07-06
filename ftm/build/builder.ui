@@ -17,6 +17,7 @@
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="halign">center</property>
+        <property name="margin_bottom">6</property>
         <child>
           <object class="GtkLabel" id="label_factory_test">
             <property name="width_request">268</property>
@@ -85,14 +86,14 @@
         </child>
         <child>
           <object class="GtkLabel" id="label_test_items_header1">
-            <property name="width_request">422</property>
+            <property name="width_request">262</property>
             <property name="height_request">47</property>
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="label" translatable="yes">测试项目</property>
           </object>
           <packing>
-            <property name="x">30</property>
+            <property name="x">17</property>
             <property name="y">68</property>
           </packing>
         </child>
@@ -105,8 +106,8 @@
             <property name="orientation">vertical</property>
           </object>
           <packing>
-            <property name="x">456</property>
-            <property name="y">61</property>
+            <property name="x">253</property>
+            <property name="y">63</property>
           </packing>
         </child>
         <child>
@@ -118,7 +119,7 @@
             <property name="label" translatable="yes">测试结果</property>
           </object>
           <packing>
-            <property name="x">559</property>
+            <property name="x">451</property>
             <property name="y">63</property>
           </packing>
         </child>
@@ -141,7 +142,7 @@
             <property name="baseline_row">1</property>
             <child>
               <object class="GtkLabel" id="label_result1">
-                <property name="width_request">300</property>
+                <property name="width_request">500</property>
                 <property name="height_request">50</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
@@ -167,7 +168,7 @@
             </child>
             <child>
               <object class="GtkLabel" id="label_result2">
-                <property name="width_request">300</property>
+                <property name="width_request">500</property>
                 <property name="height_request">50</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
@@ -180,7 +181,7 @@
             </child>
             <child>
               <object class="GtkLabel" id="label_result3">
-                <property name="width_request">300</property>
+                <property name="width_request">500</property>
                 <property name="height_request">50</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
@@ -193,7 +194,7 @@
             </child>
             <child>
               <object class="GtkLabel" id="label_result4">
-                <property name="width_request">300</property>
+                <property name="width_request">500</property>
                 <property name="height_request">50</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
@@ -227,11 +228,13 @@
                 <property name="shadow_type">out</property>
                 <child>
                   <object class="GtkLabel" id="label_test_item1">
-                    <property name="width_request">500</property>
+                    <property name="width_request">300</property>
                     <property name="height_request">50</property>
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
+                    <property name="opacity">0.98999999999999999</property>
                     <property name="label" translatable="yes">1.按键（左）</property>
+                    <property name="xalign">0.10000000149011612</property>
                   </object>
                 </child>
               </object>
@@ -249,11 +252,12 @@
                 <property name="shadow_type">out</property>
                 <child>
                   <object class="GtkLabel" id="label_test_item2">
-                    <property name="width_request">500</property>
+                    <property name="width_request">300</property>
                     <property name="height_request">50</property>
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="label" translatable="yes">2.按键（右）</property>
+                    <property name="xalign">0.10000000149011612</property>
                   </object>
                 </child>
               </object>
@@ -271,11 +275,12 @@
                 <property name="shadow_type">out</property>
                 <child>
                   <object class="GtkLabel" id="label_test_item3">
-                    <property name="width_request">500</property>
+                    <property name="width_request">300</property>
                     <property name="height_request">50</property>
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="label" translatable="yes">3.屏幕显示（全亮）</property>
+                    <property name="xalign">0.10000000149011612</property>
                   </object>
                 </child>
               </object>
@@ -287,17 +292,20 @@
             </child>
             <child>
               <object class="GtkAspectFrame" id="aspectframe4">
+                <property name="width_request">300</property>
+                <property name="height_request">50</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label_xalign">0</property>
                 <property name="shadow_type">out</property>
                 <child>
                   <object class="GtkLabel" id="label_test_item4">
-                    <property name="width_request">500</property>
+                    <property name="width_request">300</property>
                     <property name="height_request">50</property>
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="label" translatable="yes">4.屏幕显示（全暗）</property>
+                    <property name="xalign">0.10000000149011612</property>
                   </object>
                 </child>
               </object>
@@ -315,11 +323,12 @@
                 <property name="shadow_type">out</property>
                 <child>
                   <object class="GtkLabel" id="label_test_item5">
-                    <property name="width_request">500</property>
+                    <property name="width_request">300</property>
                     <property name="height_request">50</property>
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="label" translatable="yes">5.擦除Firmware（整机测试）</property>
+                    <property name="xalign">0.10000000149011612</property>
                   </object>
                 </child>
               </object>

@@ -5,10 +5,7 @@
 
 
 int init_main_ui(int argc, char *argv[])
-{
-    gdk_threads_init(); 
-	g_thread_init(NULL);  
-    
+{    
     gtk_init(&argc,&argv);
 	
     GtkBuilder *builder = gtk_builder_new();
@@ -54,6 +51,5 @@ int init_main_ui(int argc, char *argv[])
 
     gtk_widget_show_all(m_window_main);
 
-	gdk_threads_enter();
     gtk_main();
 }

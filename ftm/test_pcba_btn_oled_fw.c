@@ -374,8 +374,9 @@ static void update_btn_test_show_info(int id, int result)
             break;
 			
 		case TEST_TIME_OUT:
-			gtk_widget_modify_bg(label_firmware_erase,GTK_STATE_NORMAL, color);
-			gtk_label_set_markup(GTK_LABEL(label_firmware_erase),disp);
+		case TEST_RESET:
+			//gtk_widget_modify_bg(label_firmware_erase,GTK_STATE_NORMAL, color);
+			//gtk_label_set_markup(GTK_LABEL(label_firmware_erase),disp);
 			break;
     }
 }
