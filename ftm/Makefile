@@ -1,6 +1,5 @@
 OUT := test
 
-#ARCH ?= amd64
 ARCH ?= 386
 
 # linxu gcc
@@ -41,6 +40,7 @@ SRC_FW_PROGRAM := \
 # libusb.
 LIBNAME  := -lusb-1.0
 ifeq ($(strip $(BUILD)), linux)
+  ARCH := amd64
   LIBLOAD  := -L ./libs/linux/lib
   LIBINC := -I ./libs/linux/include/libusb-1.0
 else 
