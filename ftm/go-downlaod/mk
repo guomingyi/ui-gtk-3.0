@@ -6,7 +6,7 @@ ARCH=amd64
 
 rm -f out/fw_download_linux-$ARCH
 
-CGO_ENABLED=1 GOARCH=$ARCH GOOS=linux CC=gcc CXX=g++ go build -o out/fw_download_linux-$ARCH && ./out/fw_download_linux-$ARCH
+CGO_ENABLED=1 GOARCH=$ARCH GOOS=linux CC=gcc CXX=g++ go build -o out/fw_download_linux-$ARCH
 
 
 
