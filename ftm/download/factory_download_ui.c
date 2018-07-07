@@ -4,7 +4,6 @@
 #include "download_callback.h"
 #include "factory_ui.h"
 
-
 void init_download_callbacks(GtkWidget *win)
 {
     g_signal_connect (m_button_load_files, "clicked", G_CALLBACK (load_files_on_clicked), (gpointer)win);
@@ -13,8 +12,6 @@ void init_download_callbacks(GtkWidget *win)
 
 int init_download_ui(GtkBuilder *builder, GtkWidget *win)
 {
-    printf("init_download_ui\n");
-
     if (m_button_load_files == NULL)
     {
         m_button_load_files = GTK_BUTTON(gtk_builder_get_object(builder,"button_load_files"));
@@ -27,7 +24,6 @@ int init_download_ui(GtkBuilder *builder, GtkWidget *win)
 
     if (m_textview_loaded_files == NULL)
     {
-        printf("init m_textview_loaded_files\n");
         m_textview_loaded_files = GTK_TEXT_VIEW(gtk_builder_get_object(builder,"textview_loaded_files"));
     }
 
@@ -41,5 +37,6 @@ int init_download_ui(GtkBuilder *builder, GtkWidget *win)
         m_progressbar_download = GTK_PROGRESS_BAR(gtk_builder_get_object(builder,"progressbar_download"));
     }
 
+    load_filename_from_tmp_file();
     init_download_callbacks(win);
 }

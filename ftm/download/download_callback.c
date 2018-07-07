@@ -4,215 +4,276 @@
 #include "download_callback.h"
 #include "factory_ui.h"
 
-gchar mBinCfgFilePath[255];
-gchar mBinCfgDirPath[255];
+static char mBinCfgDirPath[255];
+static char bin_file_to_show[1024];
+static char log_buff[64][256];
 
-void parse_map_file(gchar *filepath, gchar* output_info)
+typedef struct PROCESS_BAR_T {
+    float f;
+    char t[32];
+};
+
+static struct PROCESS_BAR_T mProcess_barUpdate;
+
+
+#define LOG_TEXT_UPDATE(x) \
+    do { \
+        g_idle_add_full(G_PRIORITY_HIGH_IDLE, g_idle_thread_worker, x, NULL); \
+    } while(0)
+
+
+#define PROCESS_BAR_UPDATE(x,xx) \
+    do { \
+        mProcess_barUpdate.f = x; \
+        strcpy(mProcess_barUpdate.t, xx); \
+        g_idle_add_full(G_PRIORITY_HIGH_IDLE, g_idle_thread_worker_processbar, &mProcess_barUpdate, NULL); \
+    } while(0)
+
+static void parse_map_file(gchar *filepath, gchar* output_info)
 {
     gchar temp[64];
     FILE *fpReader;
-    GtkTextBuffer *buffer;
+    char *bindir = mBinCfgDirPath;
+    int n = 0;
 
-#ifdef __unix
-    #ifdef __linux
-        printf("Current System:Linux\n");
-    #endif
+#ifdef __linux
+    printf("HOST System: Linux\n");
 #else
-    #ifdef WINVER
-        printf("Current System:Windows\n");
-    #endif
+    printf("HOST System: Windows\n");
 #endif
 
     gint len_file_path = strlen(filepath);
     gint len_map_txt = strlen("map.txt");
     gint n_size = len_file_path - len_map_txt;
 
-    //strncpy(dir_path,filepath, n_size);
-    g_utf8_strncpy(mBinCfgDirPath,filepath, n_size);
-
-    printf("###dir_path=%s\n", mBinCfgDirPath);
-
-   // g_utf8_validate();
-
+    strncpy(bindir, filepath, n_size - 1);
     fpReader=fopen(filepath,"r");
-
-    if(fpReader==NULL)
-    {
+    if(fpReader==NULL) {
         printf("open %s failed\n", filepath);
         return NULL;
     }
 
-    while(!feof(fpReader))
-    {
-        //fscanf(fpReader, "%s", temp);
+    while(!feof(fpReader) && n++ < 3) {
         memset(temp, 0, sizeof(temp));
         fgets(temp, sizeof(temp)-1, fpReader);
-        if (!strstr(temp,"FILE"))
-        {
+        if (!strstr(temp,"FILE")) {
             if(strlen(temp) <= 0)
                 continue;
-            if(strlen(output_info) == 0)
-            {
-                strcpy(output_info,mBinCfgDirPath);
+            if(strlen(output_info) == 0) {
+                strcpy(output_info,bindir);
+                strcat(output_info,"\\");
                 strcat(output_info,temp);
             }
-            else
-            {
-                strcat(output_info,mBinCfgDirPath);
+            else {
+                strcat(output_info,bindir);
+                strcat(output_info,"\\");
                 strcat(output_info,temp);
             }
         }
-        //printf("output_info=%s",output_info);
     }
     fclose(fpReader);
 }
 
-
-void print_selected_filename(GtkWidget *file_chooser_dialog)
+static void save_filename_to_tmp_file(char *filename) 
 {
-    GtkWidget *dialog;
-    gchar *filename;
+	FILE *fp;
+	char *s= filename;
+	char c = '\n';
 
-    filename = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(file_chooser_dialog));
-    gtk_widget_destroy(file_chooser_dialog);
-    printf("filename = %s", filename);
-    dialog=gtk_message_dialog_new(NULL,GTK_DIALOG_MODAL,GTK_MESSAGE_INFO,GTK_BUTTONS_OK,filename);
-    gtk_dialog_run(GTK_DIALOG(dialog));
-    gtk_widget_destroy(dialog);
+	remove("load.txt");
+	fp = fopen("load.txt","a");
+	fprintf(fp,"%s",s);
+	fprintf(fp,"%c",c);
+	fclose(fp);
 }
 
-
-void show_selected_files_to_textview_panel(GtkWidget *file_chooser_dialog)
+void load_filename_from_tmp_file(void) 
 {
-    GtkTextBuffer *buffer;
-    //gchar filename[255] = {0};
-    gchar *filename;
-    gchar infos_to_show[1024];
-
-    memset(infos_to_show, 0, sizeof(infos_to_show));
-
-    char *curr = g_get_current_dir();
-		
-	printf("g_get_current_dir = %s\n", curr);
-
-    //filename = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(file_chooser_dialog));
-    //gtk_file_chooser_select_filename(GTK_FILE_CHOOSER(file_chooser_dialog), filename);
+	FILE *fp;
+	char s[128] = {0};
 	
-    //memcpy(mBinCfgFilePath,filename,strlen(filename));
-    sprintf(mBinCfgFilePath,"%s\\sw\\maps.txt", curr);
-    printf("mBinCfgFilePath = %s\n", mBinCfgFilePath);
-    gtk_widget_destroy(file_chooser_dialog);
+	fp = fopen("load.txt","r");
+	if (fp == NULL) 
+		return;
 
-    parse_map_file(mBinCfgFilePath, infos_to_show);
-
-    printf("infos_to_show = %s", infos_to_show);
-
-    buffer = gtk_text_view_get_buffer(m_textview_loaded_files);
-    gtk_text_buffer_set_text (buffer, infos_to_show, -1);
-
+	fscanf(fp, "%s\n", s);
+	fclose(fp);
+	
+    if (strlen(s) > 0) {
+        parse_map_file(s, bin_file_to_show);
+        gtk_text_buffer_set_text(gtk_text_view_get_buffer(m_textview_loaded_files), bin_file_to_show, -1);
+	}
 }
 
-
-void load_files_on_clicked(GtkWidget *wid, GtkWidget *win)
+static void show_selected_files_to_textview_panel(GtkWidget *file_chooser_dialog)
 {
-    printf("load_files_on_clicked !!!\n");
-    GtkWidget *dialog_file_chooser;
-    GtkFileChooserAction action = GTK_FILE_CHOOSER_ACTION_OPEN;
-    gint res;
-    char *filename;
+    gchar *filename;
+    gsize readt,writet;
 
-    dialog_file_chooser = gtk_file_chooser_dialog_new("Select File",
-                          win,
-                          GTK_FILE_CHOOSER_ACTION_OPEN,
-                          GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
-                          GTK_STOCK_OPEN, GTK_RESPONSE_ACCEPT,
-                          NULL);
-
-    printf("load_files_on_clicked show dialog_file_chooser !!!\n");
-    res = gtk_dialog_run (GTK_DIALOG (dialog_file_chooser));
-    printf("load_files_on_clicked res = %d\n", res);
-
-    if (res == GTK_RESPONSE_ACCEPT)
-    {
-        //print_selected_filename(dialog_file_chooser);
-        show_selected_files_to_textview_panel(dialog_file_chooser);
+    memset(bin_file_to_show, 0, sizeof(bin_file_to_show));
+    filename = g_filename_display_name(gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(file_chooser_dialog)));
+    if (filename != NULL) {
+        parse_map_file(filename, bin_file_to_show);
+        gtk_text_buffer_set_text(gtk_text_view_get_buffer(m_textview_loaded_files), bin_file_to_show, -1);
+		save_filename_to_tmp_file(filename);
     }
-    else
-    {
-        gtk_widget_destroy(dialog_file_chooser);
-    }
-
 }
 
-void show_download_infos_to_textview_panel(char *infos) {
+static void show_download_infos_to_textview_panel(char *infos) {
     GtkTextBuffer *buffer;
     buffer = gtk_text_view_get_buffer(m_textview_download_logs);
     gtk_text_buffer_set_text (buffer, infos, -1);
 }
 
+static void insert_text_to_textview(gchar * data)
+{
+    GtkTextBuffer *buffer;
+    GtkTextIter end;
+    gchar *escape, *text;
+    escape = g_strescape (data, NULL);
+    text = g_strconcat (escape, "\n", NULL);
+    buffer = gtk_text_view_get_buffer(m_textview_download_logs);
+    gtk_text_buffer_get_end_iter(buffer, &end);
+    gtk_text_buffer_insert(buffer, &end, text, -1);
+    g_free (escape);
+    g_free (text);
+}
 
 static gint g_idle_thread_worker(void *args)
 {	
-    printf("[%s:%s]\n", __FILE__, __func__);
-	
-    char *p = (char *)args;
-	GtkTextBuffer *buffer = gtk_text_view_get_buffer(m_textview_download_logs);
-	gtk_text_buffer_set_text(buffer, p, -1);
+    printf("%s\n", (char *)args);
+    insert_text_to_textview((char *)args);
     return FALSE;
 }
 
-static char log_buff[1024];
+static int exec_shell_sh(char *action) 
+{
+    int i = 0;
+    char buf[256];
+    char *p = buf;
+    char cmd[256] = {0};
+    char *bindir = mBinCfgDirPath;
 
-int exec_shell_sh(char *action) {
-
-	char path[256];
-	char buf[256] = {0};
-    char *p = buf, *q = log_buff;
-	
-	char cmd[256] = {0};
-	FILE *fp;
-
-    printf("[%s:%s] enter \n", __FILE__,__func__);
-
-    char *curr = g_get_current_dir();
-    sprintf(cmd, "%s\\download.bat %s\\sw %s", curr, curr, action);
-    printf("[%s:%s]----cmd----:%s\n", __FILE__,__func__,cmd);
-	
-    fp = popen(cmd, "r");
+    sprintf(cmd, "%s\\download.bat %s %s", g_get_current_dir(), bindir, action);
+    FILE *fp = popen(cmd, "r");
     while(fgets(p, 256, fp) != NULL) {
         if (p[256 - 1] == '\n') {
             p[256 - 1] = '\0';
         }
-		printf("%s\n", p);
+        strncpy(log_buff[i++], p, strlen(p));
     }
     pclose(fp);
-    
-    g_idle_add_full(G_PRIORITY_HIGH_IDLE, g_idle_thread_worker, log_buff, NULL);
-	return 0;
+
+    for (int j = 0; j < i; j++) {
+        LOG_TEXT_UPDATE(log_buff[j]);
+    }
+
+    for (int j = 0; j < 64; j++) {
+        if (strstr(log_buff[j], "No ST-LINK detected") != NULL) {
+            goto failed;
+        }
+        if (strstr(log_buff[j], "Programming Complete") != NULL) {
+            return 0;
+        }
+    }
+
+failed:
+
+    printf("[%s] Programming failed!\n", __func__);
+    return -1;
 }
 
-
-void exec_stlink_download(char *action) {
-	gint result = exec_shell_sh(action);
-}
-
-void *exec_download_thread_callback(void *args) {
-printf("[%s:%d].\n", __FILE__,__LINE__);
-
-	for (int i = 0; i < 20; i++) {
-		exec_stlink_download("b");
-		exec_stlink_download("ftm-m");
-		exec_stlink_download("ftm-f");
+static gint g_idle_thread_worker_processbar(void *args)
+{
+    struct PROCESS_BAR_T *m = (struct PROCESS_BAR_T *)args;
+    if (m->f > 0) {
+        gtk_progress_bar_set_fraction(m_progressbar_download, m->f);
 	}
+	if (m->t) {
+        gtk_progress_bar_set_text(m_progressbar_download, m->t);
+	}
+    return FALSE;
+}
 
-	g_thread_exit(NULL);
+static gint g_idle_thread_worker_ui_reset(void *args)
+{
+    gtk_widget_set_sensitive(GTK_BUTTON(m_button_start_download), TRUE);
+    return FALSE;
+}
+
+static void *exec_download_thread_callback(void *args) {
+    char *cmd[3];
+    char *bin[3];
+    char *p = bin_file_to_show;
+
+    if (strstr(p, "ftm.bin") != NULL) {
+        cmd[0] =  "b";
+        cmd[1] = "ftm-m";
+        cmd[2] = "ftm-f";
+
+        bin[0] =  "bootloader";
+        bin[1] = "metadata-ftm";
+        bin[2] = "firmware-ftm";
+    } else {
+        cmd[0] =  "b";
+        cmd[1] = "m";
+        cmd[2] = "f";
+
+        bin[0] =  "bootloader";
+        bin[1] = "metadata";
+        bin[2] = "firmware";
+    }
+
+    for (int i = 0; i < 3; i++) {
+        if (exec_shell_sh(cmd[i]) < 0) {
+			PROCESS_BAR_UPDATE(-1, "FAILED");
+            LOG_TEXT_UPDATE("***************** DOWNLAOD FAILED! *****************\n");
+            goto exit;
+        }
+        PROCESS_BAR_UPDATE((0.3*(i + 1)), bin[i]);
+    }
+
+    PROCESS_BAR_UPDATE(1.0, "SUCCESS");
+    LOG_TEXT_UPDATE("***************** DOWNLAOD SUCCESS *****************\n");
+
+exit:
+
+    g_idle_add_full(G_PRIORITY_HIGH_IDLE, g_idle_thread_worker_ui_reset, NULL, NULL);
+    g_thread_exit(NULL);
     return NULL;
+}
+
+void load_files_on_clicked(GtkWidget *wid, GtkWidget *win)
+{
+    GtkWidget *dialog_file_chooser;
+    gint res = 0;
+
+    dialog_file_chooser = gtk_file_chooser_dialog_new("Select File",
+            win,
+            GTK_FILE_CHOOSER_ACTION_OPEN,
+            GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
+            GTK_STOCK_OPEN, GTK_RESPONSE_ACCEPT,
+            NULL);
+
+    res = gtk_dialog_run (GTK_DIALOG (dialog_file_chooser));
+    if (res == GTK_RESPONSE_ACCEPT) {
+        show_selected_files_to_textview_panel(dialog_file_chooser);
+    }
+    else {
+        printf("[%s] load_files failed: res:%d\n", __func__, res);
+    }
+    gtk_widget_destroy(dialog_file_chooser);
 }
 
 void start_download_on_clicked(GtkWidget *wid, GtkWidget *win)
 {
-    printf("[%s:%s]ENTER \n", __FILE__,__func__);
-    GtkTextBuffer *buffer = gtk_text_view_get_buffer(m_textview_download_logs);
-    gtk_text_buffer_set_text (buffer, "", -1);
-	g_thread_new("download thread",exec_download_thread_callback, NULL);
+    for (int j = 0; j < 64; j++) {
+        memset(log_buff[j], 0, sizeof(log_buff[j]));
+    }
+
+    PROCESS_BAR_UPDATE(0, "0%");
+    gtk_widget_set_sensitive(GTK_BUTTON(m_button_start_download), FALSE);
+
+    gtk_text_buffer_set_text(gtk_text_view_get_buffer(m_textview_download_logs), "***************** START DOWNLAOD *****************\n", -1);
+    g_thread_new("download thread",exec_download_thread_callback, NULL);
 }

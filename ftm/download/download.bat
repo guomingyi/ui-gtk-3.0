@@ -14,38 +14,38 @@
 
 @if {"%action%"} == {"b"} (
     @echo %path%\%BL% %BL_ADDR%
-    ST-LINK_CLI.exe -c SWD UR LPM -CmpFile %path%\%BL% %BL_ADDR%
+    ST-LINK_CLI.exe -c SWD -P %path%\%BL% %BL_ADDR% -V -Rst
 ) 
 
 @if {"%action%"} == {"m"} (
     @echo %path%\%MT% %MT_ADDR%
-    ST-LINK_CLI.exe -c SWD UR LPM -CmpFile %path%\%MT% %MT_ADDR%
+    ST-LINK_CLI.exe -c SWD -P %path%\%MT% %MT_ADDR% -V -Rst
 ) 
 
 @if {"%action%"} == {"ftm-m"} (
     @echo %path%\%FTM_M% %MT_ADDR% 
-    ST-LINK_CLI.exe -c SWD UR LPM -CmpFile %path%\%FTM_M% %MT_ADDR%
+    ST-LINK_CLI.exe -c SWD -P %path%\%FTM_M% %MT_ADDR% -V -Rst
 ) 
 
 @if {"%action%"} == {"f"} (
     @echo %path%\%FW% %FW_ADDR% 
-    ST-LINK_CLI.exe -c SWD UR LPM -CmpFile %path%\%FW% %FW_ADDR%
+    ST-LINK_CLI.exe -c SWD -P %path%\%FW% %FW_ADDR% -V -Rst
 ) 
 
 @if {"%action%"} == {"ftm-f"} (
     @echo %path%\%FTM% %FW_ADDR% 
-    ST-LINK_CLI.exe -c SWD UR LPM -CmpFile %path%\%FTM% %FW_ADDR%
+    ST-LINK_CLI.exe -c SWD -P %path%\%FTM% %FW_ADDR% -V -Rst
 ) 
 
 @if {"%action%"} == {"all"} (
-    ST-LINK_CLI.exe -c SWD UR LPM -CmpFile %path%\%BL% %BL_ADDR%
-	ST-LINK_CLI.exe -c SWD UR LPM -CmpFile %path%\%MT% %MT_ADDR%
-	ST-LINK_CLI.exe -c SWD UR LPM -CmpFile %path%\%FW% %FW_ADDR%
+    ST-LINK_CLI.exe -c SWD -P %path%\%BL% %BL_ADDR% -V -Rst
+	ST-LINK_CLI.exe -c SWD -P %path%\%MT% %MT_ADDR% -V -Rst
+	ST-LINK_CLI.exe -c SWD -P %path%\%FW% %FW_ADDR% -V -Rst
 ) 
 
 @if {"%action%"} == {"ftm-all"} (
-    ST-LINK_CLI.exe -c SWD UR LPM -CmpFile %path%\%BL% %BL_ADDR%
-	ST-LINK_CLI.exe -c SWD UR LPM -CmpFile %path%\%FTM_M% %MT_ADDR%
-	ST-LINK_CLI.exe -c SWD UR LPM -CmpFile %path%\%FTM% %FW_ADDR%
+    ST-LINK_CLI.exe -c SWD -P %path%\%BL% %BL_ADDR% -V -Rst
+	ST-LINK_CLI.exe -c SWD -P %path%\%FTM_M% %MT_ADDR% -V -Rst
+	ST-LINK_CLI.exe -c SWD -P %path%\%FTM% %FW_ADDR% -V -Rst
 ) 
 
