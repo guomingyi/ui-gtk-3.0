@@ -106,6 +106,7 @@ copy_depends_win:
 	@[ -d build/share/glib-2.0 ] || mkdir -p build/share/glib-2.0
 	cp -f download/factory_download.glade build/bin
 	cp -f download/download.bat build/bin
+	cp -a download/FlashLoader download/ST-LINK_CLI.exe download/STLinkUSBDriver.dll build/bin 
 	cp -a $(LIB_WIN)/share/glib-2.0/schemas build/share/glib-2.0
 	cp -f $(LIB_WIN)/bin/*.dll build/bin && chmod 644 build/bin/*.dll
 	cp -f $(LIB_WIN)/bin/*.dll build/ && chmod 644 build/*.dll

@@ -40,7 +40,7 @@
                 <property name="height_request">69</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">PCBA软件下载</property>
+                <property name="label" translatable="yes"></property>
                 <property name="justify">center</property>
                 <property name="ellipsize">end</property>
                 <property name="angle">0.050000000000000003</property>
@@ -64,7 +64,7 @@
                 <property name="height_request">69</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">JustSafe下载工具</property>
+                <property name="label" translatable="yes">JustSafe 固件烧录工具</property>
               </object>
               <packing>
                 <property name="x">285</property>
@@ -104,7 +104,7 @@
                 </child>
                 <child>
                   <object class="GtkButton" id="button_start_download">
-                    <property name="label" translatable="yes">开始下载</property>
+                    <property name="label" translatable="yes">烧录固件</property>
                     <property name="width_request">400</property>
                     <property name="height_request">50</property>
                     <property name="visible">True</property>
@@ -122,15 +122,15 @@
             <child>
               <object class="GtkScrolledWindow" id="scrolledwindow_file">
                 <property name="width_request">800</property>
-                <property name="height_request">90</property>
+                <property name="height_request">60</property>
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="hscrollbar_policy">never</property>
                 <property name="shadow_type">in</property>
                 <child>
                   <object class="GtkTextView" id="textview_loaded_files">
                     <property name="visible">True</property>
-                    <property name="can_focus">True</property>
+                    <property name="can_focus">False</property>
                   </object>
                 </child>
               </object>
@@ -157,7 +157,7 @@
                 <property name="height_request">23</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">日志信息：</property>
+                <property name="label" translatable="yes">烧录日志：</property>
                 <property name="ellipsize">end</property>
                 <property name="xalign">0.49000000953674316</property>
               </object>
@@ -176,7 +176,7 @@
                 <child>
                   <object class="GtkTextView" id="textview_download_logs">
                     <property name="visible">True</property>
-                    <property name="can_focus">True</property>
+                    <property name="can_focus">False</property>
                   </object>
                 </child>
               </object>
