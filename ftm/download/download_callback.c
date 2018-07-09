@@ -289,7 +289,7 @@ static void *exec_download_thread_callback(void *args) {
 
     for (int i = 0; i < 3; i++) {
         if (exec_shell_sh(cmd[i]) < 0) {
-            setLogTextViewSize(20);
+            //setLogTextViewSize(20);
             PROCESS_BAR_UPDATE(-1, "FAILED");
             LOG_TEXT_UPDATE("***************** DOWNLAOD FAILED! *****************\n", 20);
             goto exit;

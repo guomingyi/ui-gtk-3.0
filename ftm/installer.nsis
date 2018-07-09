@@ -1,0 +1,99 @@
+;#!/bin/bash
+;INSTALLER=ftm-test-installer-386.exe
+;makensis -X"OutFile ftm-test-installer-386.exe" -X'InstallDir "$PROGRAMFILES32\ftm-test"' ../installer.nsis
+
+;nsis脚本：
+!include MUI2.nsh
+!include x64.nsh
+!include LogicLib.nsh
+!include WinVer.nsh
+
+
+; StrContains
+; This function does a case sensitive searches for an occurrence of a substring in a string.
+; It returns the substring if it is found.
+; Otherwise it returns null("").
+; Written by kenglish_hi
+; Adapted from StrReplace written by dandaman32
+
+
+Var STR_HAYSTACK
+Var STR_NEEDLE
+Var STR_CONTAINS_VAR_1
+Var STR_CONTAINS_VAR_2
+Var STR_CONTAINS_VAR_3
+Var STR_CONTAINS_VAR_4
+Var STR_RETURN_VAR
+
+Function StrContains
+  Exch $STR_NEEDLE
+  Exch 1
+  Exch $STR_HAYSTACK
+  ; Uncomment to debug
+  ;MessageBox MB_OK 'STR_NEEDLE = $STR_NEEDLE STR_HAYSTACK = $STR_HAYSTACK '
+    StrCpy $STR_RETURN_VAR ""
+    StrCpy $STR_CONTAINS_VAR_1 -1
+    StrLen $STR_CONTAINS_VAR_2 $STR_NEEDLE
+    StrLen $STR_CONTAINS_VAR_4 $STR_HAYSTACK
+    loop:
+      IntOp $STR_CONTAINS_VAR_1 $STR_CONTAINS_VAR_1 + 1
+      StrCpy $STR_CONTAINS_VAR_3 $STR_HAYSTACK $STR_CONTAINS_VAR_2 $STR_CONTAINS_VAR_1
+      StrCmp $STR_CONTAINS_VAR_3 $STR_NEEDLE found
+      StrCmp $STR_CONTAINS_VAR_1 $STR_CONTAINS_VAR_4 done
+      Goto loop
+    found:
+      StrCpy $STR_RETURN_VAR $STR_NEEDLE
+      Goto done
+    done:
+   Pop $STR_NEEDLE ;Prevent "invalid opcode" errors and keep the
+   Exch $STR_RETURN_VAR
+FunctionEnd
+
+!macro _StrContainsConstructor OUT NEEDLE HAYSTACK
+  Push `${HAYSTACK}`
+  Push `${NEEDLE}`
+  Call StrContains
+  Pop `${OUT}`
+!macroend
+
+!define StrContains '!insertmacro "_StrContainsConstructor"'
+
+RequestExecutionLevel admin
+SetCompressor bzip2
+
+Name "js-ftm"
+#InstallDirRegKey HKLM Software\js-ftm InstallDir
+
+ShowInstDetails hide
+ShowUninstDetails hide
+
+XPStyle on
+Page directory
+Page instfiles
+
+DirText "Please select the installation folder."
+
+Section "js-ftm"
+  SectionIn RO
+
+  DetailPrint "Stopping previous js-ftm"
+#  nsExec::Exec "taskkill /IM js-ftm.exe /F"
+
+SetOutPath "$INSTDIR"
+    File /oname=full_test.exe test_btn_oled_fw_erase-windows-386.exe
+    File /oname=full_display_test.exe test_btn_oled-windows-386.exe
+    File /oname=full_button_test.exe test_btn-windows-386.exe
+    File /r ".\*"
+
+SectionEnd
+
+Section "Start Menu Shortcuts"
+  CreateDirectory "$SMPROGRAMS\js-ftm-installer"
+ ;CreateShortCut "$SMSTARTUP\js-ftm.lnk" "$INSTDIR\js-ftm.exe" "-l $\"%APPDATA%\js-ftm\js-ftm.log$\""
+  CreateShortCut "$SMPROGRAMS\js-ftm\full_test.lnk" "$INSTDIR\full_test.exe" "-l $\"%APPDATA%\js-ftm\js-ftm.log$\""
+  CreateShortCut "$SMPROGRAMS\js-ftm\full_display_test.lnk" "$INSTDIR\full_display_test.exe" "-l $\"%APPDATA%\js-ftm\full_display_test.log$\"" 
+  CreateShortCut "$SMPROGRAMS\js-ftm\full_button_test.lnk" "$INSTDIR\full_button_test.exe" "-l $\"%APPDATA%\js-ftm\full_button_test.log$\"" 
+  CreateShortCut "$SMPROGRAMS\js-ftm\fw_program.lnk" "$INSTDIR\bin\test_fw_program-windows-386.exe" "-l $\"%APPDATA%\js-ftm\fw_program.log$\"" 
+SectionEnd
+
+Var CMDRESULT
