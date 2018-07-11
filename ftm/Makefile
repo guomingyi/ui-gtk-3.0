@@ -36,6 +36,10 @@ SRC_FW_PROGRAM := \
   download/download_callback.c \
   download/factory_download_ui.c \
   download/factory_main_ui.c
+
+SRC_FW_UPGRADE := \
+  test_fw_upgrade.c
+
 ##############################################################
 # libusb.
 LIBNAME  := -lusb-1.0
@@ -60,6 +64,11 @@ all: clean windows linux
 linux: copy_depends btn btn_oled btn_oled_fw_erase fw_program
 windows: copy_depends_win btn-win btn_oled-win btn_oled_fw_erase-win fw_program-win
 
+fw_upgrade:
+	$(CC) $(SRC_FW_UPGRADE) $(SRC) -o build/$(OUT) $(CFLAGS)
+	@mv build/$(OUT) build/$(OUT)_fw_upgrade-linux-$(ARCH)
+	tree build|grep $(OUT)
+
 btn:
 	$(CC) $(SRC_BTN) $(SRC) -o build/$(OUT) $(CFLAGS)
 	@mv build/$(OUT) build/$(OUT)_btn-linux-$(ARCH)
@@ -79,6 +88,12 @@ fw_program:
 	$(CC) $(SRC_FW_PROGRAM) $(SRC) -o build/$(OUT) $(CFLAGS)
 	@mv build/$(OUT) build/$(OUT)_fw_program-linux-$(ARCH)
 	@cp -f download/factory_download.glade build
+	tree build|grep $(OUT)
+
+
+fw_upgrade-win:
+	$(CC_WIN) $(SRC_FW_UPGRADE) $(SRC) -o build/$(OUT) $(CFLAGS)
+	@mv build/$(OUT) build/$(OUT)_fw_upgrade-windows-$(ARCH).exe
 	tree build|grep $(OUT)
 
 btn-win:

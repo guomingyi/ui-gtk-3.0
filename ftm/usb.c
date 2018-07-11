@@ -13,7 +13,7 @@ struct libusb_device_handle *handle = NULL;
 // host -> device
 int usb_msg_out(char *buf)
 {
-    char data[64] = {0};
+    char data[64+1] = {0};
     int actual_len = 0;
 
     if (handle == NULL) { 
@@ -21,10 +21,9 @@ int usb_msg_out(char *buf)
 		return -1; 
 	}
 	
-    sprintf(data, "%s", buf);
-    libusb_bulk_transfer(handle, edp2out, data, 64, &actual_len, 0);
+    libusb_bulk_transfer(handle, edp2out, buf, 64, &actual_len, 0);
     if (actual_len > 0) {
-		printf("[%s] send data: [%s] success.\r\n",__func__, buf);
+		//printf("[%s][%s:%d]\r\n",__func__, buf, actual_len);
         return 0;
     }
     printf("[%s] send data err\r\n",__func__);
@@ -42,7 +41,7 @@ int usb_msg_in(char *buf)
 		return -1; 
 	}
 	
-	printf("[%s] wait read..\r\n",__func__);
+	//printf("[%s] wait read..\r\n",__func__);
     libusb_bulk_transfer(handle, edp2in, data, 64, &actual_len, 0);
     if (actual_len > 0) {
         memcpy(buf, data, 64);

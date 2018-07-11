@@ -5,7 +5,10 @@
 
 static int usb_init_success = 0;
 
-
+void setUsbInit(int s)
+{
+	usb_init_success = s;
+}
 int usb_init(void)
 {   
     int ret = -1;
@@ -29,7 +32,6 @@ int usb_write(char *data)
     int ret = -1;
 	
 	if (usb_init_success) {
-		printf("%s(): %s\n", __func__, data);
 	    ret = usb_msg_out(data);
 	}
 	return ret;
@@ -39,7 +41,6 @@ int usb_read(char *data)
 {
     int ret = -1;
 	
-    printf("%s()\n", __func__);
 	if (usb_init_success) {
 	    ret = usb_msg_in(data);
 	}
