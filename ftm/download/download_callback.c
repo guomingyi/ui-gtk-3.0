@@ -264,16 +264,29 @@ static void *exec_download_thread_callback(void *args) {
     char *p = bin_file_to_show;
     int tim;
 
-    if (strstr(p, "ftm.bin") != NULL) {
+    if (strstr(p, "firmware-ftm") != NULL) {
+	/*
         cmd[0] = "b";
         cmd[1] = "ftm-m";
         cmd[2] = "ftm-f";
 
+
         bin[0] = "bootloader";
         bin[1] = "metadata-ftm";
         bin[2] = "firmware-ftm";
+	*/
+
+        cmd[0] = "ftm-f";
+        cmd[1] = "ftm-m";
+        cmd[2] = "b";
+
+
+        bin[0] = "firmware-ftm";
+        bin[1] = "metadata-ftm";
+        bin[2] = "bootloader";
         tim = 140;
     } else {
+	/*
         cmd[0] = "b";
         cmd[1] = "m";
         cmd[2] = "f";
@@ -281,6 +294,14 @@ static void *exec_download_thread_callback(void *args) {
         bin[0] = "bootloader";
         bin[1] = "metadata";
         bin[2] = "firmware";
+	*/
+        cmd[0] = "f";
+        cmd[1] = "m";
+        cmd[2] = "b";
+
+        bin[0] = "firmware";
+        bin[1] = "metadata";
+        bin[2] = "bootloader";
         tim = 291;
     }
 

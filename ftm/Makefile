@@ -62,7 +62,7 @@ all: clean windows linux
 	make -C go-downlaod	
 
 linux: copy_depends btn btn_oled btn_oled_fw_erase fw_program
-windows: copy_depends_win btn-win btn_oled-win btn_oled_fw_erase-win fw_program-win
+windows: copy_depends_win btn-win btn_oled-win btn_oled_fw_erase-win fw_program-win fw_upgrade-win
 
 fw_upgrade:
 	$(CC) $(SRC_FW_UPGRADE) $(SRC) -o build/$(OUT) $(CFLAGS)
