@@ -209,6 +209,45 @@ static int encode_bin_size(unsigned char *buf, unsigned long size)
     return len;
 }
 
+void HexStrToByte(const unsigned char *s, unsigned char *d, int len)
+{
+    int h, l;
+
+    for (int i = 0; i < len; i += 2) {
+        h = s[i];
+        l = s[i + 1];
+
+        if (h > 0x39)
+            h -= 0x57;
+        else
+            h -= 0x30;
+
+        if (l > 0x39)
+            l -= 0x57;
+        else
+            l -= 0x30;
+
+        d[i / 2] = (h << 4) | l;
+    }
+}
+
+static int device_reboot(void) 
+{
+    unsigned char *cmd = "0074000000020802";
+    unsigned char buf[64] = {0};
+
+    HexStrToByte(cmd, buf, strlen(cmd));
+
+    if (usb_write(buf) < 0) {
+        goto err;
+    }
+
+    return 0;
+
+err:
+    return -1;
+}
+
 static int firmware_upgrade(char *filename)
 {	
     FILE *fp;
@@ -382,6 +421,7 @@ err:
     return -1;
 }
 
+int usb_close(void);
 int main(int argc,char *argv[])
 {	
     int opt;
@@ -422,6 +462,7 @@ int main(int argc,char *argv[])
         firmware_upgrade(buf);
     }
 
+    usb_close();
     printf("[%s] exit.\n",__func__);
     return 0;
 }

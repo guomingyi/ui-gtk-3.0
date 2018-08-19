@@ -17,13 +17,13 @@ int usb_msg_out(char *buf)
     int actual_len = 0;
 
     if (handle == NULL) { 
-		printf("[%s] EEEEEEEEEEEEEEE out \r\n",__func__);
-		return -1; 
-	}
-	
+        printf("[%s] EEEEEEEEEEEEEEE out \r\n",__func__);
+        return -1; 
+    }
+
     libusb_bulk_transfer(handle, edp2out, buf, 64, &actual_len, 0);
     if (actual_len > 0) {
-		//printf("[%s][%s:%d]\r\n",__func__, buf, actual_len);
+        //printf("[%s][%s:%d]\r\n",__func__, buf, actual_len);
         return 0;
     }
     printf("[%s] send data err\r\n",__func__);
@@ -36,12 +36,12 @@ int usb_msg_in(char *buf)
     char data[64] = {0};
     int actual_len = 0;
 
-	if (handle == NULL) { 
-		printf("[%s] EEEEEEEEEEEEEEE in \r\n",__func__);
-		return -1; 
-	}
-	
-	//printf("[%s] wait read..\r\n",__func__);
+    if (handle == NULL) { 
+        printf("[%s] EEEEEEEEEEEEEEE in \r\n",__func__);
+        return -1; 
+    }
+
+    //printf("[%s] wait read..\r\n",__func__);
     libusb_bulk_transfer(handle, edp2in, data, 64, &actual_len, 0);
     if (actual_len > 0) {
         memcpy(buf, data, 64);
@@ -63,8 +63,8 @@ int usbdev_init(void)
     ret = libusb_init(&usb_ctx);
     if (ret < 0) {
         printf("[%s] err\r\n",__func__);
-		return -1;
-	}
+        return -1;
+    }
 
     libusb_set_debug(usb_ctx, LIBUSB_LOG_LEVEL_INFO);
     cnt = libusb_get_device_list(NULL, &devs);
@@ -72,22 +72,22 @@ int usbdev_init(void)
         printf("[%s] no usb dev on bus\r\n",__func__);
         return  -1;
     }
-	
-	libusb_free_device_list(devs, 1);
-	
-	printf("[%s:%s] success!\r\n",__FILE__, __func__);
-	return 0;
+
+    libusb_free_device_list(devs, 1);
+
+    printf("[%s:%s] success!\r\n",__FILE__, __func__);
+    return 0;
 }
 
 int usbdev_enumerate(int vid, int pid)
 {
-	int ret;
-	
-	if (usb_ctx == NULL) {
+    int ret;
+
+    if (usb_ctx == NULL) {
         printf("[%s] usb context not init\r\n",__func__);
-		goto exit;
-	}
-		
+        goto exit;
+    }
+
     handle = libusb_open_device_with_vid_pid(usb_ctx, vid, pid);
     if (handle == NULL) {
         printf("[%s] cant't open device\r\n",__func__);
@@ -106,23 +106,27 @@ int usbdev_enumerate(int vid, int pid)
         printf("[%s] can't claim interface\r\n",__func__);
         goto exit;
     } 
-	
-	return 0;
-	
+
+    printf("[%s] #### \r\n",__func__);
+    return 0;
+
 exit:
     return -1;
 }
 
 int usbdev_close(void)
 {
-	if (handle) {
-		libusb_close(handle);
-		libusb_exit(NULL);
-		handle = NULL;
-	    usb_ctx = NULL;
-	}
+    if (handle) {
+        printf("[%s] libusb_release_interface \r\n",__func__);
+        libusb_release_interface(handle, 0);
+        libusb_close(handle);
+        libusb_exit(NULL);
+        handle = NULL;
+        usb_ctx = NULL;
+    }
 
-	return 0;
+    printf("[%s] #### \r\n",__func__);
+    return 0;
 }
 
 //int main(int argc, char* argv[])
@@ -208,7 +212,7 @@ int main2(int argc, char* argv[])
         printf("can't claim interface\r\n");
         goto exit;
     } 
-  
+
     if (1 == action) {
         usb_msg_out("Erase fw");
         usb_msg_in(buf);
@@ -221,8 +225,8 @@ int main2(int argc, char* argv[])
     do {
         usb_msg_out("test btn.");
         usb_msg_in(buf);
-       // usleep(1000*100);
-	    sleep(1);
+        // usleep(1000*100);
+        sleep(1);
     }
     while(1);
 

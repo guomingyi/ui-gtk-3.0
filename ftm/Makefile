@@ -2,6 +2,8 @@ OUT := test
 
 ARCH ?= 386
 
+BUILD ?= linux
+
 # linxu gcc
 CC := x86_64-linux-gnu-gcc
 
@@ -61,7 +63,7 @@ CFLAGS += $(LIBNAME) $(LIBLOAD) $(LIBINC) -Wfatal-errors -g -Wall -Wunused-varia
 all: clean windows linux
 	make -C go-downlaod	
 
-linux: copy_depends btn btn_oled btn_oled_fw_erase fw_program
+linux: copy_depends btn btn_oled btn_oled_fw_erase fw_program fw_upgrade
 windows: copy_depends_win btn-win btn_oled-win btn_oled_fw_erase-win fw_program-win fw_upgrade-win
 
 fw_upgrade:

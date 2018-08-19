@@ -53,8 +53,8 @@ int usb_close(void)
 
 	if (usb_init_success) {
 		printf("%s()\n", __func__);
-		ret = usbdev_close();
 		usb_init_success = 0;
+		ret = usbdev_close();
 	}
 	return ret;
 }
